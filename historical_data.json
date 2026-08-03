@@ -1,0 +1,3172 @@
+{
+  "_meta": {
+    "exported": "2026-07",
+    "source": "gen_dashboard.py \u2014 DATA object",
+    "client": "Atlanta Ventures",
+    "description": "Historical monthly marketing metrics. Each key is YYYY-MM. This file is the source of truth for past months \u2014 update gen_dashboard.py to add new months, then re-export."
+  },
+  "months": {
+    "2026-01": {
+      "web": {
+        "sessions": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "pageviews": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "new_users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "top_pages": [],
+        "traffic_sources": {
+          "organic": null,
+          "direct": null,
+          "referral": null,
+          "social": null
+        }
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 10502,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "instagram": {
+          "followers": {
+            "v": 3772,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "facebook": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "reach": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "youtube": {
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "watch_time": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_videos": []
+        },
+        "tiktok": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "video_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": false,
+          "campaigns": []
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3159,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 2348,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 191,
+            "mom": null,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 2619,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "8.1%",
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": false,
+          "top_articles": [
+            {
+              "title": "A Look Back at 2025",
+              "open_rate": "49%",
+              "click_rate": "6.7%",
+              "impressions": 1526,
+              "reach": 1042,
+              "engagements": 127,
+              "eng_rate": "8.3%",
+              "article_views": 1612,
+              "email_sends": 1977
+            },
+            {
+              "title": "New Year. New Goals. Same Hustle",
+              "open_rate": "47%",
+              "click_rate": "5.6%",
+              "impressions": 822,
+              "reach": 609,
+              "engagements": 64,
+              "eng_rate": "7.8%",
+              "article_views": 1007,
+              "email_sends": 1260
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 6592,
+            "mom": null,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "50.6%",
+            "mom": null,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 52,
+            "mom": 1.1667,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "A Founder's Guide to Startup Events Worth Attending (Spring 2026)",
+              "sessions": 2544,
+              "url": ""
+            },
+            {
+              "title": "How The Best Startups are Using AI in 2026",
+              "sessions": 1989,
+              "url": ""
+            },
+            {
+              "title": "5 Wild Ways To Pre-Sell Your Product",
+              "sessions": 1131,
+              "url": ""
+            },
+            {
+              "title": "How To Get Your Team Onboard with Changes in 2026",
+              "sessions": 928,
+              "url": ""
+            }
+          ]
+        },
+        "startup_strategies": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1133,
+            "mom": null,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "51.4%",
+            "mom": null,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 12,
+            "mom": 0.2,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "What traits do you look for in a founder?",
+              "sessions": 423,
+              "url": ""
+            },
+            {
+              "title": "Do I need a co-founder?",
+              "sessions": 258,
+              "url": ""
+            },
+            {
+              "title": "Looking back, then moving forward",
+              "sessions": 227,
+              "url": ""
+            },
+            {
+              "title": "The Flip Side of Entrepreneur Traits",
+              "sessions": 225,
+              "url": ""
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1334,
+            "mom": null,
+            "yoy": null
+          },
+          "users": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in January 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours data for January 2026",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          }
+        }
+      }
+    },
+    "2026-02": {
+      "web": {
+        "sessions": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "pageviews": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "new_users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "top_pages": [],
+        "traffic_sources": {
+          "organic": null,
+          "direct": null,
+          "referral": null,
+          "social": null
+        }
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 10722,
+            "mom": 0.021,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "instagram": {
+          "followers": {
+            "v": 3802,
+            "mom": 0.008,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "facebook": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "reach": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "youtube": {
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "watch_time": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_videos": []
+        },
+        "tiktok": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "video_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": false,
+          "campaigns": []
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3213,
+            "mom": 0.017,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 1158,
+            "mom": 0.491,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 55,
+            "mom": -0.712,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 3905,
+            "mom": 0.491,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "4.4%",
+            "mom": -0.457,
+            "yoy": null
+          },
+          "no_send": false,
+          "top_articles": [
+            {
+              "title": "Pitching, Hiring, and Scaling in 2026",
+              "open_rate": "47%",
+              "click_rate": "2.3%",
+              "impressions": 309,
+              "reach": 215,
+              "engagements": 11,
+              "eng_rate": "3.6%",
+              "article_views": 1684,
+              "email_sends": 2144
+            },
+            {
+              "title": "Why are we still reinventing the wheel?",
+              "open_rate": "48%",
+              "click_rate": "2.5%",
+              "impressions": 849,
+              "reach": 653,
+              "engagements": 44,
+              "eng_rate": "5.2%",
+              "article_views": 2221,
+              "email_sends": 2151
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 4975,
+            "mom": -0.2453,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "49.2%",
+            "mom": -0.0277,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 82,
+            "mom": 0.5769,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "The Real Pros & Cons of a High Valuation",
+              "sessions": 2000,
+              "url": ""
+            },
+            {
+              "title": "Your Dream Job Here: Startups That Are Hiring + 15 Open Roles",
+              "sessions": 1113,
+              "url": ""
+            },
+            {
+              "title": "5 Money Lessons I Teach My Kids as a VC Mom!",
+              "sessions": 990,
+              "url": ""
+            },
+            {
+              "title": "4 Startup Lessons I Learned as an Ironman Athlete",
+              "sessions": 872,
+              "url": ""
+            }
+          ]
+        },
+        "startup_strategies": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 937,
+            "mom": -0.173,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "48.9%",
+            "mom": -0.0486,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 14,
+            "mom": 0.1667,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "How do you get your first customers to pay?",
+              "sessions": 253,
+              "url": ""
+            },
+            {
+              "title": "How do you find potential customers for discovery?",
+              "sessions": 244,
+              "url": ""
+            },
+            {
+              "title": "Atlanta Healthcare Entrepreneur Meetup",
+              "sessions": 222,
+              "url": ""
+            },
+            {
+              "title": "Should I pivot my idea or keep going?",
+              "sessions": 218,
+              "url": ""
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1944,
+            "mom": 0.457,
+            "yoy": null
+          },
+          "users": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in February 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours data for February 2026",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          }
+        }
+      }
+    },
+    "2026-03": {
+      "web": {
+        "sessions": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "pageviews": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "new_users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "top_pages": [],
+        "traffic_sources": {
+          "organic": null,
+          "direct": null,
+          "referral": null,
+          "social": null
+        }
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 10942,
+            "mom": 0.021,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "instagram": {
+          "followers": {
+            "v": 3832,
+            "mom": 0.008,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "facebook": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "reach": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "youtube": {
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "watch_time": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_videos": []
+        },
+        "tiktok": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "video_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": false,
+          "campaigns": []
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3267,
+            "mom": 0.017,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 427,
+            "mom": -0.631,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 26,
+            "mom": -0.527,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 1769,
+            "mom": -0.547,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "6.1%",
+            "mom": 0.386,
+            "yoy": null
+          },
+          "no_send": false,
+          "top_articles": [
+            {
+              "title": "Is it Possible to Solve the Multifamily Efficiency Crisis?",
+              "open_rate": "43%",
+              "click_rate": "4.2%",
+              "impressions": 427,
+              "reach": 279,
+              "engagements": 26,
+              "eng_rate": "6.1%",
+              "article_views": 1769,
+              "email_sends": 2214
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 5690,
+            "mom": 0.1437,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "47.0%",
+            "mom": -0.0447,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 72,
+            "mom": -0.122,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "The Top David Cummings Blogs Every Founder Should Read",
+              "sessions": 1529,
+              "url": ""
+            },
+            {
+              "title": "Should You Talk To VCs Who Are Not A Fit?",
+              "sessions": 1382,
+              "url": ""
+            },
+            {
+              "title": "From Founder to CEO: How to Make the Shift",
+              "sessions": 970,
+              "url": ""
+            },
+            {
+              "title": "Your Spring Lineup: Conferences, Jogs, Fundraising Advice, and Free Coffee",
+              "sessions": 920,
+              "url": ""
+            }
+          ]
+        },
+        "startup_strategies": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 910,
+            "mom": -0.0288,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "46.2%",
+            "mom": -0.0552,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 14,
+            "mom": 0,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "Should I raise money or keep bootstrapping?",
+              "sessions": 260,
+              "url": ""
+            },
+            {
+              "title": "Do I need a novel idea?",
+              "sessions": 247,
+              "url": ""
+            },
+            {
+              "title": "How do I know if I have product-market fit?",
+              "sessions": 206,
+              "url": ""
+            },
+            {
+              "title": "How important is market timing for a startup idea?",
+              "sessions": 197,
+              "url": ""
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1778,
+            "mom": -0.085,
+            "yoy": null
+          },
+          "users": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in March 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours data for March 2026",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          }
+        }
+      }
+    },
+    "2026-04": {
+      "web": {
+        "sessions": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "pageviews": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "new_users": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "top_pages": [],
+        "traffic_sources": {
+          "organic": null,
+          "direct": null,
+          "referral": null,
+          "social": null
+        }
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 11161,
+            "mom": 0.02,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 21306,
+            "mom": 0.001,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 579,
+            "mom": -0.884,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "instagram": {
+          "followers": {
+            "v": 3861,
+            "mom": 0.008,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 19826,
+            "mom": 3.033,
+            "yoy": null
+          },
+          "likes": {
+            "v": 271,
+            "mom": 0.489,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "facebook": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "reach": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        },
+        "youtube": {
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "watch_time": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_videos": []
+        },
+        "tiktok": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "video_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": false,
+          "campaigns": []
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3321,
+            "mom": 0.017,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 402,
+            "mom": -0.059,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 36,
+            "mom": 0.385,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 2087,
+            "mom": 0.18,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "9.0%",
+            "mom": 0.475,
+            "yoy": null
+          },
+          "no_send": false,
+          "top_articles": [
+            {
+              "title": "A System for Aging in Place",
+              "open_rate": "45%",
+              "click_rate": "5.5%",
+              "impressions": 402,
+              "reach": 256,
+              "engagements": 36,
+              "eng_rate": "9.0%",
+              "article_views": 2087,
+              "email_sends": 2255
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 3800,
+            "mom": -0.3322,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "45.7%",
+            "mom": -0.0277,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 61,
+            "mom": -0.1528,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "Do's and Don'ts of AI Implementation (From an Expert)",
+              "sessions": 1006,
+              "url": ""
+            },
+            {
+              "title": "Founder Favorites: Looking For a COO? 3 Startup Hires To Make",
+              "sessions": 937,
+              "url": ""
+            },
+            {
+              "title": "ICYMI: What Founders Need To Know About Raising Capital in 2026",
+              "sessions": 933,
+              "url": ""
+            },
+            {
+              "title": "5 Lessons From 5 Years at Atlanta Ventures",
+              "sessions": 924,
+              "url": ""
+            }
+          ]
+        },
+        "startup_strategies": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1165,
+            "mom": 0.2802,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "42.5%",
+            "mom": -0.0801,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 21,
+            "mom": 0.5,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "Relationships Over Transactions: When to Reach Out to Investors",
+              "sessions": 257,
+              "url": ""
+            },
+            {
+              "title": "My digital twin",
+              "sessions": 253,
+              "url": ""
+            },
+            {
+              "title": "The Rory Effect: Why Success is Never a Straight Line",
+              "sessions": 249,
+              "url": ""
+            },
+            {
+              "title": "The Shared Skills of Founders and Investors",
+              "sessions": 233,
+              "url": ""
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 1449,
+            "mom": -0.185,
+            "yoy": null
+          },
+          "users": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": []
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in April 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours data for April 2026",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          }
+        }
+      }
+    },
+    "2026-05": {
+      "web": {
+        "sessions": {
+          "v": 4319,
+          "mom": -0.0114,
+          "yoy": null
+        },
+        "users": {
+          "v": 3500,
+          "mom": -0.0224,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": "29s avg",
+          "mom": 0.026,
+          "yoy": null
+        },
+        "form_submissions": {
+          "v": 52,
+          "mom": 0.0196,
+          "yoy": null
+        },
+        "event_count": {
+          "v": 20252,
+          "mom": 0.0282,
+          "yoy": null
+        },
+        "traffic": [
+          {
+            "source": "Direct",
+            "sessions": 2340,
+            "pct": "54%"
+          },
+          {
+            "source": "Organic Search",
+            "sessions": 1705,
+            "pct": "39%"
+          },
+          {
+            "source": "Referral",
+            "sessions": 217,
+            "pct": "5%"
+          },
+          {
+            "source": "Organic Social",
+            "sessions": 49,
+            "pct": "1%"
+          }
+        ],
+        "top_pages": [
+          {
+            "page": "/",
+            "sessions": 1013,
+            "change": -0.007
+          },
+          {
+            "page": "/authors/david-cummings",
+            "sessions": 156,
+            "change": 0.16
+          },
+          {
+            "page": "/about-us",
+            "sessions": 130,
+            "change": -0.037
+          },
+          {
+            "page": "/capital",
+            "sessions": 117,
+            "change": 0.19
+          },
+          {
+            "page": "/blog/the-3-rules-to-customer-interviews",
+            "sessions": 114,
+            "change": 0.21
+          },
+          {
+            "page": "/events",
+            "sessions": 89,
+            "change": -0.083
+          }
+        ]
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 11381,
+            "mom": -0.0131,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 31320,
+            "mom": 0.47,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 741,
+            "mom": 0.28,
+            "yoy": null
+          },
+          "posts": {
+            "v": 15,
+            "mom": -0.0625,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "date": "May 8",
+              "caption": "Fifteen years ago, Kyle Porter\u2026",
+              "impressions": 8579,
+              "likes": 190,
+              "url": ""
+            },
+            {
+              "date": "May 12",
+              "caption": "Five years ago, the Carpool Logistics team\u2026",
+              "impressions": 4983,
+              "likes": 161,
+              "url": ""
+            },
+            {
+              "date": "May 29",
+              "caption": "If she can do it, I can do it too.",
+              "impressions": 2698,
+              "likes": 57,
+              "url": ""
+            }
+          ]
+        },
+        "instagram": {
+          "followers": {
+            "v": 3891,
+            "mom": 0.031,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 18240,
+            "mom": -0.08,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 312,
+            "mom": 0.15,
+            "yoy": null
+          },
+          "posts": {
+            "v": 9,
+            "mom": 0,
+            "yoy": null
+          }
+        },
+        "facebook": {
+          "followers": {
+            "v": 189,
+            "mom": 0.0216,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 67,
+            "mom": 0.4,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "1.16%",
+            "mom": 0.35,
+            "yoy": null
+          },
+          "posts": {
+            "v": 12,
+            "mom": 0,
+            "yoy": null
+          }
+        },
+        "youtube": {
+          "subscribers": {
+            "v": 226,
+            "mom": 0,
+            "yoy": null
+          },
+          "views": {
+            "v": 1081,
+            "mom": 3.98,
+            "yoy": null
+          },
+          "likes": {
+            "v": 10,
+            "mom": 1.5,
+            "yoy": null
+          },
+          "videos": {
+            "v": 2,
+            "mom": 1,
+            "yoy": null
+          },
+          "top_videos": [
+            {
+              "title": "Undaunted Team",
+              "views": 751,
+              "likes": 4
+            },
+            {
+              "title": "Join us at Pitch Practice",
+              "views": 42,
+              "likes": 0
+            }
+          ]
+        },
+        "tiktok": {
+          "followers": {
+            "v": 130,
+            "mom": 0,
+            "yoy": null
+          },
+          "video_views": {
+            "v": 92,
+            "mom": 1,
+            "yoy": null
+          },
+          "likes": {
+            "v": 1,
+            "mom": 1,
+            "yoy": null
+          },
+          "posts": {
+            "v": 0,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": 2841,
+            "mom": 0.018,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 6,
+            "mom": null,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": "43.32%",
+            "mom": -0.0112,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": "4.07%",
+            "mom": -0.16,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": 2252,
+            "mom": -0.0101,
+            "yoy": null
+          },
+          "opens": {
+            "v": 2073,
+            "mom": 0.0039,
+            "yoy": null
+          },
+          "campaigns": [
+            {
+              "name": "May 2026 HOTP",
+              "open_rate": "52.14%",
+              "click_rate": "5.2%",
+              "unsub_rate": "0.1%"
+            },
+            {
+              "name": "May AV Insights",
+              "open_rate": "44.05%",
+              "click_rate": "3.8%",
+              "unsub_rate": "0.2%"
+            }
+          ]
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3375,
+            "mom": 0.0163,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 1806,
+            "mom": 3.4925,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 89,
+            "mom": 1.4722,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 3278,
+            "mom": 0.5707,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "4.9%",
+            "mom": -0.4556,
+            "yoy": null
+          },
+          "top_articles": [
+            {
+              "title": "Rebuilding Downtown: Inside the Opening of Founders Green",
+              "open_rate": "45%",
+              "click_rate": "2.3%",
+              "impressions": 1418,
+              "reach": 1062,
+              "engagements": 75,
+              "eng_rate": "5.3%",
+              "article_views": 1657,
+              "email_sends": 2320
+            },
+            {
+              "title": "Is Traditional Health Insurance Obsolete?",
+              "open_rate": "44%",
+              "click_rate": "2.1%",
+              "impressions": 388,
+              "reach": 291,
+              "engagements": 14,
+              "eng_rate": "3.6%",
+              "article_views": 1621,
+              "email_sends": 2308
+            },
+            {
+              "title": "Grayscale Acquired by Paylocity",
+              "open_rate": "47%",
+              "click_rate": "2.5%",
+              "impressions": 2400,
+              "reach": 1759,
+              "engagements": 104,
+              "eng_rate": "4.3%",
+              "article_views": 1821,
+              "email_sends": 2283
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "sessions": {
+            "v": 998,
+            "mom": 0.12,
+            "yoy": null
+          },
+          "views": {
+            "v": 3445,
+            "mom": -0.0934,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "45.3%",
+            "mom": -0.0088,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 40,
+            "mom": -0.3443,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "5 Healthiest Fast Food Picks for Founders",
+              "sessions": 98,
+              "url": ""
+            },
+            {
+              "title": "4 Cold Outreaches That Actually Work",
+              "sessions": 64,
+              "url": "https://kathrynoday.substack.com/p/4-cold-outreaches-that-actually-worked"
+            }
+          ]
+        },
+        "startup_strategies": {
+          "sessions": {
+            "v": 398,
+            "mom": 0.0258,
+            "yoy": null
+          },
+          "views": {
+            "v": 1088,
+            "mom": -0.0661,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "41.8%",
+            "mom": -0.0165,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 22,
+            "mom": 0.0476,
+            "yoy": null
+          },
+          "ai_assisted": true,
+          "top_posts": [
+            {
+              "title": "Are You a Giver or Taker?",
+              "sessions": 14,
+              "url": "https://startupstrategies.substack.com/p/are-you-a-giver-or-taker"
+            },
+            {
+              "title": "Beyond the Buzzword: What Traits Do You Look For\u2026",
+              "sessions": 14,
+              "url": "https://startupstrategies.substack.com/p/beyond-the-buzzword-what-traction"
+            },
+            {
+              "title": "The Entrepreneur's Edge: Why You Need to Think Big",
+              "sessions": 13,
+              "url": "https://startupstrategies.substack.com/p/the-entrepreneurs-edge-why-you-need"
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": {
+            "v": 1412,
+            "mom": 0.0144,
+            "yoy": null
+          },
+          "views": {
+            "v": 1557,
+            "mom": 0.0745,
+            "yoy": null
+          },
+          "users": {
+            "v": 1289,
+            "mom": 0.0031,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "26.56%",
+            "mom": 0.0271,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "The 3 Rules to Customer Interviews From the Mom Test",
+              "sessions": 114,
+              "url": ""
+            },
+            {
+              "title": "Examples of Cold Email Outreach",
+              "sessions": 82,
+              "url": ""
+            },
+            {
+              "title": "Are You Task-Oriented or People-Oriented?",
+              "sessions": 23,
+              "url": ""
+            },
+            {
+              "title": "Q&A with CEO and Co-Founder",
+              "sessions": 22,
+              "url": ""
+            }
+          ]
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in May 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours in May 2026",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          }
+        }
+      }
+    },
+    "2026-06": {
+      "web": {
+        "sessions": {
+          "v": 2229,
+          "mom": -0.4839,
+          "yoy": null
+        },
+        "users": {
+          "v": 1900,
+          "mom": -0.4571,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": "33s avg",
+          "mom": 0.14,
+          "yoy": null
+        },
+        "form_submissions": {
+          "v": 9,
+          "mom": -0.8269,
+          "yoy": null
+        },
+        "event_count": {
+          "v": 10795,
+          "mom": -0.467,
+          "yoy": null
+        },
+        "traffic": [
+          {
+            "source": "Direct",
+            "sessions": 928,
+            "pct": "42%",
+            "yoy_note": "YTD +142% (bot-inflated)"
+          },
+          {
+            "source": "Organic Search",
+            "sessions": 661,
+            "pct": "30%",
+            "yoy_note": "YTD -34% YoY \u26a0"
+          },
+          {
+            "source": "Referral",
+            "sessions": 589,
+            "pct": "26%",
+            "yoy_note": "YTD -7% (spam referral)"
+          },
+          {
+            "source": "AI Assistant",
+            "sessions": 35,
+            "pct": "2%",
+            "yoy_note": "New in 2026"
+          },
+          {
+            "source": "Organic Social",
+            "sessions": 12,
+            "pct": "1%",
+            "yoy_note": "YTD -78% YoY"
+          }
+        ],
+        "top_pages": [
+          {
+            "page": "/",
+            "sessions": 996,
+            "change": -0.017
+          },
+          {
+            "page": "/about-us",
+            "sessions": 175,
+            "change": 0.346
+          },
+          {
+            "page": "/capital",
+            "sessions": 141,
+            "change": 0.205
+          },
+          {
+            "page": "/events",
+            "sessions": 69,
+            "change": -0.225
+          },
+          {
+            "page": "/meet-david-cummings",
+            "sessions": 58,
+            "change": null
+          }
+        ],
+        "note": "Bot traffic alert: 39% of YTD users are Singapore/China bots. Referral includes ~533 views from trafficheap.cc spam. Avg engagement time: 33s (+14% vs May's 29s). YTD scroll rate: 1.3% (384 scroll events / 30K sessions). YTD 'Not Found' views: 5,800 (11% of all views). Office Hours is #5 most-visited page YTD (1,400 views)."
+      },
+      "social": {
+        "linkedin": {
+          "followers": {
+            "v": 11532,
+            "mom": 0.0133,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 16894,
+            "mom": -0.461,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 409,
+            "mom": -0.448,
+            "yoy": null
+          },
+          "posts": {
+            "v": 13,
+            "mom": -0.133,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "date": "Jun 15",
+              "caption": "Team/intern content \u2014 top impressions + likes this month",
+              "impressions": 3125,
+              "likes": 103,
+              "url": ""
+            },
+            {
+              "date": "Jun 1",
+              "caption": "Smorgasburg Atlanta / community post",
+              "impressions": 2275,
+              "likes": 47,
+              "url": ""
+            }
+          ]
+        },
+        "instagram": {
+          "followers": {
+            "v": 3925,
+            "mom": 0.0087,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 6402,
+            "mom": -0.649,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 234,
+            "mom": -0.25,
+            "yoy": null
+          },
+          "posts": {
+            "v": 29,
+            "mom": 2.22,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "date": "Jun 26",
+              "caption": "World Cup energy at Founders Green \u2014 watch parties, soccer clinics, local founders and restaurateurs front and center",
+              "reach": 2976,
+              "likes": 90,
+              "views": 3957,
+              "type": "Reel"
+            },
+            {
+              "date": "Jun 16",
+              "caption": "Atlanta's first home FIFA World Cup match \u2014 South Downtown coming to life with businesses opening and community showing up",
+              "reach": 3834,
+              "likes": 67,
+              "views": 5112,
+              "type": "Reel"
+            },
+            {
+              "date": "Jun 1",
+              "caption": "Smorgasburg Atlanta is back in South Downtown \u2014 founders and restaurant owners testing concepts every World Cup Match Day and Saturday",
+              "reach": 719,
+              "likes": 44,
+              "views": 1345
+            },
+            {
+              "date": "Jun 15",
+              "caption": "David Cummings shares leadership playbook on Delta Air Lines Insights on Leadership series with Metro Atlanta Chamber",
+              "reach": 381,
+              "likes": 38,
+              "views": 731
+            },
+            {
+              "date": "Jun 22",
+              "caption": "Summer update: new interns learning the build process, Office Hours with Kathryn and A.T., World Cup energy at South Downtown",
+              "reach": 463,
+              "likes": 35,
+              "views": 1086
+            }
+          ]
+        },
+        "facebook": {
+          "followers": {
+            "v": 192,
+            "mom": 0.016,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 56,
+            "mom": -0.164,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "13.79%",
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 20,
+            "mom": 0.667,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "date": "Jun 10",
+              "caption": "40 Under 40 Class of 2026: Brianna Jackson (Heart of South Downtown) and Vedant Pradeep (Reframe, YC-backed)",
+              "impressions": 71,
+              "reach": 17,
+              "eng_rate": 5.88
+            },
+            {
+              "date": "Jun 9",
+              "caption": "Intern team spotlight: Aiden Fisher (AI/studio), Yasmine Green (Greenzie/CBQ), Kate Trotter (marketing)",
+              "impressions": 50,
+              "reach": 23,
+              "eng_rate": 4.35
+            },
+            {
+              "date": "Jun 8",
+              "caption": "ATL Founder + Funder Jog \u2014 next run September 18 at ATV Sylvan, hosted by ATV, bluubird and trackcred",
+              "impressions": 49,
+              "reach": 18,
+              "eng_rate": 22.22
+            },
+            {
+              "date": "Jun 15",
+              "caption": "David Cummings leadership playbook on Delta Airlines Insights series \u2014 focus on 3 high-impact priorities, delegate the rest",
+              "impressions": 45,
+              "reach": 23,
+              "eng_rate": 21.74
+            },
+            {
+              "date": "Jun 1",
+              "caption": "Smorgasburg Atlanta open every World Cup Match Day and Saturday in South Downtown \u2014 entrepreneurship in action",
+              "impressions": 45,
+              "reach": 22,
+              "eng_rate": 9.09
+            }
+          ]
+        },
+        "youtube": {
+          "subscribers": {
+            "v": 228,
+            "mom": 0.0088,
+            "yoy": null
+          },
+          "views": {
+            "v": 1741,
+            "mom": 0.61,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "videos": {
+            "v": 1,
+            "mom": -0.5,
+            "yoy": null
+          },
+          "top_videos": [
+            {
+              "title": "World Cup video \u2014 Atlanta team reaction",
+              "views": 1741,
+              "likes": null
+            }
+          ]
+        },
+        "tiktok": {
+          "followers": {
+            "v": 130,
+            "mom": 0,
+            "yoy": null
+          },
+          "video_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 0,
+            "mom": null,
+            "yoy": null
+          }
+        },
+        "twitter": {
+          "followers": {
+            "v": 2856,
+            "mom": 0.0053,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 754,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 12,
+            "mom": 1,
+            "yoy": null
+          }
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "open_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": 2263,
+            "mom": 0.0049,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": true,
+          "campaigns": []
+        },
+        "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3429,
+            "mom": 0.016,
+            "yoy": null
+          },
+          "impressions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "article_views": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "no_send": true,
+          "top_articles": []
+        }
+      },
+      "content": {
+        "odaily": {
+          "subscribers": {
+            "v": 1172
+          },
+          "traffic_sources": {
+            "email": 0.791,
+            "direct": 0.139,
+            "social": 0.025,
+            "substack": 0.012,
+            "search": 0.031
+          },
+          "sessions": {
+            "v": 1200,
+            "mom": 0.202,
+            "yoy": null
+          },
+          "views": {
+            "v": 4646,
+            "mom": 0.348,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "43.75%",
+            "mom": -0.0342,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 24,
+            "mom": -0.4,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "5 Things I Wish I Knew Before Becoming a Founder",
+              "sessions": 66,
+              "url": "https://kathrynoday.substack.com/p/5-things-i-wish-i-knew-before-becoming"
+            },
+            {
+              "title": "6 Ways to Project Confidence Without Faking It",
+              "sessions": 40,
+              "url": "https://kathrynoday.substack.com/p/6-ways-to-project-confidence-without"
+            },
+            {
+              "title": "5 Healthiest Fast Food Picks for Founders",
+              "sessions": 39,
+              "url": ""
+            },
+            {
+              "title": "Founder's Guide to Getting S*** Done",
+              "sessions": 22,
+              "url": "https://kathrynoday.substack.com/p/founders-guide-to-getting-sht-done"
+            }
+          ]
+        },
+        "startup_strategies": {
+          "subscribers": {
+            "v": 258
+          },
+          "traffic_sources": {
+            "email": 0.679,
+            "direct": 0.153,
+            "social": 0.067,
+            "substack": 0.057,
+            "search": 0.037
+          },
+          "sessions": {
+            "v": 89,
+            "mom": -0.776,
+            "yoy": null
+          },
+          "views": {
+            "v": 864,
+            "mom": -0.206,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "40.8%",
+            "mom": -0.0239,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 10,
+            "mom": -0.545,
+            "yoy": null
+          },
+          "ai_assisted": true,
+          "top_posts": [
+            {
+              "title": "Failure makes you stronger",
+              "sessions": 238,
+              "url": "https://startupstrategies.substack.com/p/failure-makes-you-stronger"
+            },
+            {
+              "title": "Investor cold outreach red flags",
+              "sessions": 237,
+              "url": "https://startupstrategies.substack.com/p/investor-cold-outreach-red-flags"
+            },
+            {
+              "title": "Find your team",
+              "sessions": 203,
+              "url": "https://startupstrategies.substack.com/p/find-your-team"
+            },
+            {
+              "title": "Make your bed",
+              "sessions": 194,
+              "url": "https://startupstrategies.substack.com/p/make-your-bed"
+            }
+          ]
+        },
+        "av_blog": {
+          "traffic_sources": {
+            "direct": 0.7545,
+            "organic_search": 0.2274,
+            "ai_assistant": 0.0108,
+            "referral": 0.0054
+          },
+          "sessions": {
+            "v": 600,
+            "mom": -0.575,
+            "yoy": null
+          },
+          "views": {
+            "v": 662,
+            "mom": -0.575,
+            "yoy": null
+          },
+          "users": {
+            "v": 556,
+            "mom": -0.569,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "27%",
+            "mom": 0.0166,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "The 3 Rules to Customer Interviews (Mom Test)",
+              "sessions": 37,
+              "url": ""
+            },
+            {
+              "title": "Blog Index (/resources/blogs)",
+              "sessions": 22,
+              "url": ""
+            },
+            {
+              "title": "A Guide to Building a Marketing Team for a Startup",
+              "sessions": 14,
+              "url": ""
+            },
+            {
+              "title": "Examples of Cold Outreach Emails to VCs",
+              "sessions": 13,
+              "url": ""
+            },
+            {
+              "title": "Why a Weekly Update Can 10x Your Company",
+              "sessions": 13,
+              "url": ""
+            },
+            {
+              "title": "Sell First or Build First",
+              "sessions": 10,
+              "url": ""
+            },
+            {
+              "title": "Share Your Startup Ideas",
+              "sessions": 9,
+              "url": ""
+            },
+            {
+              "title": "Summer Fruit: Watermelons or Grapes",
+              "sessions": 9,
+              "url": ""
+            },
+            {
+              "title": "The Send and Delete Employee Test",
+              "sessions": 9,
+              "url": ""
+            },
+            {
+              "title": "8 Moats for Sustainable Software Companies",
+              "sessions": 8,
+              "url": ""
+            }
+          ]
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in June 2026",
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141,
+          "history": [
+            {
+              "date": "Apr 15, 2026",
+              "rsvps": 84,
+              "attended": 45,
+              "conversion": "53%"
+            },
+            {
+              "date": "Feb 4, 2026",
+              "rsvps": 160,
+              "attended": 43,
+              "conversion": "26%"
+            },
+            {
+              "date": "Oct 29, 2025",
+              "rsvps": 152,
+              "attended": 58,
+              "conversion": "38%"
+            },
+            {
+              "date": "Aug 20, 2025",
+              "rsvps": 120,
+              "attended": 41,
+              "conversion": "34%"
+            },
+            {
+              "date": "Jul 16, 2025",
+              "rsvps": 157,
+              "attended": 45,
+              "conversion": "29%"
+            },
+            {
+              "date": "Apr 23, 2025",
+              "rsvps": 179,
+              "attended": 50,
+              "conversion": "28%"
+            },
+            {
+              "date": "Jan 22, 2025",
+              "rsvps": 148,
+              "attended": 60,
+              "conversion": "41%"
+            },
+            {
+              "date": "Nov 14, 2024",
+              "rsvps": 151,
+              "attended": 70,
+              "conversion": "46%"
+            },
+            {
+              "date": "Sep 25, 2024",
+              "rsvps": 109,
+              "attended": 35,
+              "conversion": "32%"
+            },
+            {
+              "date": "Jun 12, 2024",
+              "rsvps": 119,
+              "attended": 41,
+              "conversion": "34%"
+            },
+            {
+              "date": "Mar 27, 2024",
+              "rsvps": 158,
+              "attended": 30,
+              "conversion": "19%"
+            },
+            {
+              "date": "Jan 1, 2024",
+              "rsvps": 151,
+              "attended": 44,
+              "conversion": "29%"
+            },
+            {
+              "date": "Nov 1, 2023",
+              "rsvps": 127,
+              "attended": 44,
+              "conversion": "35%"
+            },
+            {
+              "date": "Sep 1, 2023",
+              "rsvps": 165,
+              "attended": 55,
+              "conversion": "33%"
+            },
+            {
+              "date": "Jul 1, 2023",
+              "rsvps": 143,
+              "attended": 43,
+              "conversion": "30%"
+            },
+            {
+              "date": "May 1, 2023",
+              "rsvps": 117,
+              "attended": 46,
+              "conversion": "39%"
+            },
+            {
+              "date": "Mar 1, 2023",
+              "rsvps": 136,
+              "attended": 66,
+              "conversion": "49%"
+            },
+            {
+              "date": "Jan 1, 2023",
+              "rsvps": 122,
+              "attended": 42,
+              "conversion": "34%"
+            },
+            {
+              "date": "Nov 1, 2022",
+              "rsvps": 122,
+              "attended": 45,
+              "conversion": "37%"
+            },
+            {
+              "date": "Oct 1, 2022",
+              "rsvps": 99,
+              "attended": 36,
+              "conversion": "36%"
+            },
+            {
+              "date": "Aug 1, 2022",
+              "rsvps": 137,
+              "attended": 41,
+              "conversion": "30%"
+            },
+            {
+              "date": "Jun 1, 2022",
+              "rsvps": 146,
+              "attended": 46,
+              "conversion": "32%"
+            }
+          ]
+        },
+        "office_hours": {
+          "note": "June 11, 2026: 10 RSVPs \u2192 7 attended (70%)",
+          "june": {
+            "rsvps": 10,
+            "attended": 7,
+            "conversion": "70%"
+          },
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          },
+          "history": [
+            {
+              "date": "Jun 11, 2026",
+              "rsvps": 10,
+              "attended": 7,
+              "conversion": "70%"
+            },
+            {
+              "date": "May 14, 2026",
+              "rsvps": 9,
+              "attended": 10,
+              "conversion": "111%"
+            },
+            {
+              "date": "Mar 19, 2026",
+              "rsvps": 27,
+              "attended": 22,
+              "conversion": "81%"
+            },
+            {
+              "date": "Dec 4, 2025",
+              "rsvps": 15,
+              "attended": 12,
+              "conversion": "80%"
+            },
+            {
+              "date": "Nov 13, 2025",
+              "rsvps": 13,
+              "attended": 12,
+              "conversion": "92%"
+            },
+            {
+              "date": "Jul 10, 2025",
+              "rsvps": 35,
+              "attended": 21,
+              "conversion": "60%"
+            }
+          ]
+        }
+      }
+    },
+    "2026-07": {
+      "period_key": "2026-07",
+      "period_label": "Jul 2026",
+      "web": {
+        "sessions": 2130,
+        "users": 1858,
+        "engagement_rate": null,
+        "form_submissions": null,
+        "event_count": null,
+        "traffic": [
+          {
+            "source": "Direct",
+            "sessions": 1497,
+            "pct": "70%"
+          },
+          {
+            "source": "Organic Search",
+            "sessions": 441,
+            "pct": "21%"
+          },
+          {
+            "source": "Unassigned",
+            "sessions": 86,
+            "pct": "4%"
+          },
+          {
+            "source": "Referral",
+            "sessions": 49,
+            "pct": "2%"
+          },
+          {
+            "source": "Organic Social",
+            "sessions": 44,
+            "pct": "2%"
+          },
+          {
+            "source": "AI Assistant",
+            "sessions": 10,
+            "pct": "0%"
+          }
+        ],
+        "top_pages": [
+          {
+            "page": "/",
+            "sessions": 426,
+            "change": null
+          },
+          {
+            "page": "(not set)",
+            "sessions": 85,
+            "change": null
+          },
+          {
+            "page": "/companies",
+            "sessions": 80,
+            "change": null
+          },
+          {
+            "page": "/capital",
+            "sessions": 60,
+            "change": null
+          },
+          {
+            "page": "/events",
+            "sessions": 48,
+            "change": null
+          }
+        ],
+        "note": "form_submissions and event_count not captured this cycle (ga4_pull.py doesn't collect these fields yet); engagement_rate not available."
+      },
+      "social": {
+        "linkedin": {
+          "followers": 11487,
+          "impressions": 21291,
+          "engagements": 3509,
+          "posts": 15,
+          "top_posts": []
+        },
+        "instagram": {
+          "followers": 3947,
+          "impressions": 27694,
+          "engagements": 330,
+          "posts": 15,
+          "top_posts": []
+        },
+        "facebook": {
+          "followers": 194,
+          "engagements": 26,
+          "engagement_rate": null,
+          "posts": 14,
+          "top_posts": []
+        },
+        "youtube": {
+          "subscribers": 226,
+          "views": 247,
+          "likes": null,
+          "videos": 0,
+          "top_videos": []
+        },
+        "tiktok": {
+          "followers": 130,
+          "video_views": 0,
+          "likes": 0,
+          "posts": 0
+        },
+        "twitter": {
+          "followers": 2794,
+          "impressions": 592,
+          "posts": 14
+        }
+      },
+      "newsletters": {
+        "mailchimp": {
+          "no_send": false,
+          "subscribers": 3109,
+          "open_rate": "21.5%",
+          "click_rate": "1.3%",
+          "unsub_rate": "0.2%",
+          "campaigns": [
+            {
+              "name": "July AV Insights: The Perlant is Headed to Nashville",
+              "open_rate": "26.3%",
+              "click_rate": "1.5%",
+              "unsub_rate": "0.1%"
+            },
+            {
+              "name": "July 2026 HOTP",
+              "open_rate": "25.0%",
+              "click_rate": "1.3%",
+              "unsub_rate": "0.1%"
+            },
+            {
+              "name": "Resend: July 2026 HOTP",
+              "open_rate": "13.1%",
+              "click_rate": "1.0%",
+              "unsub_rate": "0.3%"
+            }
+          ]
+        },
+        "linkedin_newsletter": {
+          "no_send": false,
+          "subscribers": 3523,
+          "impressions": 2199,
+          "engagements": 25,
+          "article_views": 3109,
+          "top_articles": [
+            {
+              "title": "Hot Off The Press: July's Momentum Check",
+              "open_rate": "",
+              "click_rate": "0.5%",
+              "impressions": 1108,
+              "reach": 830,
+              "engagements": 18,
+              "eng_rate": "1.6%",
+              "article_views": 1497,
+              "email_sends": 2378
+            },
+            {
+              "title": "The Perlant Is Headed to Nashville",
+              "open_rate": "",
+              "click_rate": "1.5%",
+              "impressions": 1095,
+              "reach": 846,
+              "engagements": 26,
+              "eng_rate": "2.4%",
+              "article_views": 1573,
+              "email_sends": 2367
+            }
+          ]
+        }
+      },
+      "content": {
+        "odaily": {
+          "subscribers": 1217,
+          "sessions": null,
+          "views": 2210,
+          "open_rate": "42.73%",
+          "new_subs": 45,
+          "top_posts": [
+            {
+              "title": "5 Reasons Your Fundraise Isn't Going Well",
+              "sessions": 688,
+              "url": ""
+            },
+            {
+              "title": "Founder Favorites: Your Ultimate Customer Success Guide",
+              "sessions": 741,
+              "url": ""
+            },
+            {
+              "title": "Founder Favorites: How To Turn Procrastination Into Your Superpower",
+              "sessions": 781,
+              "url": ""
+            }
+          ]
+        },
+        "startup_strategies": {
+          "subscribers": 322,
+          "sessions": null,
+          "views": 963,
+          "open_rate": "37.88%",
+          "new_subs": 64,
+          "ai_assisted": true,
+          "top_posts": [
+            {
+              "title": "Keep showing up",
+              "sessions": 160,
+              "url": ""
+            },
+            {
+              "title": "Who is your ICP (Ideal Customer Profile)?",
+              "sessions": 178,
+              "url": ""
+            },
+            {
+              "title": "Three principles that have changed over time",
+              "sessions": 226,
+              "url": ""
+            },
+            {
+              "title": "Startups are hard",
+              "sessions": 215,
+              "url": ""
+            },
+            {
+              "title": "Use downtime to recharge and clarify your thinking",
+              "sessions": 184,
+              "url": ""
+            }
+          ]
+        },
+        "av_blog": {
+          "sessions": null,
+          "views": null,
+          "users": null,
+          "engagement_rate": null,
+          "top_posts": []
+        }
+      },
+      "events": {
+        "hem": {
+          "note": "No HEM event in July 2026 (confirmed via Eventbrite pull \u2014 zero events for the org this month)",
+          "total_members": 4141
+        },
+        "office_hours": {
+          "note": "No Office Hours event in July 2026 (confirmed via Eventbrite pull \u2014 zero events for the org this month)"
+        }
+      }
+    }
+  },
+  "goals": {
+    "2026": [
+      {
+        "name": "Average HEM Attendance",
+        "start": 51,
+        "current": 44,
+        "target": 55,
+        "unit": "per event",
+        "type": "Monthly"
+      },
+      {
+        "name": "Average Office Hours Attendance",
+        "start": 20,
+        "current": 13,
+        "target": 18,
+        "unit": "per event",
+        "type": "Monthly"
+      },
+      {
+        "name": "Mailchimp Open Rate",
+        "start": 52.6,
+        "current": 43.32,
+        "target": 48,
+        "unit": "%",
+        "type": "Monthly"
+      },
+      {
+        "name": "Mailchimp Subscriber Growth",
+        "start": 2242,
+        "current": 2263,
+        "target": 2350,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "Mailchimp Click Rate",
+        "start": 3.9,
+        "current": 4.07,
+        "target": 5,
+        "unit": "%",
+        "type": "Monthly"
+      },
+      {
+        "name": "LinkedIn Newsletter Subscriber Growth",
+        "start": 2850,
+        "current": 3429,
+        "target": 4000,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "LinkedIn Newsletter Impressions",
+        "start": 21500,
+        "current": 24680,
+        "target": 45000,
+        "unit": "impressions",
+        "type": "Annual"
+      },
+      {
+        "name": "LinkedIn Newsletter Engagements",
+        "start": 390,
+        "current": 487,
+        "target": 550,
+        "unit": "engagements",
+        "type": "Monthly"
+      },
+      {
+        "name": "LinkedIn Newsletter Average Engagement Rate",
+        "start": 4,
+        "current": 4.3,
+        "target": 5,
+        "unit": "%",
+        "type": "Monthly"
+      },
+      {
+        "name": "Blog Views",
+        "start": 0,
+        "current": 8724,
+        "target": 18000,
+        "unit": "views",
+        "type": "Annual"
+      },
+      {
+        "name": "The O'Daily Substack Views",
+        "start": 0,
+        "current": 29148,
+        "target": 75000,
+        "unit": "views",
+        "type": "Annual"
+      },
+      {
+        "name": "The O'Daily Substack Subscriber Growth",
+        "start": 1064,
+        "current": 1172,
+        "target": 1260,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "The O'Daily Substack Open Rate",
+        "start": 49,
+        "current": 43.75,
+        "target": 46,
+        "unit": "%",
+        "type": "Monthly"
+      },
+      {
+        "name": "Startup Strategies Substack Views",
+        "start": 0,
+        "current": 6097,
+        "target": 13500,
+        "unit": "views",
+        "type": "Annual"
+      },
+      {
+        "name": "Startup Strategies Subscriber Growth",
+        "start": 226,
+        "current": 258,
+        "target": 290,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "Startup Strategies Open Rate",
+        "start": 51.49,
+        "current": 40.8,
+        "target": 46,
+        "unit": "%",
+        "type": "Monthly"
+      },
+      {
+        "name": "LinkedIn Followers",
+        "start": 10502,
+        "current": 11532,
+        "target": 13000,
+        "unit": "followers",
+        "type": "Annual"
+      },
+      {
+        "name": "Instagram Followers",
+        "start": 3772,
+        "current": 3925,
+        "target": 4200,
+        "unit": "followers",
+        "type": "Annual"
+      },
+      {
+        "name": "X Subscribers",
+        "start": 2792,
+        "current": 2856,
+        "target": 2900,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "Facebook Followers",
+        "start": 180,
+        "current": 192,
+        "target": 198,
+        "unit": "followers",
+        "type": "Annual"
+      },
+      {
+        "name": "YouTube Subscribers",
+        "start": 210,
+        "current": 228,
+        "target": 255,
+        "unit": "subscribers",
+        "type": "Annual"
+      },
+      {
+        "name": "TikTok Followers",
+        "start": 130,
+        "current": 130,
+        "target": 130,
+        "unit": "followers",
+        "type": "Annual"
+      },
+      {
+        "name": "Total Social Following",
+        "start": 17586,
+        "current": 18863,
+        "target": 21000,
+        "unit": "followers",
+        "type": "Annual"
+      }
+    ]
+  }
+}

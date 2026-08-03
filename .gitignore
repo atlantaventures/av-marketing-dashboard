@@ -17,7 +17,8 @@ venv/
 # ── Monthly data pulls (local working files, not source of truth) ─────────────
 ga4_*.json
 eventbrite_*.json
-*_data.json
+20[0-9][0-9]-[0-9][0-9]_data.json
+!historical_data.json
 
 # ── Browser auth ──────────────────────────────────────────────────────────────
 # token.json already covered above
