@@ -267,8 +267,8 @@
   <div style="display:flex;align-items:center;gap:10px">
     <button class="period-btn" id="period-btn" onclick="toggleFilter()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-right:6px;flex-shrink:0"><rect x="1" y="2" width="12" height="11" rx="1.5" stroke="white" stroke-width="1.3"/><path d="M1 5.5h12" stroke="white" stroke-width="1.3"/><path d="M4.5 1v2M9.5 1v2" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
-      <span id="period-label-primary" style="font-weight:700;">6/1/2026 - 6/30/2026</span>
-      <span id="period-label-compare" style="font-weight:400;opacity:0.6;margin-left:6px;">vs 5/1/2026 - 5/31/2026</span>
+      <span id="period-label-primary" style="font-weight:700;">7/1/2026 - 7/31/2026</span>
+      <span id="period-label-compare" style="font-weight:400;opacity:0.6;margin-left:6px;">vs 6/1/2026 - 6/30/2026</span>
       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left:8px;flex-shrink:0"><path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <button class="period-btn" onclick="window.print()" style="background:var(--blue);border-color:var(--blue);">Export PDF</button>
@@ -310,7 +310,7 @@
           <option value="custom">Custom Range</option>
         </select>
         <div class="fp-date-range" style="margin-top:8px">
-          <input class="fp-date-input" id="fp-from" type="text" value="6/1/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
+          <input class="fp-date-input" id="fp-from" type="text" value="7/1/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
           <span class="fp-date-arrow">&#8594;</span>
           <input class="fp-date-input" id="fp-to" type="text" value="6/30/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
         </div>
@@ -502,7 +502,7 @@
 <script>
 // ── DATA ──────────────────────────────────────
 const DATA = {
-  meta:{client:"Atlanta Ventures",period:"Jun 2026",period_key:"2026-06",pulled:"July 15, 2026"},
+  meta:{client:"Atlanta Ventures",period:"Jul 2026",period_key:"2026-07",pulled:"August 3, 2026"},
   narrative:{
     "2026-06":{
     overview:{
@@ -536,6 +536,148 @@ const DATA = {
     }
   },
   months:{
+    "2026-07":{
+      web:{
+        sessions:{v:2130,mom:-0.0444,yoy:null},users:{v:1858,mom:-0.0221,yoy:null},
+        engagement_rate:{v:null,mom:null,yoy:null},form_submissions:{v:null,mom:null,yoy:null},event_count:{v:null,mom:null,yoy:null},
+        traffic:[
+          {source:"Direct",sessions:1497,pct:"70%",yoy_note:""},
+          {source:"Organic Search",sessions:441,pct:"21%",yoy_note:""},
+          {source:"Unassigned",sessions:86,pct:"4%",yoy_note:""},
+          {source:"Referral",sessions:49,pct:"2%",yoy_note:""},
+          {source:"Organic Social",sessions:44,pct:"2%",yoy_note:""},
+          {source:"AI Assistant",sessions:10,pct:"0%",yoy_note:""}
+        ],
+        top_pages:[
+          {page:"/",sessions:426,change:null},
+          {page:"(not set)",sessions:85,change:null},
+          {page:"/companies",sessions:80,change:null},
+          {page:"/capital",sessions:60,change:null},
+          {page:"/events",sessions:48,change:null}
+        ],
+        note:"form_submissions and event_count not captured this cycle (ga4_pull.py doesn't collect these fields yet); engagement_rate not available."
+      },
+      social:{
+        linkedin:{
+          followers:{v:11487,mom:-0.0039,yoy:null},impressions:{v:21291,mom:0.2603,yoy:null},
+          engagements:{v:3509,mom:7.5795,yoy:null},posts:{v:15,mom:0.1538,yoy:null},
+          // NOTE FOR JACEY: connect Metricool MCP to auto-populate post URLs and previews each month.
+          top_posts:[]
+        },
+        instagram:{
+          followers:{v:3947,mom:0.0056,yoy:null},impressions:{v:27694,mom:3.3258,yoy:null},
+          engagements:{v:330,mom:0.4103,yoy:null},posts:{v:15,mom:-0.4828,yoy:null},
+          top_posts:[]
+        },
+        facebook:{
+          followers:{v:194,mom:0.0104,yoy:null},engagements:{v:26,mom:-0.5357,yoy:null},
+          engagement_rate:{v:null,mom:null,yoy:null},posts:{v:14,mom:-0.3,yoy:null},
+          top_posts:[]
+        },
+        youtube:{
+          subscribers:{v:226,mom:-0.0088,yoy:null},views:{v:247,mom:-0.8581,yoy:null},
+          likes:{v:null,mom:null,yoy:null},videos:{v:0,mom:-1.0,yoy:null},
+          top_videos:[]
+        },
+        tiktok:{
+          followers:{v:130,mom:0.0,yoy:null},video_views:{v:0,mom:null,yoy:null},
+          likes:{v:0,mom:null,yoy:null},posts:{v:0,mom:null,yoy:null}
+        },
+        twitter:{
+          followers:{v:2794,mom:-0.0217,yoy:null},impressions:{v:592,mom:null,yoy:null},
+          posts:{v:14,mom:0.1667,yoy:null}
+        }
+      },
+      newsletters:{
+        mailchimp:{
+          open_rate:{v:"21.5%",mom:null,yoy:null},click_rate:{v:"1.3%",mom:null,yoy:null},
+          subscribers:{v:3109,mom:0.3738,yoy:null},opens:{v:null,mom:null,yoy:null},
+          no_send:false,campaigns:[{name:"July AV Insights: The Perlant is Headed to Nashville",open_rate:"26.3%",click_rate:"1.5%",unsub_rate:"0.1%"},{name:"July 2026 HOTP",open_rate:"25.0%",click_rate:"1.3%",unsub_rate:"0.1%"},{name:"Resend: July 2026 HOTP",open_rate:"13.1%",click_rate:"1.0%",unsub_rate:"0.3%"}]
+        },
+        linkedin_newsletter:{
+          subscribers:{v:3523,mom:0.0274,yoy:null},impressions:{v:2199,mom:null,yoy:null},
+          engagements:{v:25,mom:null,yoy:null},article_views:{v:3109,mom:null,yoy:null},
+          engagement_rate:{v:"1.1%",mom:null,yoy:null},no_send:false,
+          top_articles:[
+          {title:"Hot Off The Press: July's Momentum Check",open_rate:"",click_rate:"0.5%",impressions:1108,reach:830,engagements:18,eng_rate:"1.6%",article_views:1497,email_sends:2378},
+          {title:"The Perlant Is Headed to Nashville",open_rate:"",click_rate:"1.5%",impressions:1095,reach:846,engagements:26,eng_rate:"2.4%",article_views:1573,email_sends:2367}
+          ]
+        }
+      },
+      content:{
+        odaily:{
+          subscribers:{v:1217},
+          sessions:{v:null,mom:null,yoy:null},views:{v:2210,mom:-0.5243,yoy:null},
+          open_rate:{v:"42.73%",mom:null,yoy:null},new_subs:{v:45,mom:0.875,yoy:null},
+          top_posts:[
+            {title:"5 Reasons Your Fundraise Isn't Going Well",sessions:688,url:""},
+            {title:"Founder Favorites: Your Ultimate Customer Success Guide",sessions:741,url:""},
+            {title:"Founder Favorites: How To Turn Procrastination Into Your Superpower",sessions:781,url:""}
+          ]
+        },
+        startup_strategies:{
+          subscribers:{v:322},
+          sessions:{v:null,mom:null,yoy:null},views:{v:963,mom:0.1146,yoy:null},
+          open_rate:{v:"37.88%",mom:null,yoy:null},new_subs:{v:64,mom:5.4,yoy:null},
+          ai_assisted:true,
+          top_posts:[
+            {title:"Keep showing up",sessions:160,url:""},
+            {title:"Who is your ICP (Ideal Customer Profile)?",sessions:178,url:""},
+            {title:"Three principles that have changed over time",sessions:226,url:""},
+            {title:"Startups are hard",sessions:215,url:""},
+            {title:"Use downtime to recharge and clarify your thinking",sessions:184,url:""}
+          ]
+        },
+        av_blog:{
+          sessions:{v:null,mom:null,yoy:null},views:{v:null,mom:null,yoy:null},
+          users:{v:null,mom:null,yoy:null},engagement_rate:{v:null,mom:null,yoy:null},
+          top_posts:[]
+        }
+      },
+      events:{
+        hem:{
+          note:"No HEM event in July 2026 (confirmed via Eventbrite pull — zero events for the org this month)",
+          historical_avg:{rsvps:136,attendance:47,conversion:"35%",replays:30},
+          total_members:4141,
+          history:[
+            {date:"Apr 15, 2026",rsvps:84,attended:45,conversion:"53%"},
+            {date:"Feb 4, 2026",rsvps:160,attended:43,conversion:"26%"},
+            {date:"Oct 29, 2025",rsvps:152,attended:58,conversion:"38%"},
+            {date:"Aug 20, 2025",rsvps:120,attended:41,conversion:"34%"},
+            {date:"Jul 16, 2025",rsvps:157,attended:45,conversion:"29%"},
+            {date:"Apr 23, 2025",rsvps:179,attended:50,conversion:"28%"},
+            {date:"Jan 22, 2025",rsvps:148,attended:60,conversion:"41%"},
+            {date:"Nov 14, 2024",rsvps:151,attended:70,conversion:"46%"},
+            {date:"Sep 25, 2024",rsvps:109,attended:35,conversion:"32%"},
+            {date:"Jun 12, 2024",rsvps:119,attended:41,conversion:"34%"},
+            {date:"Mar 27, 2024",rsvps:158,attended:30,conversion:"19%"},
+            {date:"Jan 1, 2024",rsvps:151,attended:44,conversion:"29%"},
+            {date:"Nov 1, 2023",rsvps:127,attended:44,conversion:"35%"},
+            {date:"Sep 1, 2023",rsvps:165,attended:55,conversion:"33%"},
+            {date:"Jul 1, 2023",rsvps:143,attended:43,conversion:"30%"},
+            {date:"May 1, 2023",rsvps:117,attended:46,conversion:"39%"},
+            {date:"Mar 1, 2023",rsvps:136,attended:66,conversion:"49%"},
+            {date:"Jan 1, 2023",rsvps:122,attended:42,conversion:"34%"},
+            {date:"Nov 1, 2022",rsvps:122,attended:45,conversion:"37%"},
+            {date:"Oct 1, 2022",rsvps:99,attended:36,conversion:"36%"},
+            {date:"Aug 1, 2022",rsvps:137,attended:41,conversion:"30%"},
+            {date:"Jun 1, 2022",rsvps:146,attended:46,conversion:"32%"}
+          ]
+        },
+        office_hours:{
+          note:"No Office Hours event in July 2026 (confirmed via Eventbrite pull — zero events for the org this month)",
+          historical_avg:{rsvps:28,attendance:19,conversion:"72%"},
+          history:[
+            {date:"Jun 11, 2026",rsvps:10,attended:7,conversion:"70%"},
+            {date:"May 14, 2026",rsvps:9,attended:10,conversion:"111%"},
+            {date:"Mar 19, 2026",rsvps:27,attended:22,conversion:"81%"},
+            {date:"Dec 4, 2025",rsvps:15,attended:12,conversion:"80%"},
+            {date:"Nov 13, 2025",rsvps:13,attended:12,conversion:"92%"},
+            {date:"Jul 10, 2025",rsvps:35,attended:21,conversion:"60%"}
+          ]
+        }
+      }
+    },
     "2026-06":{
       web:{
         sessions:{v:2229,mom:-0.4839,yoy:null},users:{v:1900,mom:-0.4571,yoy:null},
@@ -901,6 +1043,8 @@ const DATA = {
       {period:"Apr 2026",open_rate:26.7,click_rate:2.5,unsub_rate:0.22,subscribers:2276},
       {period:"May 2026",open_rate:26.4,click_rate:2.1,unsub_rate:0.29,subscribers:2252},
       {period:"Jun 2026",open_rate:null,click_rate:null,unsub_rate:null,subscribers:2263,no_send:true}
+,
+      {period:"Jul 2026",open_rate:"21.5%",click_rate:"1.3%",unsub_rate:"0.2%",subscribers:3109}
       // ADD NEXT MONTH HERE ↑
     ],
     // Social follower growth: Jan = goal start values; May/Jun = actuals; Feb–Apr = linear estimates
@@ -911,6 +1055,8 @@ const DATA = {
       {period:"Apr 2026",linkedin:11161,instagram:3861,youtube:222,twitter:2829,facebook:187,li_impressions:21306,li_engagements:579,ig_impressions:19826,ig_engagements:271},
       {period:"May 2026",linkedin:11381,instagram:3891,youtube:226,twitter:2841,facebook:189,li_impressions:31320,li_engagements:741,ig_impressions:18240,ig_engagements:312},
       {period:"Jun 2026",linkedin:11532,instagram:3925,youtube:228,twitter:2856,facebook:192,li_impressions:16894,li_engagements:409,ig_impressions:6402,ig_engagements:234}
+,
+      {period:"Jul 2026",linkedin:11487,instagram:3947,youtube:226,twitter:2794,facebook:194,li_impressions:21291,li_engagements:3509,ig_impressions:27694,ig_engagements:330}
       // ADD SOCIAL MONTH HERE ↑
     ],
     // Web sessions: actuals from GA4. Jan–Apr pending from Jacey/GA4 pull.
@@ -921,6 +1067,8 @@ const DATA = {
       {period:"Apr 2026",sessions:4377},
       {period:"May 2026",sessions:4319},
       {period:"Jun 2026",sessions:2229}
+,
+      {period:"Jul 2026",sessions:2130}
       // ADD WEB MONTH HERE ↑
     ],
     linkedin_newsletter:[
@@ -933,6 +1081,8 @@ const DATA = {
       {period:"Apr 2026",subscribers:3321,article_views:2087,impressions:402,engagements:36,eng_rate:9.0},
       {period:"May 2026",subscribers:3375,article_views:3278,impressions:1806,engagements:89,eng_rate:4.9},
       {period:"Jun 2026",subscribers:3429,article_views:null,impressions:null,engagements:null,eng_rate:null,no_send:true}
+,
+      {period:"Jul 2026",subscribers:3523,article_views:3109,impressions:2199,engagements:25,eng_rate:1.1}
       // ADD LINKEDIN MONTH HERE ↑
     ]
   },
@@ -1093,11 +1243,11 @@ function renderCals() {
 
 // ── FILTER PRESETS ───────────────────────────
 const presetDates = {
-  current_month: {from:'6/1/2026',  to:'6/30/2026', cFrom:'5/1/2026',  cTo:'5/31/2026', note:'Comparing 30 days to 31 days.', label:'Current Month'},
-  last_month:    {from:'6/1/2026',  to:'6/30/2026', cFrom:'5/1/2026',  cTo:'5/31/2026', note:'Comparing 30 days to 31 days.', label:'Last Month'},
-  last_3_months: {from:'4/1/2026',  to:'6/30/2026', cFrom:'1/1/2026',  cTo:'3/31/2026', note:'Comparing 91 days to 90 days.', label:'Last 3 Months'},
-  last_6_months: {from:'1/1/2026',  to:'6/30/2026', cFrom:'7/1/2025',  cTo:'12/31/2025',note:'Comparing 181 days to 184 days.',label:'Last 6 Months'},
-  ytd:           {from:'1/1/2026',  to:'6/30/2026', cFrom:'1/1/2025',  cTo:'6/30/2025', note:'Comparing 181 days to 181 days.',label:'Year to Date'},
+  current_month: {from:'7/1/2026',  to:'7/31/2026', cFrom:'6/1/2026',  cTo:'6/30/2026', note:'Comparing 30 days to 31 days.', label:'Current Month'},
+  last_month:    {from:'7/1/2026',  to:'7/31/2026', cFrom:'6/1/2026',  cTo:'6/30/2026', note:'Comparing 30 days to 31 days.', label:'Last Month'},
+  last_3_months: {from:'4/1/2026',  to:'7/31/2026', cFrom:'1/1/2026',  cTo:'3/31/2026', note:'Comparing 91 days to 90 days.', label:'Last 3 Months'},
+  last_6_months: {from:'1/1/2026',  to:'7/31/2026', cFrom:'7/1/2025',  cTo:'12/31/2025',note:'Comparing 181 days to 184 days.',label:'Last 6 Months'},
+  ytd:           {from:'1/1/2026',  to:'7/31/2026', cFrom:'1/1/2025',  cTo:'6/30/2025', note:'Comparing 181 days to 181 days.',label:'Year to Date'},
   last_year:     {from:'1/1/2025',  to:'12/31/2025',cFrom:'1/1/2024',  cTo:'12/31/2024',note:'Comparing 365 days to 366 days.',label:'Last Year'}
 };
 
