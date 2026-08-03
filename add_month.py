@@ -513,8 +513,12 @@ def update_meta_and_dates(text, period_key, period_label):
     text = text.replace(f'>vs {old_prev_from} - {old_prev_to}</span>',
                         f'>vs {prev_from} - {prev_to}</span>')
 
-    # 4. fp-from date input default value
+    # 4. fp-from / fp-to date input default values — both must be updated or
+    # detectPeriodKey() sees a "from" in the new month and a stale "to" from
+    # the old month, fails the full-month check, and narratives silently
+    # never match (this broke for at least one prior month before being caught).
     text = text.replace(f'value="{old_from}"', f'value="{new_from}"')
+    text = text.replace(f'value="{old_to}"', f'value="{new_to}"')
 
     # 5. presetDates current_month + last_month (share same from/to/cFrom/cTo)
     old_cm = f"from:'{old_from}',  to:'{old_to}', cFrom:'{old_prev_from}',  cTo:'{old_prev_to}'"
