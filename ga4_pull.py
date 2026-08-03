@@ -35,6 +35,17 @@ SCOPES       = ["https://www.googleapis.com/auth/analytics.readonly"]
 TOKEN_FILE   = "token.json"          # saved after first auth; do not delete
 SECRETS_FILE = "client_secrets.json" # downloaded from Google Cloud Console
 
+# Blog pages live under this path prefix (per gen_dashboard.py page examples,
+# e.g. "/blog/the-3-rules-to-customer-interviews"). Adjust if the site's blog
+# path prefix ever changes.
+BLOG_PATH_PREFIX = "/blog"
+
+# Candidate GA4 event names for "form submission" conversions, checked in
+# order. If none match, the full event breakdown is printed/saved so you can
+# tell Claude the correct event name — add it to the front of this list once
+# known, and future runs will pick it up automatically.
+FORM_EVENT_NAMES = ["Contact_Form_Submit", "form_submission", "generate_lead", "form_submit", "contact_form_submit"]
+
 # ── Auth ──────────────────────────────────────────────────────────────────────
 
 def get_credentials():
@@ -131,6 +142,96 @@ def pull_top_pages(client, start, end, limit=5):
         })
     return pages
 
+def pull_engagement(client, start, end):
+    """Average engagement time per session, e.g. '33s avg'."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        metrics=[Metric(name="averageSessionDuration")],
+    )
+    row = client.run_report(req).rows[0].metric_values
+    seconds = round(float(row[0].value))
+    return f"{seconds}s avg"
+
+def pull_events(client, start, end):
+    """Total event count, plus a per-event-name breakdown so the correct
+    'form submission' event can be identified and pinned in FORM_EVENT_NAMES."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimensions=[Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        order_bys=[OrderBy(
+            metric=OrderBy.MetricOrderBy(metric_name="eventCount"), desc=True
+        )],
+        limit=25,
+    )
+    breakdown = {}
+    for row in client.run_report(req).rows:
+        breakdown[row.dimension_values[0].value] = int(row.metric_values[0].value)
+
+    total_events = sum(breakdown.values())
+
+    form_submissions = None
+    matched_event = None
+    for name in FORM_EVENT_NAMES:
+        if name in breakdown:
+            form_submissions = breakdown[name]
+            matched_event = name
+            break
+
+    return {
+        "event_count": total_events,
+        "form_submissions": form_submissions,
+        "form_event_matched": matched_event,
+        "event_breakdown": breakdown,
+    }
+
+def pull_blog(client, start, end, limit=10):
+    """Sessions/views/users/engagement rate for pages under BLOG_PATH_PREFIX,
+    plus top blog posts by sessions."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimensions=[Dimension(name="pagePath")],
+        metrics=[
+            Metric(name="sessions"),
+            Metric(name="screenPageViews"),
+            Metric(name="totalUsers"),
+            Metric(name="engagementRate"),
+        ],
+        order_bys=[OrderBy(
+            metric=OrderBy.MetricOrderBy(metric_name="sessions"), desc=True
+        )],
+        limit=100,
+    )
+    rows = [
+        r for r in client.run_report(req).rows
+        if r.dimension_values[0].value.startswith(BLOG_PATH_PREFIX)
+    ]
+
+    total_sessions = sum(int(r.metric_values[0].value) for r in rows)
+    total_views    = sum(int(r.metric_values[1].value) for r in rows)
+    total_users    = sum(int(r.metric_values[2].value) for r in rows)
+    # Session-weighted average engagement rate across blog pages
+    weighted_er = (
+        sum(int(r.metric_values[0].value) * float(r.metric_values[3].value) for r in rows) / total_sessions
+        if total_sessions else 0
+    )
+
+    top_posts = [
+        {"title": r.dimension_values[0].value, "sessions": int(r.metric_values[0].value), "url": ""}
+        for r in rows[:limit]
+    ]
+
+    return {
+        "sessions": total_sessions,
+        "views": total_views,
+        "users": total_users,
+        "engagement_rate": f"{round(weighted_er * 100, 2)}%",
+        "top_posts": top_posts,
+    }
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -143,15 +244,30 @@ def main():
 
     print(f"\nPulling GA4 data: {start} → {end}")
 
+    events = pull_events(client, start, end)
+
     result = {
         "period":          start[:7],
         "date_range":      {"start": start, "end": end},
         "summary":         pull_summary(client, start, end),
         "traffic_sources": pull_traffic_sources(client, start, end),
         "top_pages":       pull_top_pages(client, start, end),
+        "engagement_rate": pull_engagement(client, start, end),
+        "event_count":     events["event_count"],
+        "form_submissions": events["form_submissions"],
+        "form_event_matched": events["form_event_matched"],
+        "event_breakdown": events["event_breakdown"],
+        "blog":            pull_blog(client, start, end),
     }
 
     print(json.dumps(result, indent=2))
+
+    if events["form_submissions"] is None:
+        print(
+            "\n⚠  Could not auto-match a 'form submission' event name.\n"
+            "   Check event_breakdown above for the right event, then tell Claude\n"
+            "   which one it is so it can be added to FORM_EVENT_NAMES in ga4_pull.py."
+        )
 
     output_file = f"ga4_{start[:7]}.json"
     with open(output_file, "w") as f:

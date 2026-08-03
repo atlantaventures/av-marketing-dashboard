@@ -504,6 +504,36 @@
 const DATA = {
   meta:{client:"Atlanta Ventures",period:"Jul 2026",period_key:"2026-07",pulled:"August 3, 2026"},
   narrative:{
+    "2026-07":{
+    overview:{
+      read:"• Mailchimp and LinkedIn Newsletter both broke a multi-month silence in July: 3 Mailchimp sends went out (open rates 26.3%, 25.0%, and 13.1% on a resend) and 2 LinkedIn Newsletter articles published — the first real newsletter activity since ~April/May\n• LinkedIn Newsletter subscribers hit 3,523, extending an unbroken monthly growth streak that's now run all 7 months of 2026\n• Both Substacks show open rates still declining every month with no exception: O'Daily is down to 42.73% (7 straight monthly drops from 50.6% in January) and Startup Strategies is down to 37.88% (7 straight drops from 51.4%)\n• O'Daily views fell sharply to 2,210 (-52% vs June's 4,646), while Startup Strategies views actually ticked up to 963 (+11.5%) — a split result across the two newsletters\n• LinkedIn impressions jumped to 21,291 (+26% vs June) and Instagram impressions more than quadrupled to 27,694 (vs June's 6,402 low) — both recovering from June's dip\n• AV Blog sessions collapsed to 124 (-79% vs June's 600), the lowest of any month with data this year — worth investigating whether this is a real drop or another tracking issue like June's GA4 indexing bug\n• No HEM or Office Hours event ran in July (confirmed via the new Eventbrite pull, which returned zero org events for the month)",
+      rec:"• Investigate the AV Blog session collapse (124 vs a ~600-1,400/month historical range) before assuming it's organic decline — rule out a tracking or indexing issue the way June's GA4 bug was ruled out\n• Keep the Mailchimp and LinkedIn Newsletter cadence going now that both have restarted; a second consecutive quiet month is what caused the erosion narrative earlier this year\n• Both Substack open rates have now declined for 7 straight months without exception — this is no longer a one-off dip and is worth a dedicated subject-line or send-time test rather than another wait-and-see month\n• Schedule the next HEM and Office Hours events; going a full month with zero of either is a gap in both the events KPIs and the audience touchpoints those events normally provide"
+    },
+    web:{
+      read:"• Sessions held roughly flat at 2,130 (-4.4% vs June's 2,229) — both months remain well below the April/May baseline (May: 4,319), which the June narrative attributed partly to a GA4 indexing issue that was reportedly fixed July 20; July's numbers don't show a clear recovery signal, so the low baseline may not be fully resolved\n• Direct traffic was 70% of sessions (1,497), a much higher concentration than June's 42% — worth confirming this isn't bot-inflated the way June's Direct spike was flagged\n• AV Blog sessions fell to 124 from June's 600 (-79%), by far the lowest reading of the year\n• Form submissions and total event count weren't captured this cycle — ga4_pull.py didn't collect those fields yet at the time of the July pull (fixed for future months, see below)\n• A new event-name breakdown pull found 2,784 'Contact_Form_Submit' events in July, far above the historical 9-52/month range for form submissions; this looks like a tracking misconfiguration rather than real form activity, and has been flagged to the webmaster",
+      rec:"• Re-baseline whether the July 20 GA4 fix actually resolved the traffic drop — July's own sessions are still low, so either the fix didn't fully address it or there's a separate, real decline underway\n• Chase the AV Blog session collapse specifically; a 79% single-month drop is large enough to warrant checking GA4 filters, redirects, and whether blog content is still being indexed/linked from key pages\n• Hold off trusting the 'Contact_Form_Submit' count (2,784) as real lead volume until the webmaster confirms the tracking fix; treat it as directionally unreliable for now\n• Now that ga4_pull.py captures engagement rate, event breakdown, and blog metrics automatically, use August's pull to establish a clean comparison point for all of these"
+    },
+    social:{
+      read:"• LinkedIn impressions recovered to 21,291 (+26% vs June's 16,894 low), and Instagram impressions jumped to 27,694 — more than 4x June's 6,402\n• LinkedIn engagements are reported at 3,509, roughly 8x any prior 2026 month (range was 409-741 Apr-Jun); this is large enough that it's worth confirming Metricool is counting 'engagements' the same way this month as in prior months before treating it as a real signal\n• LinkedIn followers dipped slightly to 11,487 (-0.4%), the first monthly decline of the year\n• Instagram followers and posting volume both grew (3,947 followers, +0.6%; 15 posts, matching June's most-active pace)\n• Facebook and Twitter/X both declined slightly (Facebook +2 followers to 194; Twitter -62 followers to 2,794); TikTok remains flat at 130 followers with effectively no tracked activity\n• Individual top-post detail (captions, per-post impressions/likes) isn't available through the current Metricool MCP connection — it only exposes aggregate metrics, not a list of published posts — so this section is running on totals only until that's resolved with Confetti",
+      rec:"• Verify the LinkedIn engagement figure (3,509) against Metricool's own dashboard or with Evie before reporting it as an 8x improvement; if it's a genuine metric-definition change, prior months' engagement figures aren't a clean comparison anymore\n• Ask Evie/Confetti whether Metricool's MCP can expose individual post data, or continue pulling the monthly PDF specifically for top-post detail, since the current connector only returns channel totals\n• Look into what drove the Instagram and LinkedIn impression recovery this month and try to repeat it — both channels had their weakest month in June and rebounded together in July"
+    },
+    newsletters:{
+      read:"• Mailchimp sent 3 campaigns in July after a quiet stretch: 'July AV Insights' (26.3% open, 1.5% click), 'July 2026 HOTP' (25.0% open, 1.3% click), and a resend of the HOTP (13.1% open, 1.0% click, unsub rate 0.3% — the highest of the three, typical for resends)\n• The Mailchimp subscriber count shown this month (3,109) is scoped specifically to the 'Atlanta Ventures Newsletter' audience, confirmed with Jacey — it isn't directly comparable to June's 2,263, which may have used a different scope, so don't read the jump as +37% real growth\n• LinkedIn Newsletter published 2 articles in July after no sends in June: 'Hot Off The Press' (1,497 views, 42% email open rate) and 'The Perlant Is Headed to Nashville' (1,573 views, 43% email open rate) — both performed similarly\n• LinkedIn Newsletter subscribers grew to 3,523 (+2.7%), continuing an unbroken 7-month growth streak",
+      rec:"• Establish one consistent Mailchimp audience to report on every month going forward so subscriber trend lines are actually comparable — flag this to whoever else pulls Mailchimp numbers\n• Keep the LinkedIn Newsletter cadence at 1-2 articles/month now that it's restarted; the subscriber growth streak has held even through no-send months, so consistent publishing is additive rather than a rescue\n• The HOTP resend underperformed the original send by half (13.1% vs 25.0% open) — consider whether a resend is worth sending at all versus letting the first send's numbers stand"
+    },
+    content:{
+      read:"• O'Daily views dropped to 2,210 (-52% vs June's 4,646), the lowest monthly figure this year; open rate fell to 42.73%, marking 7 consecutive monthly declines from January's 50.6%\n• Startup Strategies views rose to 963 (+11.5% vs June's 864), the first increase after a multi-month decline, but its open rate also kept falling — 37.88%, down from 40.8% and now also 7 straight months of decline (from 51.4% in January)\n• Both Substacks gained subscribers: O'Daily to 1,217 (+3.8%) and Startup Strategies to 322 (+24.8%) — subscriber growth is holding up even as engagement (views, open rate) softens\n• AV Blog sessions fell to 124 from June's 600 (-79%), consistent with the broader web traffic drop this month\n• Substack 'sessions' (as distinct from post views) still isn't part of this pull — confirmed with Jacey that it was never actually in the documented monthly workflow, so this isn't a new gap, just a field that was never populated",
+      rec:"• The 7-straight-month open-rate decline on both Substacks is the clearest actionable signal in this section — worth a dedicated subject-line/send-time test on at least one newsletter in August rather than continuing to watch it decline\n• Investigate why O'Daily views specifically dropped 52% in a month where Startup Strategies views rose — check whether promotion (social/LinkedIn cross-posts) for O'Daily specifically dropped off in July\n• Pair the AV Blog session investigation (see Web section) with content section reporting, since both draw from the same underlying GA4 issue"
+    },
+    events:{
+      read:"• No HEM event ran in July, confirmed via the newly working Eventbrite pull (zero org events returned for the month) — HEM total membership is still showing 4,141, unchanged for 7 consecutive months, which suggests this figure isn't actually being updated by any current pull and may just be carried forward indefinitely\n• No Office Hours event ran in July either, per the same Eventbrite confirmation\n• This is the first month using the real Eventbrite API connection rather than manual entry, so 'zero events' can now be trusted as an actual API result rather than an assumption",
+      rec:"• Get an HEM and Office Hours event on the calendar for August — two consecutive months (or more) without either event is a real gap in both attendance data and audience touchpoints\n• Find an actual source for HEM total membership (4,141 has been static for 7 months) — either pull it from wherever membership is tracked, or replace it with a note that it's not currently being updated, rather than implying it's a live number\n• Now that Eventbrite pulls are reliable, use August as the first clean month to validate RSVP/attendance data end-to-end once an event is actually scheduled"
+    },
+    goals:{
+      read:"• LinkedIn Newsletter subscriber growth remains the most consistent bright spot: 3,159 → 3,213 → 3,267 → 3,321 → 3,375 → 3,429 → 3,523, positive every single month of 2026 so far\n• LinkedIn followers had their first down month of the year (11,487, -0.4%), a small but notable break from steady growth in prior months\n• Both Substack open rates are now on 7-month losing streaks with no exception (O'Daily 50.6%→42.73%; Startup Strategies 51.4%→37.88%) — this is the most consistent negative trend in the whole dashboard and deserves goal-level attention, not just a content-section note\n• Substack subscriber counts are the counter-signal: both O'Daily (1,217) and Startup Strategies (322) grew this month even as engagement metrics softened\n• Events data has a real gap this year: HEM total membership (4,141) hasn't moved in 7 months of reporting, meaning goal tracking for HEM membership growth currently has no real underlying data feeding it",
+      rec:"• Treat the Substack open-rate decline as a standing item until it breaks its losing streak — 7 straight months down on both newsletters is a trend, not noise\n• Find a real, updating data source for HEM total membership before the next goals review; a static number for 7 months means that specific goal can't actually be tracked right now\n• Keep leaning into whatever's driving the LinkedIn Newsletter's unbroken growth streak — it's the most reliable positive trend line this year and worth understanding well enough to replicate elsewhere"
+    }
+    },
     "2026-06":{
     overview:{
       read:"• Instagram was the standout channel in June: the Perlant collab reached 36K+ accounts with 263 likes and 154 reshares, and YouTube hit 1,741 views from a single World Cup video\n• LinkedIn impressions dropped 46% to 16,894 — a 6-month low; over H1 impressions tracked directly with content type: peaks in Feb (35.8K) and May (31.3K) both tied to portfolio milestone posts\n• Both email channels went dark for the second consecutive month; subscriber bases held, but open rate erosion typically begins at the two-month mark\n• The O'Daily bounced back to 4,646 views (+35%), strongest since Q1 but still 30% below the January peak (6,592); the O'Daily open rate has declined every month for six months (50.6% ‒ 43.75%)\n• Instagram impressions tell a clear story: Q1 averaged 6.6K/month, Apr–May averaged 19.0K during the Perlant collab window, June returned to 6.4K at the pre-collab baseline\n• Web: June's 2,229 sessions is anomalous due to the new site launch breaking GA4 indexing; April–May averaged 4,348 sessions/month and is the real baseline; fix confirmed July 20",
@@ -629,9 +659,20 @@ const DATA = {
           ]
         },
         av_blog:{
-          sessions:{v:null,mom:null,yoy:null},views:{v:null,mom:null,yoy:null},
-          users:{v:null,mom:null,yoy:null},engagement_rate:{v:null,mom:null,yoy:null},
-          top_posts:[]
+          sessions:{v:124,mom:-0.7933,yoy:null},views:{v:120,mom:-0.8188,yoy:null},
+          users:{v:123,mom:null,yoy:null},engagement_rate:{v:"66.13%",mom:null,yoy:null},
+          top_posts:[
+            {title:"Blog Index",sessions:20,url:"https://atlantaventures.com/blog/"},
+            {title:"3 Areas Investors Observe Grit in Entrepreneurs",sessions:5,url:"https://atlantaventures.com/blog/3-areas-investors-observe-grit-in-entrepreneurs"},
+            {title:"Beyond Hyper Growth",sessions:5,url:"https://atlantaventures.com/blog/beyond-hyper-growth"},
+            {title:"Burn the Ships",sessions:5,url:"https://atlantaventures.com/blog/burn-the-ships"},
+            {title:"Driving Innovation by Making Mistakes",sessions:5,url:"https://atlantaventures.com/blog/driving-innovation-by-making-mistakes"},
+            {title:"Everything Compounds",sessions:5,url:"https://atlantaventures.com/blog/everything-compounds-399c8"},
+            {title:"Planning Your Future Org Chart",sessions:5,url:"https://atlantaventures.com/blog/planning-your-future-org-chart"},
+            {title:"Simplify the Product Development Life Cycle",sessions:5,url:"https://atlantaventures.com/blog/simplify-the-product-development-life-cycle"},
+            {title:"Start in a Niche",sessions:5,url:"https://atlantaventures.com/blog/start-in-a-niche"},
+            {title:"4 Considerations for Turning Your Passion Into a Business",sessions:4,url:"https://atlantaventures.com/blog/4-considerations-for-turning-your-passion-into-a-business"}
+          ]
         }
       },
       events:{
@@ -1696,22 +1737,23 @@ function renderSubstack6Mo(){
 function renderEvents(){
   const ev=M.events;
   const oh=ev.office_hours;
-  const ohCurrent=oh.june||null;
   const ohHistory=[...(oh.history||[])].reverse().slice(-6);
-  // Detect if there was a HEM event this reporting period
+  // Detect if there was a HEM / Office Hours event this reporting period
   const [pyear,pmonth]=DATA.meta.period_key.split('-');
   const monthNames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const curMon=monthNames[parseInt(pmonth)-1];
   const hemHistory=[...(ev.hem.history||[])].reverse().slice(-6);
   const hemCurrent=(ev.hem.history&&ev.hem.history[0]&&ev.hem.history[0].date.includes(curMon)&&ev.hem.history[0].date.includes(pyear))?ev.hem.history[0]:null;
+  const ohCurrent=(oh.history&&oh.history[0]&&oh.history[0].date.includes(curMon)&&oh.history[0].date.includes(pyear))?oh.history[0]:null;
+  const noEventNote=(txt)=>`<div style="font-size:12px;color:var(--gray-500);font-style:italic;margin-bottom:16px">${txt||'No event this period.'}</div>`;
   document.getElementById('events-grid').innerHTML=`
     <div class="event-card">
       <div style="font-size:11px;font-weight:700;color:var(--gray-500);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px">Healthcare Entrepreneur Meetup</div>
-      ${`<div class="event-kpis" style="margin-bottom:16px">
-        <div><div class="event-kpi-label">RSVPs ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent?hemCurrent.rsvps:0}</div></div>
-        <div><div class="event-kpi-label">Attended ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent?hemCurrent.attended:0}</div></div>
-        <div><div class="event-kpi-label">Show Rate ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent?hemCurrent.conversion:"--"}</div></div>
-      </div>`}
+      ${hemCurrent?`<div class="event-kpis" style="margin-bottom:16px">
+        <div><div class="event-kpi-label">RSVPs ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent.rsvps}</div></div>
+        <div><div class="event-kpi-label">Attended ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent.attended}</div></div>
+        <div><div class="event-kpi-label">Show Rate ${iTag('Eventbrite')}</div><div class="event-kpi-value">${hemCurrent.conversion}</div></div>
+      </div>`:noEventNote(ev.hem.note)}
     </div>
     <div class="event-card">
       <div style="font-size:11px;font-weight:700;color:var(--gray-500);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px">Office Hours</div>
@@ -1719,7 +1761,7 @@ function renderEvents(){
         <div><div class="event-kpi-label">RSVPs ${iTag('Eventbrite')}</div><div class="event-kpi-value">${ohCurrent.rsvps}</div></div>
         <div><div class="event-kpi-label">Attended ${iTag('Eventbrite')}</div><div class="event-kpi-value">${ohCurrent.attended}</div></div>
         <div><div class="event-kpi-label">Show Rate ${iTag('Eventbrite')}</div><div class="event-kpi-value">${ohCurrent.conversion}</div></div>
-      </div>`:''}
+      </div>`:noEventNote(oh.note)}
     </div>`;
   // HEM trend chart
   const hemChartContainer=document.getElementById('hem-chart-container');

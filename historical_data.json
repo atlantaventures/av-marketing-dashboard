@@ -2732,44 +2732,68 @@
       }
     },
     "2026-07": {
-      "period_key": "2026-07",
-      "period_label": "Jul 2026",
       "web": {
-        "sessions": 2130,
-        "users": 1858,
-        "engagement_rate": null,
-        "form_submissions": null,
-        "event_count": null,
+        "sessions": {
+          "v": 2130,
+          "mom": -0.0444,
+          "yoy": null
+        },
+        "users": {
+          "v": 1858,
+          "mom": -0.0221,
+          "yoy": null
+        },
+        "engagement_rate": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "form_submissions": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
+        "event_count": {
+          "v": null,
+          "mom": null,
+          "yoy": null
+        },
         "traffic": [
           {
             "source": "Direct",
             "sessions": 1497,
-            "pct": "70%"
+            "pct": "70%",
+            "yoy_note": ""
           },
           {
             "source": "Organic Search",
             "sessions": 441,
-            "pct": "21%"
+            "pct": "21%",
+            "yoy_note": ""
           },
           {
             "source": "Unassigned",
             "sessions": 86,
-            "pct": "4%"
+            "pct": "4%",
+            "yoy_note": ""
           },
           {
             "source": "Referral",
             "sessions": 49,
-            "pct": "2%"
+            "pct": "2%",
+            "yoy_note": ""
           },
           {
             "source": "Organic Social",
             "sessions": 44,
-            "pct": "2%"
+            "pct": "2%",
+            "yoy_note": ""
           },
           {
             "source": "AI Assistant",
             "sessions": 10,
-            "pct": "0%"
+            "pct": "0%",
+            "yoy_note": ""
           }
         ],
         "top_pages": [
@@ -2803,52 +2827,160 @@
       },
       "social": {
         "linkedin": {
-          "followers": 11487,
-          "impressions": 21291,
-          "engagements": 3509,
-          "posts": 15,
+          "followers": {
+            "v": 11487,
+            "mom": -0.0039,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 21291,
+            "mom": 0.2603,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 3509,
+            "mom": 7.5795,
+            "yoy": null
+          },
+          "posts": {
+            "v": 15,
+            "mom": 0.1538,
+            "yoy": null
+          },
           "top_posts": []
         },
         "instagram": {
-          "followers": 3947,
-          "impressions": 27694,
-          "engagements": 330,
-          "posts": 15,
+          "followers": {
+            "v": 3947,
+            "mom": 0.0056,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 27694,
+            "mom": 3.3258,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 330,
+            "mom": 0.4103,
+            "yoy": null
+          },
+          "posts": {
+            "v": 15,
+            "mom": -0.4828,
+            "yoy": null
+          },
           "top_posts": []
         },
         "facebook": {
-          "followers": 194,
-          "engagements": 26,
-          "engagement_rate": null,
-          "posts": 14,
+          "followers": {
+            "v": 194,
+            "mom": 0.0104,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 26,
+            "mom": -0.5357,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 14,
+            "mom": -0.3,
+            "yoy": null
+          },
           "top_posts": []
         },
         "youtube": {
-          "subscribers": 226,
-          "views": 247,
-          "likes": null,
-          "videos": 0,
+          "subscribers": {
+            "v": 226,
+            "mom": -0.0088,
+            "yoy": null
+          },
+          "views": {
+            "v": 247,
+            "mom": -0.8581,
+            "yoy": null
+          },
+          "likes": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "videos": {
+            "v": 0,
+            "mom": -1.0,
+            "yoy": null
+          },
           "top_videos": []
         },
         "tiktok": {
-          "followers": 130,
-          "video_views": 0,
-          "likes": 0,
-          "posts": 0
+          "followers": {
+            "v": 130,
+            "mom": 0.0,
+            "yoy": null
+          },
+          "video_views": {
+            "v": 0,
+            "mom": null,
+            "yoy": null
+          },
+          "likes": {
+            "v": 0,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 0,
+            "mom": null,
+            "yoy": null
+          }
         },
         "twitter": {
-          "followers": 2794,
-          "impressions": 592,
-          "posts": 14
+          "followers": {
+            "v": 2794,
+            "mom": -0.0217,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 592,
+            "mom": null,
+            "yoy": null
+          },
+          "posts": {
+            "v": 14,
+            "mom": 0.1667,
+            "yoy": null
+          }
         }
       },
       "newsletters": {
         "mailchimp": {
+          "open_rate": {
+            "v": "21.5%",
+            "mom": null,
+            "yoy": null
+          },
+          "click_rate": {
+            "v": "1.3%",
+            "mom": null,
+            "yoy": null
+          },
+          "subscribers": {
+            "v": 3109,
+            "mom": 0.3738,
+            "yoy": null
+          },
+          "opens": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
           "no_send": false,
-          "subscribers": 3109,
-          "open_rate": "21.5%",
-          "click_rate": "1.3%",
-          "unsub_rate": "0.2%",
           "campaigns": [
             {
               "name": "July AV Insights: The Perlant is Headed to Nashville",
@@ -2871,11 +3003,32 @@
           ]
         },
         "linkedin_newsletter": {
+          "subscribers": {
+            "v": 3523,
+            "mom": 0.0274,
+            "yoy": null
+          },
+          "impressions": {
+            "v": 2199,
+            "mom": null,
+            "yoy": null
+          },
+          "engagements": {
+            "v": 25,
+            "mom": null,
+            "yoy": null
+          },
+          "article_views": {
+            "v": 3109,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "1.1%",
+            "mom": null,
+            "yoy": null
+          },
           "no_send": false,
-          "subscribers": 3523,
-          "impressions": 2199,
-          "engagements": 25,
-          "article_views": 3109,
           "top_articles": [
             {
               "title": "Hot Off The Press: July's Momentum Check",
@@ -2904,11 +3057,29 @@
       },
       "content": {
         "odaily": {
-          "subscribers": 1217,
-          "sessions": null,
-          "views": 2210,
-          "open_rate": "42.73%",
-          "new_subs": 45,
+          "subscribers": {
+            "v": 1217
+          },
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 2210,
+            "mom": -0.5243,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "42.73%",
+            "mom": null,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 45,
+            "mom": 0.875,
+            "yoy": null
+          },
           "top_posts": [
             {
               "title": "5 Reasons Your Fundraise Isn't Going Well",
@@ -2928,11 +3099,29 @@
           ]
         },
         "startup_strategies": {
-          "subscribers": 322,
-          "sessions": null,
-          "views": 963,
-          "open_rate": "37.88%",
-          "new_subs": 64,
+          "subscribers": {
+            "v": 322
+          },
+          "sessions": {
+            "v": null,
+            "mom": null,
+            "yoy": null
+          },
+          "views": {
+            "v": 963,
+            "mom": 0.1146,
+            "yoy": null
+          },
+          "open_rate": {
+            "v": "37.88%",
+            "mom": null,
+            "yoy": null
+          },
+          "new_subs": {
+            "v": 64,
+            "mom": 5.4,
+            "yoy": null
+          },
           "ai_assisted": true,
           "top_posts": [
             {
@@ -2963,20 +3152,270 @@
           ]
         },
         "av_blog": {
-          "sessions": null,
-          "views": null,
-          "users": null,
-          "engagement_rate": null,
-          "top_posts": []
+          "sessions": {
+            "v": 124,
+            "mom": -0.7933,
+            "yoy": null
+          },
+          "views": {
+            "v": 120,
+            "mom": -0.8188,
+            "yoy": null
+          },
+          "users": {
+            "v": 123,
+            "mom": null,
+            "yoy": null
+          },
+          "engagement_rate": {
+            "v": "66.13%",
+            "mom": null,
+            "yoy": null
+          },
+          "top_posts": [
+            {
+              "title": "Blog Index",
+              "sessions": 20,
+              "url": "https://atlantaventures.com/blog/"
+            },
+            {
+              "title": "3 Areas Investors Observe Grit in Entrepreneurs",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/3-areas-investors-observe-grit-in-entrepreneurs"
+            },
+            {
+              "title": "Beyond Hyper Growth",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/beyond-hyper-growth"
+            },
+            {
+              "title": "Burn the Ships",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/burn-the-ships"
+            },
+            {
+              "title": "Driving Innovation by Making Mistakes",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/driving-innovation-by-making-mistakes"
+            },
+            {
+              "title": "Everything Compounds",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/everything-compounds-399c8"
+            },
+            {
+              "title": "Planning Your Future Org Chart",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/planning-your-future-org-chart"
+            },
+            {
+              "title": "Simplify the Product Development Life Cycle",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/simplify-the-product-development-life-cycle"
+            },
+            {
+              "title": "Start in a Niche",
+              "sessions": 5,
+              "url": "https://atlantaventures.com/blog/start-in-a-niche"
+            },
+            {
+              "title": "4 Considerations for Turning Your Passion Into a Business",
+              "sessions": 4,
+              "url": "https://atlantaventures.com/blog/4-considerations-for-turning-your-passion-into-a-business"
+            }
+          ]
         }
       },
       "events": {
         "hem": {
           "note": "No HEM event in July 2026 (confirmed via Eventbrite pull \u2014 zero events for the org this month)",
-          "total_members": 4141
+          "historical_avg": {
+            "rsvps": 136,
+            "attendance": 47,
+            "conversion": "35%",
+            "replays": 30
+          },
+          "total_members": 4141,
+          "history": [
+            {
+              "date": "Apr 15, 2026",
+              "rsvps": 84,
+              "attended": 45,
+              "conversion": "53%"
+            },
+            {
+              "date": "Feb 4, 2026",
+              "rsvps": 160,
+              "attended": 43,
+              "conversion": "26%"
+            },
+            {
+              "date": "Oct 29, 2025",
+              "rsvps": 152,
+              "attended": 58,
+              "conversion": "38%"
+            },
+            {
+              "date": "Aug 20, 2025",
+              "rsvps": 120,
+              "attended": 41,
+              "conversion": "34%"
+            },
+            {
+              "date": "Jul 16, 2025",
+              "rsvps": 157,
+              "attended": 45,
+              "conversion": "29%"
+            },
+            {
+              "date": "Apr 23, 2025",
+              "rsvps": 179,
+              "attended": 50,
+              "conversion": "28%"
+            },
+            {
+              "date": "Jan 22, 2025",
+              "rsvps": 148,
+              "attended": 60,
+              "conversion": "41%"
+            },
+            {
+              "date": "Nov 14, 2024",
+              "rsvps": 151,
+              "attended": 70,
+              "conversion": "46%"
+            },
+            {
+              "date": "Sep 25, 2024",
+              "rsvps": 109,
+              "attended": 35,
+              "conversion": "32%"
+            },
+            {
+              "date": "Jun 12, 2024",
+              "rsvps": 119,
+              "attended": 41,
+              "conversion": "34%"
+            },
+            {
+              "date": "Mar 27, 2024",
+              "rsvps": 158,
+              "attended": 30,
+              "conversion": "19%"
+            },
+            {
+              "date": "Jan 1, 2024",
+              "rsvps": 151,
+              "attended": 44,
+              "conversion": "29%"
+            },
+            {
+              "date": "Nov 1, 2023",
+              "rsvps": 127,
+              "attended": 44,
+              "conversion": "35%"
+            },
+            {
+              "date": "Sep 1, 2023",
+              "rsvps": 165,
+              "attended": 55,
+              "conversion": "33%"
+            },
+            {
+              "date": "Jul 1, 2023",
+              "rsvps": 143,
+              "attended": 43,
+              "conversion": "30%"
+            },
+            {
+              "date": "May 1, 2023",
+              "rsvps": 117,
+              "attended": 46,
+              "conversion": "39%"
+            },
+            {
+              "date": "Mar 1, 2023",
+              "rsvps": 136,
+              "attended": 66,
+              "conversion": "49%"
+            },
+            {
+              "date": "Jan 1, 2023",
+              "rsvps": 122,
+              "attended": 42,
+              "conversion": "34%"
+            },
+            {
+              "date": "Nov 1, 2022",
+              "rsvps": 122,
+              "attended": 45,
+              "conversion": "37%"
+            },
+            {
+              "date": "Oct 1, 2022",
+              "rsvps": 99,
+              "attended": 36,
+              "conversion": "36%"
+            },
+            {
+              "date": "Aug 1, 2022",
+              "rsvps": 137,
+              "attended": 41,
+              "conversion": "30%"
+            },
+            {
+              "date": "Jun 1, 2022",
+              "rsvps": 146,
+              "attended": 46,
+              "conversion": "32%"
+            }
+          ]
         },
         "office_hours": {
-          "note": "No Office Hours event in July 2026 (confirmed via Eventbrite pull \u2014 zero events for the org this month)"
+          "note": "No Office Hours event in July 2026 (confirmed via Eventbrite pull \u2014 zero events for the org this month)",
+          "historical_avg": {
+            "rsvps": 28,
+            "attendance": 19,
+            "conversion": "72%"
+          },
+          "history": [
+            {
+              "date": "Jun 11, 2026",
+              "rsvps": 10,
+              "attended": 7,
+              "conversion": "70%"
+            },
+            {
+              "date": "May 14, 2026",
+              "rsvps": 9,
+              "attended": 10,
+              "conversion": "111%"
+            },
+            {
+              "date": "Mar 19, 2026",
+              "rsvps": 27,
+              "attended": 22,
+              "conversion": "81%"
+            },
+            {
+              "date": "Dec 4, 2025",
+              "rsvps": 15,
+              "attended": 12,
+              "conversion": "80%"
+            },
+            {
+              "date": "Nov 13, 2025",
+              "rsvps": 13,
+              "attended": 12,
+              "conversion": "92%"
+            },
+            {
+              "date": "Jul 10, 2025",
+              "rsvps": 35,
+              "attended": 21,
+              "conversion": "60%"
+            }
+          ]
         }
       }
     }
