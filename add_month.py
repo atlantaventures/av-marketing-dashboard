@@ -537,6 +537,40 @@ def update_meta_and_dates(text, period_key, period_label):
     return text, new_fname
 
 
+def extract_month_as_json(text, period_key):
+    """Pull DATA.months[period_key] back out of gen_dashboard.py's JS text and
+    convert it to a real JSON-compatible dict, so historical_data.json stores
+    the same nested {v,mom,yoy} shape the dashboard itself uses — not the flat
+    raw input file. This is the single source of truth for the month's data.
+    """
+    # Scope the search to the DATA.months section only — DATA.narrative uses
+    # the same "YYYY-MM":{ key format, and narrative prose can contain false-
+    # positive matches (e.g. "(Mar: 22, May: 10)"), so searching the whole
+    # file risked grabbing the wrong block or corrupting on narrative text.
+    months_start = text.index(MONTHS_MARKER)
+    marker = f'"{period_key}":{{'
+    start = text.index(marker, months_start) + len(marker) - 1
+    depth = 0
+    i = start
+    while True:
+        c = text[i]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                block = text[start:i + 1]
+                break
+        i += 1
+
+    # Strip full-line JS comments (never strip "//" inside URLs/strings)
+    block = re.sub(r"^[ \t]*//[^\n]*\n", "", block, flags=re.MULTILINE)
+    # Quote bare object keys: {key: or ,key:
+    block = re.sub(r"([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:", r'\1"\2":', block)
+
+    return json.loads(block)
+
+
 def regenerate_html():
     result = subprocess.run(
         ["python3", str(GEN)],
@@ -662,9 +696,11 @@ def main():
     print(f"\nRegenerating HTML dashboard...")
     regenerate_html()
 
-    # Update historical_data.json
+    # Update historical_data.json — extract the just-written nested {v,mom,yoy}
+    # block from gen_dashboard.py itself (the source of truth) rather than
+    # storing the raw flat input, so next month's mom/yoy math has the right shape.
     if hist:
-        hist["months"][period_key] = data  # store raw input for reference
+        hist["months"][period_key] = extract_month_as_json(text, period_key)
         hist["_meta"]["exported"] = period_key
         HIST.write_text(json.dumps(hist, indent=2))
         print(f"  ✓ historical_data.json updated")

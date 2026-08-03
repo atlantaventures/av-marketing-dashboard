@@ -51,8 +51,8 @@ def get_date_range(year=None, month=None):
         last_month = first_of_this_month - timedelta(days=1)
         year, month = last_month.year, last_month.month
     _, last_day = monthrange(year, month)
-    start = f"{year}-{month:02d}-01T00:00:00"
-    end = f"{year}-{month:02d}-{last_day:02d}T23:59:59"
+    start = f"{year}-{month:02d}-01"
+    end = f"{year}-{month:02d}-{last_day:02d}"
     return start, end, f"{year}-{month:02d}"
 
 
@@ -78,6 +78,7 @@ def list_org_events(token, org_id, start, end):
                 "start_date.range_start": start,
                 "start_date.range_end": end,
                 "order_by": "start_asc",
+                "status": "all",
                 "page": page,
             },
         )
