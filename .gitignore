@@ -1,0 +1,27 @@
+# ── Secrets — NEVER commit these ──────────────────────────────────────────────
+token.json
+client_secrets.json
+eventbrite_secrets.json
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Monthly data pulls (local working files, not source of truth) ─────────────
+ga4_*.json
+eventbrite_*.json
+*_data.json
+
+# ── Browser auth ──────────────────────────────────────────────────────────────
+# token.json already covered above
+
+# ── Archived HTML (index.html is the live one; dated files are local archives)
+AV_Dashboard_Preview_*.html
+AV_Dashboard_*.pdf
