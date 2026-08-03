@@ -322,7 +322,7 @@ html = """<!DOCTYPE html>
         <div class="fp-date-range" style="margin-top:8px">
           <input class="fp-date-input" id="fp-from" type="text" value="7/1/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
           <span class="fp-date-arrow">&#8594;</span>
-          <input class="fp-date-input" id="fp-to" type="text" value="6/30/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
+          <input class="fp-date-input" id="fp-to" type="text" value="7/31/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
         </div>
       </div>
       <div>
@@ -1429,7 +1429,7 @@ function renderWeb(){
   document.getElementById('kpi-web').innerHTML=[
     {label:"Sessions",value:fmt(w.sessions.v),delta:getDelta(w.sessions),src:'GA4'},
     {label:"Users",value:fmt(w.users.v),delta:getDelta(w.users),src:'GA4'},
-    {label:"Avg Engagement Time",value:w.engagement_rate.v,delta:getDelta(w.engagement_rate),src:'GA4'},
+    {label:"Avg Engagement Time",value:fmt(w.engagement_rate.v),delta:getDelta(w.engagement_rate),src:'GA4'},
     {label:"Form Submissions",value:fmt(w.form_submissions.v),delta:getDelta(w.form_submissions),src:'GA4'},
     {label:"Total Events",value:fmt(w.event_count.v),delta:getDelta(w.event_count),src:'GA4'}
   ].map(k=>`<div class="kpi-card"><div class="kpi-label">${k.label}${k.src?iTag(k.src):''}</div><div class="kpi-value">${k.value}</div>${dEl(k.delta)}</div>`).join('');
@@ -1464,7 +1464,7 @@ function renderSocial(){
   const channels=[
     {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt(s.linkedin.followers.v),delta:getDelta(s.linkedin.followers)},{label:"Impressions",value:fmt(s.linkedin.impressions.v),delta:getDelta(s.linkedin.impressions)},{label:"Engagements",value:fmt(s.linkedin.engagements.v),delta:getDelta(s.linkedin.engagements)},{label:"Posts",value:fmt(s.linkedin.posts.v),delta:getDelta(s.linkedin.posts)}]},
     {name:"Instagram",metrics:[{label:"Followers",value:fmt(s.instagram.followers.v),delta:getDelta(s.instagram.followers)},{label:"Post Views",value:fmt(s.instagram.impressions.v),delta:getDelta(s.instagram.impressions)},{label:"Engagements",value:fmt(s.instagram.engagements.v),delta:getDelta(s.instagram.engagements)},{label:"Posts",value:fmt(s.instagram.posts.v),delta:getDelta(s.instagram.posts)}]},
-    {name:"Facebook",metrics:[{label:"Followers",value:fmt(s.facebook.followers.v),delta:getDelta(s.facebook.followers)},{label:"Engagements",value:fmt(s.facebook.engagements.v),delta:getDelta(s.facebook.engagements)},{label:"Eng. Rate",value:s.facebook.engagement_rate.v,delta:getDelta(s.facebook.engagement_rate)},{label:"Posts",value:fmt(s.facebook.posts.v),delta:getDelta(s.facebook.posts)}]},
+    {name:"Facebook",metrics:[{label:"Followers",value:fmt(s.facebook.followers.v),delta:getDelta(s.facebook.followers)},{label:"Engagements",value:fmt(s.facebook.engagements.v),delta:getDelta(s.facebook.engagements)},{label:"Eng. Rate",value:fmt(s.facebook.engagement_rate.v),delta:getDelta(s.facebook.engagement_rate)},{label:"Posts",value:fmt(s.facebook.posts.v),delta:getDelta(s.facebook.posts)}]},
     {name:"YouTube",metrics:[{label:"Subscribers",value:fmt(s.youtube.subscribers.v),delta:getDelta(s.youtube.subscribers)},{label:"Views",value:fmt(s.youtube.views.v),delta:getDelta(s.youtube.views)},{label:"Likes",value:fmt(s.youtube.likes.v),delta:getDelta(s.youtube.likes)},{label:"Videos",value:fmt(s.youtube.videos.v),delta:getDelta(s.youtube.videos)}]},
     {name:"TikTok",metrics:[{label:"Followers",value:fmt(s.tiktok.followers.v),delta:getDelta(s.tiktok.followers)},{label:"Video Views",value:fmt(s.tiktok.video_views.v),delta:getDelta(s.tiktok.video_views)},{label:"Likes",value:fmt(s.tiktok.likes.v),delta:getDelta(s.tiktok.likes)},{label:"Posts",value:fmt(s.tiktok.posts.v),delta:getDelta(s.tiktok.posts)}]},
     {name:"Twitter / X",metrics:[{label:"Followers",value:fmt(s.twitter.followers.v),delta:getDelta(s.twitter.followers)},{label:"Impressions",value:fmt(s.twitter.impressions.v),delta:getDelta(s.twitter.impressions)},{label:"Posts",value:fmt(s.twitter.posts.v),delta:getDelta(s.twitter.posts)}]}
@@ -1524,7 +1524,7 @@ function renderNewsletters(){
         <div><div class="nl-stat-label">Subscribers ${iTag('LinkedIn Analytics')}</div><div class="nl-stat-value">${fmt(M.newsletters.linkedin_newsletter.subscribers.v)}</div>${(()=>{const d=getDelta(M.newsletters.linkedin_newsletter.subscribers);if(d===null)return '<div class="nl-stat-delta flat">—</div>';const p=(Math.abs(d)*100).toFixed(1),cls=d>0?"pos":d<0?"neg":"flat",ar=d>0?"↑":d<0?"↓":"→";return `<div class="nl-stat-delta ${cls}">${ar} ${p}%</div>`;})()}</div>
         <div><div class="nl-stat-label">Article Views ${iTag('LinkedIn Analytics')}</div><div class="nl-stat-value">${fmt(li.article_views.v)}</div><div class="nl-stat-delta ${liavCls}">${liavdc}</div></div>
         <div><div class="nl-stat-label">Engagements ${iTag('LinkedIn Analytics')}</div><div class="nl-stat-value">${fmt(li.engagements.v)}</div><div class="nl-stat-delta ${liengCls}">${liengdc}</div></div>
-        <div><div class="nl-stat-label">Eng. Rate ${iTag('LinkedIn Analytics')}</div><div class="nl-stat-value">${li.engagement_rate.v}</div><div class="nl-stat-delta ${lierCls}">${lierdc}</div></div>
+        <div><div class="nl-stat-label">Eng. Rate ${iTag('LinkedIn Analytics')}</div><div class="nl-stat-value">${fmt(li.engagement_rate.v)}</div><div class="nl-stat-delta ${lierCls}">${lierdc}</div></div>
       </div>
     </div>`;
   document.querySelector('#mc-campaigns-table tbody').innerHTML=mc.campaigns.map(c=>`<tr><td>${c.name}</td><td class="num">${c.open_rate}</td><td class="num">${c.click_rate}</td><td class="num">${c.unsub_rate}</td></tr>`).join('')||'<tr><td colspan="4" style="text-align:center;color:#9ca3af;padding:20px">No campaigns this period</td></tr>';
@@ -1654,7 +1654,7 @@ function renderBlogs(){
         <div><div class="nl-stat-label">Sessions ${iTag('GA4')}</div><div class="nl-stat-value">${fmt(c.av_blog.sessions.v)}</div><div class="nl-stat-delta ${blogCls}">${blogSdc}</div></div>
         <div><div class="nl-stat-label">Views ${iTag('GA4')}</div><div class="nl-stat-value">${fmt(c.av_blog.views.v)}</div><div class="nl-stat-delta ${blogVCls}">${blogVdc}</div></div>
         <div><div class="nl-stat-label">Users ${iTag('GA4')}</div><div class="nl-stat-value">${fmt(c.av_blog.users.v)}</div><div class="nl-stat-delta ${blogUCls}">${blogUdc}</div></div>
-        <div><div class="nl-stat-label">Eng. Rate ${iTag('GA4')}</div><div class="nl-stat-value">${c.av_blog.engagement_rate.v}</div><div class="nl-stat-delta ${blogErCls}">${blogErdc}</div></div>
+        <div><div class="nl-stat-label">Eng. Rate ${iTag('GA4')}</div><div class="nl-stat-value">${fmt(c.av_blog.engagement_rate.v)}</div><div class="nl-stat-delta ${blogErCls}">${blogErdc}</div></div>
       </div></div>`+
     `<div class="nl-card"><div class="nl-card-header"><span class="nl-card-title">AV Blog</span><span style="font-size:10px;color:var(--gray-400);font-weight:500;margin-left:6px">Top Posts</span></div>
       <table class="nl-posts-table"><thead><tr><th>Post ${iTag('GA4')}</th><th class="nl-pt-num">Sessions</th><th class="nl-pt-view">View</th></tr></thead>
