@@ -2744,18 +2744,18 @@
           "yoy": null
         },
         "engagement_rate": {
-          "v": null,
+          "v": "86s avg",
           "mom": null,
           "yoy": null
         },
         "form_submissions": {
-          "v": null,
+          "v": 32,
           "mom": null,
           "yoy": null
         },
         "event_count": {
-          "v": null,
-          "mom": null,
+          "v": 11853,
+          "mom": 0.098,
           "yoy": null
         },
         "traffic": [
@@ -2823,7 +2823,7 @@
             "change": null
           }
         ],
-        "note": "form_submissions and event_count not captured this cycle (ga4_pull.py doesn't collect these fields yet); engagement_rate not available."
+        "note": "Form Submissions (32) sourced from the Fluent Forms WordPress plugin, not GA4 \u2014 GA4's 'Contact_Form_Submit' event showed 2,784 for July, confirmed via Fluent Forms to be a broken/overcounting tracking event, not real submissions. No mom comparison shown for Form Submissions since June's stored figure (9) came from that same unreliable GA4 metric and isn't a fair baseline."
       },
       "social": {
         "linkedin": {
