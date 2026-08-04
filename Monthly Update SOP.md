@@ -33,6 +33,10 @@ This saves `ga4_YYYY-MM.json` in the folder. Attach it to your Claude prompt in 
 
 > **First time only:** see Connector Setup Guide.md for the one-time Google Cloud setup.
 
+> **Form Submissions cross-check:** GA4's `Contact_Form_Submit` event is known to badly overcount (2,784 vs. 32 real submissions in July 2026) and should not be trusted as-is. Check the real number at:
+> `https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports`
+> Use the Fluent Forms number for the dashboard's Form Submissions metric until the GA4 tracking issue is fixed by the webmaster. Once it's confirmed fixed, re-validate one month side-by-side before trusting GA4 again.
+
 ---
 
 ## Step 2 — Eventbrite Events Data (2 minutes)
@@ -108,6 +112,8 @@ Substack: Pull O'Daily and Startup Strategies stats for [Month Year] using Chrom
 
 Social: [Attach Confetti PDF — or "Pull from Metricool"]
 Mailchimp: Pull from Mailchimp MCP.
+
+Form Submissions: [Check https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports and paste the real total — don't rely on GA4's Contact_Form_Submit event until the webmaster confirms it's fixed]
 
 Build the month data JSON and run add_month.py, then regenerate the dashboard.
 ```
