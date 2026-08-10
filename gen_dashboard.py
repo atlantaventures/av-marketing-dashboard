@@ -664,6 +664,7 @@ const DATA = {
       content:{
         odaily:{
           subscribers:{v:1217},
+          traffic_sources:{email:0.7944,direct:0.1292,social:0.0171,substack:0.0128,search:0.0465},
           sessions:{v:null,mom:null,yoy:null},views:{v:2210,mom:-0.5243,yoy:null},
           open_rate:{v:"42.73%",mom:null,yoy:null},new_subs:{v:45,mom:0.875,yoy:null},
           top_posts:[
@@ -674,6 +675,7 @@ const DATA = {
         },
         startup_strategies:{
           subscribers:{v:322},
+          traffic_sources:{email:0.7514,direct:0.1383,social:0.0535,substack:0.0337,search:0.0230},
           sessions:{v:null,mom:null,yoy:null},views:{v:963,mom:0.1146,yoy:null},
           open_rate:{v:"37.88%",mom:null,yoy:null},new_subs:{v:64,mom:5.4,yoy:null},
           ai_assisted:true,
