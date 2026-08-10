@@ -232,6 +232,44 @@ def pull_blog(client, start, end, limit=10):
         "top_posts": top_posts,
     }
 
+def pull_blog_traffic_sources(client, start, end):
+    """Sessions by GA4 default channel group, scoped to blog pages only.
+    Maps onto the dashboard's av_blog.traffic_sources schema
+    ({direct, organic_search, ai_assistant, referral} as fractions of total
+    blog sessions). Any channel group not explicitly mapped (e.g. Organic
+    Social, Email, Unassigned) folds into "referral" so the four fractions
+    still sum to ~1."""
+    req = RunReportRequest(
+        property=f"properties/{PROPERTY_ID}",
+        date_ranges=[DateRange(start_date=start, end_date=end)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="sessionDefaultChannelGroup")],
+        metrics=[Metric(name="sessions")],
+        limit=250,
+    )
+    channel_sessions = {}
+    for row in client.run_report(req).rows:
+        page = row.dimension_values[0].value
+        if not page.startswith(BLOG_PATH_PREFIX):
+            continue
+        channel = row.dimension_values[1].value
+        sessions = int(row.metric_values[0].value)
+        channel_sessions[channel] = channel_sessions.get(channel, 0) + sessions
+
+    total = sum(channel_sessions.values())
+    if not total:
+        return {"direct": None, "organic_search": None, "ai_assistant": None, "referral": None}
+
+    buckets = {"direct": 0, "organic_search": 0, "ai_assistant": 0, "referral": 0}
+    channel_map = {
+        "Direct": "direct",
+        "Organic Search": "organic_search",
+        "AI Assistant": "ai_assistant",
+    }
+    for channel, sessions in channel_sessions.items():
+        buckets[channel_map.get(channel, "referral")] += sessions
+
+    return {k: round(v / total, 4) for k, v in buckets.items()}
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -245,6 +283,8 @@ def main():
     print(f"\nPulling GA4 data: {start} → {end}")
 
     events = pull_events(client, start, end)
+    blog = pull_blog(client, start, end)
+    blog["traffic_sources"] = pull_blog_traffic_sources(client, start, end)
 
     result = {
         "period":          start[:7],
@@ -257,7 +297,7 @@ def main():
         "form_submissions": events["form_submissions"],
         "form_event_matched": events["form_event_matched"],
         "event_breakdown": events["event_breakdown"],
-        "blog":            pull_blog(client, start, end),
+        "blog":            blog,
     }
 
     print(json.dumps(result, indent=2))
