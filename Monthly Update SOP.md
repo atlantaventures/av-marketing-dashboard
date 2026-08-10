@@ -55,9 +55,9 @@ This saves `eventbrite_YYYY-MM.json` with RSVPs, attendance, and show rate for H
 
 ## Step 3 — Social Data
 
-**If Metricool MCP is connected** (preferred): Claude pulls this automatically. Skip to Step 4.
+**If Metricool MCP is connected** (preferred): Claude pulls channel totals (followers, impressions, engagements, posts) automatically. Skip to Step 4.
 
-**If not connected**: ask Evie Lutz at Confetti for the monthly Metricool PDF report and attach it to your Claude prompt in Step 7.
+**Either way, still ask Evie Lutz at Confetti for the monthly Metricool PDF report and attach it to your Claude prompt in Step 7.** The MCP connection only exposes aggregate channel totals — it has no tool for listing individual published posts, so the PDF is the only source for "Top Posts" (captions, per-post stats, and links) in the Social section.
 
 ---
 

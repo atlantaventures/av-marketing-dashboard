@@ -514,8 +514,8 @@ const DATA = {
       rec:"• Re-baseline whether the July 20 GA4 fix actually resolved the traffic drop — July's own sessions are still low, so either the fix didn't fully address it or there's a separate, real decline underway\n• Chase the AV Blog session collapse specifically; a 79% single-month drop is large enough to warrant checking GA4 filters, redirects, and whether blog content is still being indexed/linked from key pages\n• Keep sourcing Form Submissions from Fluent Forms going forward rather than GA4; ask the webmaster to fix or remove the 'Contact_Form_Submit' GA4 event since it's off by roughly 87x and not fixable by filtering alone\n• Now that ga4_pull.py captures engagement rate, event breakdown, and blog metrics automatically, use August's pull (paired with a Fluent Forms check) to establish a clean comparison point for all of these"
     },
     social:{
-      read:"• LinkedIn impressions recovered to 21,291 (+26% vs June's 16,894 low), and Instagram impressions jumped to 27,694 — more than 4x June's 6,402\n• LinkedIn engagements are reported at 3,509, roughly 8x any prior 2026 month (range was 409-741 Apr-Jun); this is large enough that it's worth confirming Metricool is counting 'engagements' the same way this month as in prior months before treating it as a real signal\n• LinkedIn followers dipped slightly to 11,487 (-0.4%), the first monthly decline of the year\n• Instagram followers and posting volume both grew (3,947 followers, +0.6%; 15 posts, matching June's most-active pace)\n• Facebook and Twitter/X both declined slightly (Facebook +2 followers to 194; Twitter -62 followers to 2,794); TikTok remains flat at 130 followers with effectively no tracked activity\n• Individual top-post detail (captions, per-post impressions/likes) isn't available through the current Metricool MCP connection — it only exposes aggregate metrics, not a list of published posts — so this section is running on totals only until that's resolved with Confetti",
-      rec:"• Verify the LinkedIn engagement figure (3,509) against Metricool's own dashboard or with Evie before reporting it as an 8x improvement; if it's a genuine metric-definition change, prior months' engagement figures aren't a clean comparison anymore\n• Ask Evie/Confetti whether Metricool's MCP can expose individual post data, or continue pulling the monthly PDF specifically for top-post detail, since the current connector only returns channel totals\n• Look into what drove the Instagram and LinkedIn impression recovery this month and try to repeat it — both channels had their weakest month in June and rebounded together in July"
+      read:"• LinkedIn impressions recovered to 21,291 (+26% vs June's 16,894 low), and Instagram impressions jumped to 27,694 — more than 4x June's 6,402\n• LinkedIn engagements are reported at 3,509, roughly 8x any prior 2026 month (range was 409-741 Apr-Jun); this is large enough that it's worth confirming Metricool is counting 'engagements' the same way this month as in prior months before treating it as a real signal\n• LinkedIn followers dipped slightly to 11,487 (-0.4%), the first monthly decline of the year\n• Instagram followers and posting volume both grew (3,947 followers, +0.6%; 15 posts, matching June's most-active pace)\n• Facebook and Twitter/X both declined slightly (Facebook +2 followers to 194; Twitter -62 followers to 2,794); TikTok remains flat at 130 followers with effectively no tracked activity\n• Top posts are now populated with real captions, stats, and links, sourced from Evie's Confetti/Metricool PDF report since the MCP connection itself only exposes channel totals, not individual posts\n• The Christian Ries / Perlant post was the standout on both LinkedIn (6,821 impressions, 143 reactions) and Instagram top-5, while the South Downtown founders post led Instagram overall (7,502 views) — portfolio and founder-story content is clearly outperforming other formats this month",
+      rec:"• Verify the LinkedIn engagement figure (3,509) against Metricool's own dashboard or with Evie before reporting it as an 8x improvement; if it's a genuine metric-definition change, prior months' engagement figures aren't a clean comparison anymore\n• Keep the Confetti/Metricool PDF in the monthly workflow specifically for top-post detail, since the MCP connector itself only returns channel totals — this is now a standing step, not a one-off\n• Do more of what's working: portfolio founder-story content (Perlant, South Downtown, Hannon Hill) is dominating the top-posts list across every channel this month — lean into that format for August"
     },
     newsletters:{
       read:"• Mailchimp sent 3 campaigns in July after a quiet stretch: 'July AV Insights' (26.3% open, 1.5% click), 'July 2026 HOTP' (25.0% open, 1.3% click), and a resend of the HOTP (13.1% open, 1.0% click, unsub rate 0.3% — the highest of the three, typical for resends)\n• The Mailchimp subscriber count shown this month (3,109) is scoped specifically to the 'Atlanta Ventures Newsletter' audience, confirmed with Jacey — it isn't directly comparable to June's 2,263, which may have used a different scope, so don't read the jump as +37% real growth\n• LinkedIn Newsletter published 2 articles in July after no sends in June: 'Hot Off The Press' (1,497 views, 42% email open rate) and 'The Perlant Is Headed to Nashville' (1,573 views, 43% email open rate) — both performed similarly\n• LinkedIn Newsletter subscribers grew to 3,523 (+2.7%), continuing an unbroken 7-month growth streak",
@@ -591,18 +591,35 @@ const DATA = {
         linkedin:{
           followers:{v:11487,mom:-0.0039,yoy:null},impressions:{v:21291,mom:0.2603,yoy:null},
           engagements:{v:3509,mom:7.5795,yoy:null},posts:{v:15,mom:0.1538,yoy:null},
-          // NOTE FOR JACEY: connect Metricool MCP to auto-populate post URLs and previews each month.
-          top_posts:[]
+          top_posts:[
+            {date:"Jul 24",caption:"Christian Ries on why he built The Perlant",impressions:6821,reach:6821,likes:143,engagements:143,eng_rate:"6.86%",url:"https://www.linkedin.com/feed/update/urn:li:share:7486456969248219136"},
+            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong on the gap in enterprise video",impressions:3166,reach:3166,likes:78,engagements:78,eng_rate:"14.28%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7483223156187537408"},
+            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",impressions:1314,reach:1314,likes:64,engagements:64,eng_rate:"32.95%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7480619517900152832"},
+            {date:"Jul 27",caption:"Ty Abernethy — making hiring human again since 2018",impressions:3282,reach:3282,likes:57,engagements:57,eng_rate:"18.19%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7487598578287230976"},
+            {date:"Jul 16",caption:"The Healthy Human Economy — health tech room to be in",impressions:1593,reach:1593,likes:38,engagements:38,eng_rate:"3.52%",url:"https://www.linkedin.com/feed/update/urn:li:share:7483543689731031043"}
+          ]
         },
         instagram:{
           followers:{v:3947,mom:0.0056,yoy:null},impressions:{v:27694,mom:3.3258,yoy:null},
           engagements:{v:330,mom:0.4103,yoy:null},posts:{v:15,mom:-0.4828,yoy:null},
-          top_posts:[]
+          top_posts:[
+            {date:"Jul 20",caption:"Where Atlanta's founders got their start (South Downtown)",views:7502,reach:2950,impressions:2950,likes:129,engagements:129,eng_rate:"5.08%",url:"https://www.instagram.com/p/DbBvYXolVBK/"},
+            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong on the gap in enterprise video",views:1226,reach:454,impressions:454,likes:34,engagements:34,eng_rate:"10.13%",url:"https://www.instagram.com/p/Da0sCx6nB1S/"},
+            {date:"Jul 22",caption:"Where the Atlanta Ventures team got their start",views:909,reach:372,impressions:372,likes:24,engagements:24,eng_rate:"7.53%",url:"https://www.instagram.com/p/DbGlbhynJqC/"},
+            {date:"Jul 24",caption:"Christian Ries on building The Perlant",views:535,reach:281,impressions:281,likes:20,engagements:20,eng_rate:"7.12%",url:"https://www.instagram.com/p/DbLrJn7FdTH/"},
+            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",views:504,reach:224,impressions:224,likes:18,engagements:18,eng_rate:"9.82%",url:"https://www.instagram.com/p/DaiMGUNnIUh/"}
+          ]
         },
         facebook:{
           followers:{v:194,mom:0.0104,yoy:null},engagements:{v:26,mom:-0.5357,yoy:null},
           engagement_rate:{v:null,mom:null,yoy:null},posts:{v:14,mom:-0.3,yoy:null},
-          top_posts:[]
+          top_posts:[
+            {date:"Jul 22",caption:"Where the Atlanta Ventures team got their start",views:68,reach:32,impressions:32,engagements:7,eng_rate:"21.88%",url:"https://facebook.com/549464963845954/posts/1644107171048389"},
+            {date:"Jul 29",caption:"Hannon Hill is fixing a problem every university has",views:53,reach:29,impressions:29,engagements:5,eng_rate:"20.69%",url:"https://facebook.com/549464963845954/posts/1650485267077246"},
+            {date:"Jul 16",caption:"The Healthy Human Economy — health tech room to be in",views:34,reach:30,impressions:30,engagements:1,eng_rate:"10%",url:"https://facebook.com/549464963845954/posts/1638607921598314"},
+            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",views:47,reach:35,impressions:35,engagements:1,eng_rate:"8.57%",url:"https://facebook.com/549464963845954/posts/1631430815649358"},
+            {date:"Jul 31",caption:"Next Healthcare Entrepreneur Meetup, with Women + Tech",views:17,reach:13,impressions:13,engagements:1,eng_rate:"7.69%",url:"https://facebook.com/549464963845954/posts/1652670013525438"}
+          ]
         },
         youtube:{
           subscribers:{v:226,mom:-0.0088,yoy:null},views:{v:247,mom:-0.8581,yoy:null},
