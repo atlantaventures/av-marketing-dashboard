@@ -401,6 +401,10 @@
         </table>
       </div>
     </div>
+    <div style="margin-bottom:4px">
+      <div class="section-eyebrow" style="margin-bottom:10px">Kathryn O'Daily — Personal Social</div>
+      <div class="channel-grid" id="kathryn-social-grid"></div>
+    </div>
     <div class="narrative-grid">
       <div class="narrative-block"><div class="narrative-label">The Read</div><div class="narrative-text" contenteditable="true" id="n-social-read"></div></div>
       <div class="narrative-block"><div class="narrative-label">Recommendation</div><div class="narrative-text" contenteditable="true" id="n-social-rec"></div></div>
@@ -633,6 +637,18 @@ const DATA = {
         twitter:{
           followers:{v:2794,mom:-0.0217,yoy:null},impressions:{v:592,mom:null,yoy:null},
           posts:{v:14,mom:0.1667,yoy:null}
+        }
+      },
+      kathryn_social:{
+        linkedin:{
+          followers:{v:8999,mom:0.0183,yoy:null},impressions:{v:58922,mom:-0.3894,yoy:null},
+          engagements:{v:790,mom:-0.2972,yoy:null},posts:{v:14,mom:0.1667,yoy:null},
+          top_posts:[]
+        },
+        instagram:{
+          followers:{v:894,mom:0.0182,yoy:null},impressions:{v:280,mom:-0.7225,yoy:null},
+          engagements:{v:52,mom:-0.5,yoy:null},posts:{v:26,mom:0.3684,yoy:null},
+          top_posts:[]
         }
       },
       newsletters:{
@@ -1498,6 +1514,19 @@ function renderSocial(){
     : '<tr><td colspan="6" style="text-align:center;color:#9ca3af;padding:20px">No post data available</td></tr>';
 }
 
+// ── KATHRYN O'DAILY PERSONAL SOCIAL ──────────
+function renderKathrynSocial(){
+  const ks=M.kathryn_social;
+  const grid=document.getElementById('kathryn-social-grid');
+  if(!grid) return;
+  if(!ks){grid.innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';return;}
+  const channels=[
+    {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt(ks.linkedin.followers.v),delta:getDelta(ks.linkedin.followers)},{label:"Impressions",value:fmt(ks.linkedin.impressions.v),delta:getDelta(ks.linkedin.impressions)},{label:"Engagements",value:fmt(ks.linkedin.engagements.v),delta:getDelta(ks.linkedin.engagements)},{label:"Posts",value:fmt(ks.linkedin.posts.v),delta:getDelta(ks.linkedin.posts)}]},
+    {name:"Instagram",metrics:[{label:"Followers",value:fmt(ks.instagram.followers.v),delta:getDelta(ks.instagram.followers)},{label:"Post Views",value:fmt(ks.instagram.impressions.v),delta:getDelta(ks.instagram.impressions)},{label:"Engagements",value:fmt(ks.instagram.engagements.v),delta:getDelta(ks.instagram.engagements)},{label:"Posts",value:fmt(ks.instagram.posts.v),delta:getDelta(ks.instagram.posts)}]}
+  ];
+  grid.innerHTML=channels.map(ch=>`<div class="channel-card ${ch.primary?'primary-channel':''}"><div class="channel-header"><span class="channel-name">${ch.name}</span>${ch.primary?'<span class="channel-primary-badge">Primary</span>':''} ${iTag('Metricool (brand 5146601)')}</div>${ch.metrics.map(m=>`<div class="channel-metric"><div class="channel-metric-label">${m.label}</div><div class="channel-metric-value">${m.value} ${dInline(m.delta)}</div></div>`).join('')}</div>`).join('');
+}
+
 // ── NEWSLETTERS ──────────────────────────────
 function renderNewsletters(){
   let mc=M.newsletters.mailchimp,li=M.newsletters.linkedin_newsletter;
@@ -2011,7 +2040,7 @@ window.addEventListener('scroll',()=>{
 
 // ── INIT ─────────────────────────────────────
 function init(){
-  renderGoals();renderWeb();renderSocial();renderSocialTrend();renderLIIGTrend();renderNewsletters();renderBlogs();renderBlogTrend();renderSubstack6Mo();renderEvents();renderNarratives();renderContextLog();loadNotes();
+  renderGoals();renderWeb();renderSocial();renderKathrynSocial();renderSocialTrend();renderLIIGTrend();renderNewsletters();renderBlogs();renderBlogTrend();renderSubstack6Mo();renderEvents();renderNarratives();renderContextLog();loadNotes();
   document.getElementById('footer-sources').innerHTML='Sources: GA4 &middot; Mailchimp &middot; Sprout Social &middot; Substack &middot; Zoom &middot; Eventbrite<br>Pulled: '+DATA.meta.pulled;
 }
 document.addEventListener('DOMContentLoaded',init);
