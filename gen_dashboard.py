@@ -290,7 +290,8 @@ html = """<!DOCTYPE html>
   <div class="tab-nav-inner">
     <button class="tab-link active" onclick="scrollToSection('section-goals',this)">Goals</button>
     <button class="tab-link" onclick="scrollToSection('section-web',this)">Web</button>
-    <button class="tab-link" onclick="scrollToSection('section-social',this)">Social</button>
+    <button class="tab-link" onclick="scrollToSection('section-social',this)">AV Social</button>
+    <button class="tab-link" onclick="scrollToSection('section-ko-social',this)">KO Social</button>
     <button class="tab-link" onclick="scrollToSection('section-newsletters',this)">Newsletters</button>
     <button class="tab-link" onclick="scrollToSection('section-content',this)">Blogs</button>
     <button class="tab-link" onclick="scrollToSection('section-events',this)">Events</button>
@@ -399,7 +400,7 @@ html = """<!DOCTYPE html>
   <div class="divider"></div>
 
   <section class="section" id="section-social">
-    <div class="section-eyebrow">Social</div>
+    <div class="section-eyebrow">AV Social</div>
     <div class="channel-grid" id="channel-grid"></div>
     <div id="social-li-ig-chart" style="margin-bottom:16px"></div>
     <div style="margin-bottom:4px">
@@ -411,17 +412,25 @@ html = """<!DOCTYPE html>
         </table>
       </div>
     </div>
-    <div style="margin-bottom:4px">
-      <div class="section-eyebrow" style="margin-bottom:10px">Kathryn O'Daily — Personal Social</div>
-      <div class="channel-grid" id="kathryn-social-grid"></div>
-      <div id="kathryn-social-li-ig-chart" style="margin-top:16px"></div>
-    </div>
     <div class="narrative-grid">
       <div class="narrative-block"><div class="narrative-label">The Read</div><div class="narrative-text" contenteditable="true" id="n-social-read"></div></div>
       <div class="narrative-block"><div class="narrative-label">Recommendation</div><div class="narrative-text" contenteditable="true" id="n-social-rec"></div></div>
     </div>
     <button class="notes-toggle" onclick="toggleNotes('notes-social',this)"><svg width="7" height="11" viewBox="0 0 7 11" fill="none"><path d="M1 1l5 4.5L1 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Notes &amp; Decisions</button>
     <div class="notes-panel" id="notes-social"><div class="notes-panel-label">Notes &amp; Decisions</div><textarea class="notes-textarea" placeholder="Add notes, decisions, or context about social…" oninput="saveNote('social',this.value)"></textarea></div>
+  </section>
+  <div class="divider"></div>
+
+  <section class="section" id="section-ko-social">
+    <div class="section-eyebrow">KO Social</div>
+    <div class="channel-grid" id="kathryn-social-grid"></div>
+    <div id="kathryn-social-li-ig-chart" style="margin-bottom:16px"></div>
+    <div class="narrative-grid">
+      <div class="narrative-block"><div class="narrative-label">The Read</div><div class="narrative-text" contenteditable="true" id="n-ko-social-read"></div></div>
+      <div class="narrative-block"><div class="narrative-label">Recommendation</div><div class="narrative-text" contenteditable="true" id="n-ko-social-rec"></div></div>
+    </div>
+    <button class="notes-toggle" onclick="toggleNotes('notes-ko-social',this)"><svg width="7" height="11" viewBox="0 0 7 11" fill="none"><path d="M1 1l5 4.5L1 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Notes &amp; Decisions</button>
+    <div class="notes-panel" id="notes-ko-social"><div class="notes-panel-label">Notes &amp; Decisions</div><textarea class="notes-textarea" placeholder="Add notes, decisions, or context about Kathryn's personal social…" oninput="saveNote('ko-social',this.value)"></textarea></div>
   </section>
   <div class="divider"></div>
 
@@ -531,6 +540,10 @@ const DATA = {
     social:{
       read:"• LinkedIn impressions recovered to 21,291 (+26% vs June's 16,894 low), and Instagram impressions jumped to 27,694 — more than 4x June's 6,402\\n• LinkedIn engagements are reported at 3,509, roughly 8x any prior 2026 month (range was 409-741 Apr-Jun); this is large enough that it's worth confirming Metricool is counting 'engagements' the same way this month as in prior months before treating it as a real signal\\n• LinkedIn followers dipped slightly to 11,487 (-0.4%), the first monthly decline of the year\\n• Instagram followers and posting volume both grew (3,947 followers, +0.6%; 15 posts, matching June's most-active pace)\\n• Facebook and Twitter/X both declined slightly (Facebook +2 followers to 194; Twitter -62 followers to 2,794); TikTok remains flat at 130 followers with effectively no tracked activity\\n• Top posts are now populated with real captions, stats, and links, sourced from Evie's Confetti/Metricool PDF report since the MCP connection itself only exposes channel totals, not individual posts\\n• The Christian Ries / Perlant post was the standout on both LinkedIn (6,821 impressions, 143 reactions) and Instagram top-5, while the South Downtown founders post led Instagram overall (7,502 views) — portfolio and founder-story content is clearly outperforming other formats this month",
       rec:"• Verify the LinkedIn engagement figure (3,509) against Metricool's own dashboard or with Evie before reporting it as an 8x improvement; if it's a genuine metric-definition change, prior months' engagement figures aren't a clean comparison anymore\\n• Keep the Confetti/Metricool PDF in the monthly workflow specifically for top-post detail, since the MCP connector itself only returns channel totals — this is now a standing step, not a one-off\\n• Do more of what's working: portfolio founder-story content (Perlant, South Downtown, Hannon Hill) is dominating the top-posts list across every channel this month — lean into that format for August"
+    },
+    ko_social:{
+      read:"• Kathryn's LinkedIn grew to 8,999 followers (+1.8% vs June's 8,837) on 14 posts, up from 12 in June\\n• LinkedIn impressions fell to 58,922 (-38.9% vs June's 96,479), but June's total was inflated by one outlier post (50,828 impressions in a single day) — excluding that, July's pace is actually more typical\\n• LinkedIn engagements dropped to 790 (-29.7% vs June's 1,124), tracking the lower impression volume; engagement rate held roughly steady at 1.34% (vs 1.17% in June)\\n• Instagram followers grew to 894 (+1.8%) on 26 posts, up from 19 in June — posting volume is trending up on both channels\\n• Instagram's impressions/engagements figures (280 / 52) are unreliable this month: Metricool only returned post-level reach and interaction data for 1 of the 26 posting days, the same gap seen in June and every other month pulled back to January — don't read much into the month-over-month change on these two numbers specifically\\n• No Top Posts data yet for this section — the Confetti/Metricool PDF Evie provides covers the AV brand accounts, not Kathryn's personal profiles, so there's currently no source for individual post-level detail here",
+      rec:"• Treat Instagram impressions/engagements as directional only until there's a better data source — the sparse coverage isn't a one-off, it's shown up in every month pulled back to January\\n• If Kathryn's personal Instagram performance matters enough to report precisely, ask Evie whether Confetti's PDF can be extended to cover it, the same way Top Posts and reliable IG stats got solved for the other channels\\n• LinkedIn's posting cadence and follower growth are both trending in the right direction — worth watching whether the July dip in impressions/engagements continues into August now that June's outlier post is out of the comparison"
     },
     newsletters:{
       read:"• Mailchimp sent 3 campaigns in July after a quiet stretch: 'July AV Insights' (26.3% open, 1.5% click), 'July 2026 HOTP' (25.0% open, 1.3% click), and a resend of the HOTP (13.1% open, 1.0% click, unsub rate 0.3% — the highest of the three, typical for resends)\\n• The Mailchimp subscriber count shown this month (3,109) is scoped specifically to the 'Atlanta Ventures Newsletter' audience, confirmed with Jacey — it isn't directly comparable to June's 2,263, which may have used a different scope, so don't read the jump as +37% real growth\\n• LinkedIn Newsletter published 2 articles in July after no sends in June: 'Hot Off The Press' (1,497 views, 42% email open rate) and 'The Perlant Is Headed to Nashville' (1,573 views, 43% email open rate) — both performed similarly\\n• LinkedIn Newsletter subscribers grew to 3,523 (+2.7%), continuing an unbroken 7-month growth streak",
@@ -1433,7 +1446,7 @@ function applyFilter(){
   } else {
     cEl.style.display='none';
   }
-  closeFilter();renderWeb();renderSocial();renderSocialTrend();renderNewsletterCharts();renderNarratives();
+  closeFilter();renderWeb();renderSocial();renderKathrynSocial();renderSocialTrend();renderNewsletterCharts();renderNarratives();
 }
 document.addEventListener('click',e=>{
   const pop=document.getElementById('filter-popover'),btn=document.getElementById('period-btn');
@@ -1923,6 +1936,7 @@ const NARRATIVE_IDS=[
   ['n-goals-read','n-goals-rec','goals'],
   ['n-web-read','n-web-rec','web'],
   ['n-social-read','n-social-rec','social'],
+  ['n-ko-social-read','n-ko-social-rec','ko_social'],
   ['n-newsletters-read','n-newsletters-rec','newsletters'],
   ['n-content-read','n-content-rec','content'],
   ['n-events-read','n-events-rec','events']
@@ -1977,7 +1991,7 @@ function saveNote(section, val){
   localStorage.setItem(key, val);
 }
 function loadNotes(){
-  ['goals','web','social','newsletters','content','events'].forEach(s=>{
+  ['goals','web','social','ko-social','newsletters','content','events'].forEach(s=>{
     const key='av-notes-'+period+'-'+s;
     const val=localStorage.getItem(key);
     const panel=document.getElementById('notes-'+s);
@@ -2077,7 +2091,7 @@ function scrollToSection(id, btn){
   btn.classList.add('active');
 }
 // Highlight tab on scroll
-const sections=[['section-goals','Goals'],['section-web','Web'],['section-social','Social'],['section-newsletters','Newsletters'],['section-content','Blogs'],['section-events','Events'],['section-context','Context Log']];
+const sections=[['section-goals','Goals'],['section-web','Web'],['section-social','AV Social'],['section-ko-social','KO Social'],['section-newsletters','Newsletters'],['section-content','Blogs'],['section-events','Events'],['section-context','Context Log']];
 window.addEventListener('scroll',()=>{
   const offset=62+44+32;
   let current=0;
