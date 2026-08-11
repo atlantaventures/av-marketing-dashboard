@@ -414,6 +414,7 @@ html = """<!DOCTYPE html>
     <div style="margin-bottom:4px">
       <div class="section-eyebrow" style="margin-bottom:10px">Kathryn O'Daily — Personal Social</div>
       <div class="channel-grid" id="kathryn-social-grid"></div>
+      <div id="kathryn-social-li-ig-chart" style="margin-top:16px"></div>
     </div>
     <div class="narrative-grid">
       <div class="narrative-block"><div class="narrative-label">The Read</div><div class="narrative-text" contenteditable="true" id="n-social-read"></div></div>
@@ -1145,6 +1146,19 @@ const DATA = {
       {period:"Jul 2026",linkedin:11487,instagram:3947,youtube:226,twitter:2794,facebook:194,li_impressions:21291,li_engagements:3509,ig_impressions:27694,ig_engagements:330}
       // ADD SOCIAL MONTH HERE ↑
     ],
+    // Kathryn O'Daily personal social — Metricool brand 5146601. IG impressions/engagements
+    // are sparse most months (Metricool only returns post-level reach/interaction data for
+    // ~1 posting day out of the whole month) — treat IG figures here as directional, not exact.
+    kathryn_social:[
+      {period:"Jan 2026",li_impressions:20323,li_engagements:516,ig_impressions:493,ig_engagements:88},
+      {period:"Feb 2026",li_impressions:64421,li_engagements:1042,ig_impressions:2249,ig_engagements:213},
+      {period:"Mar 2026",li_impressions:30985,li_engagements:551,ig_impressions:363,ig_engagements:50},
+      {period:"Apr 2026",li_impressions:50266,li_engagements:1427,ig_impressions:268,ig_engagements:42},
+      {period:"May 2026",li_impressions:62410,li_engagements:1098,ig_impressions:717,ig_engagements:46},
+      {period:"Jun 2026",li_impressions:96479,li_engagements:1124,ig_impressions:1009,ig_engagements:104},
+      {period:"Jul 2026",li_impressions:58922,li_engagements:790,ig_impressions:280,ig_engagements:52}
+      // ADD KATHRYN SOCIAL MONTH HERE ↑
+    ],
     // Web sessions: actuals from GA4. Jan–Apr pending from Jacey/GA4 pull.
     web_sessions:[
       {period:"Jan 2026",sessions:5840},
@@ -1535,6 +1549,29 @@ function renderKathrynSocial(){
     {name:"Instagram",metrics:[{label:"Followers",value:fmt(ks.instagram.followers.v),delta:getDelta(ks.instagram.followers)},{label:"Post Views",value:fmt(ks.instagram.impressions.v),delta:getDelta(ks.instagram.impressions)},{label:"Engagements",value:fmt(ks.instagram.engagements.v),delta:getDelta(ks.instagram.engagements)},{label:"Posts",value:fmt(ks.instagram.posts.v),delta:getDelta(ks.instagram.posts)}]}
   ];
   grid.innerHTML=channels.map(ch=>`<div class="channel-card ${ch.primary?'primary-channel':''}"><div class="channel-header"><span class="channel-name">${ch.name}</span>${ch.primary?'<span class="channel-primary-badge">Primary</span>':''} ${iTag('Metricool (brand 5146601)')}</div>${ch.metrics.map(m=>`<div class="channel-metric"><div class="channel-metric-label">${m.label}</div><div class="channel-metric-value">${m.value} ${dInline(m.delta)}</div></div>`).join('')}</div>`).join('');
+  renderKathrynSocialTrend();
+}
+
+// ── KATHRYN O'DAILY 4-CHART TREND ────────────
+function renderKathrynSocialTrend(){
+  const all=DATA.trends.kathryn_social;
+  if(!all||!all.length) return;
+  const recent=all.slice(-6);
+  if(!recent.length) return;
+  const labels=recent.map(d=>d.period);
+  const container=document.getElementById('kathryn-social-li-ig-chart');
+  if(!container) return;
+  container.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="nl-card"><div class="nl-card-header" style="margin-bottom:12px"><span class="nl-card-title">LinkedIn Impressions</span>${iTag('Metricool (brand 5146601)')}</div><div style="position:relative;height:160px"><canvas id="chart-ks-li-impressions"></canvas></div></div><div class="nl-card"><div class="nl-card-header" style="margin-bottom:12px"><span class="nl-card-title">LinkedIn Engagements</span>${iTag('Metricool (brand 5146601)')}</div><div style="position:relative;height:160px"><canvas id="chart-ks-li-engagements"></canvas></div></div><div class="nl-card"><div class="nl-card-header" style="margin-bottom:12px"><span class="nl-card-title">Instagram Impressions</span>${iTag('Metricool (brand 5146601)')}</div><div style="position:relative;height:160px"><canvas id="chart-ks-ig-impressions"></canvas></div></div><div class="nl-card"><div class="nl-card-header" style="margin-bottom:12px"><span class="nl-card-title">Instagram Engagements</span>${iTag('Metricool (brand 5146601)')}</div><div style="position:relative;height:160px"><canvas id="chart-ks-ig-engagements"></canvas></div></div></div>`;
+  function mkChart(id,data,color){
+    if(chartInstances[id]) chartInstances[id].destroy();
+    const ctx=document.getElementById(id);
+    if(!ctx) return;
+    chartInstances[id]=new Chart(ctx,{type:'line',data:{labels,datasets:[{label:'',data,borderColor:color,backgroundColor:color+'18',tension:0.35,pointRadius:4,pointHoverRadius:6,borderWidth:2,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{mode:'index',intersect:false}},scales:{x:{grid:{display:false},ticks:{font:{family:'Poppins',size:9},color:'#9ca3af'}},y:{grid:{color:'#e4e4e2'},ticks:{font:{family:'Poppins',size:9},color:'#9ca3af'},border:{dash:[3,3]}}}}});
+  }
+  mkChart('chart-ks-li-impressions',recent.map(d=>d.li_impressions??null),'#2584c5');
+  mkChart('chart-ks-li-engagements',recent.map(d=>d.li_engagements??null),'#2584c5');
+  mkChart('chart-ks-ig-impressions',recent.map(d=>d.ig_impressions??null),'#c13584');
+  mkChart('chart-ks-ig-engagements',recent.map(d=>d.ig_engagements??null),'#c13584');
 }
 
 // ── NEWSLETTERS ──────────────────────────────
