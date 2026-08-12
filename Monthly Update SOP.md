@@ -12,11 +12,13 @@ Each month, you gather data from six sources and tell Claude. Claude assembles e
 
 | Channel | Source | How you get it |
 |---------|--------|---------------|
-| Web traffic | GA4 | Run `ga4_pull.py` (automatic) |
+| Web traffic | GA4 | Run `ga4_pull.py` (automatic) — now also includes AV Blog traffic sources |
 | Social (LinkedIn, Instagram, etc.) | Metricool | Claude pulls via Metricool MCP (if connected) or you share the Confetti PDF |
+| Kathryn's personal social (LinkedIn, Instagram) | Metricool | Claude pulls via Metricool MCP, brand ID `5146601` |
 | Mailchimp newsletter | Mailchimp | Claude pulls automatically via Mailchimp MCP |
 | LinkedIn Newsletter | LinkedIn Analytics | Two screenshots from the LinkedIn admin page |
-| Substack (O'Daily + Startup Strategies) | Substack | Claude reads via Chrome extension — no export needed |
+| Substack stats (O'Daily + Startup Strategies) | Substack | Claude reads via Chrome extension — no export needed |
+| **Substack traffic sources** (O'Daily + Startup Strategies) | Substack | **Manual — see Step 3a below** |
 | Events (HEM + Office Hours) | Eventbrite | Run `eventbrite_pull.py` (automatic, once set up) |
 
 ---
@@ -61,6 +63,22 @@ This saves `eventbrite_YYYY-MM.json` with RSVPs, attendance, and show rate for H
 
 ---
 
+## Step 3a — Substack Traffic Sources (5 minutes) — MANUAL, every month
+
+**This is the one data point Claude cannot pull automatically.** Claude in Chrome cannot reliably drive Substack's custom date-range picker on this specific page (typing into it breaks the page; setting the underlying input via script doesn't refresh the chart) — so this step has to be done by hand, every month, from these two pages:
+
+- O'Daily: `https://kathrynoday.substack.com/publish/stats/traffic`
+- Startup Strategies: `https://startupstrategies.substack.com/publish/stats/traffic`
+
+For each one:
+1. Click the date field (**click the calendar icon, don't type into the box**) and set the range to the first → last day of the previous month
+2. Scroll to the **"Traffic by source"** table
+3. Screenshot the table (or just tell Claude the Views by row) and send it to Claude
+
+Claude will bucket the rows into `email / direct / social / substack / search` (folding anything else — Other External, AI, Messaging — out of the total) and update the traffic-source card for that publication. This is the authoritative source for O'Daily's and Startup Strategies' Traffic Sources cards — don't substitute another page or a rough estimate.
+
+---
+
 ## Step 4 — LinkedIn Newsletter Screenshots (5 minutes)
 
 LinkedIn has no API, so grab two things from the admin page.
@@ -84,11 +102,12 @@ LinkedIn has no API, so grab two things from the admin page.
 ## Step 5 — Check Your Folder
 
 Before running the update, confirm you have:
-- [ ] `ga4_YYYY-MM.json` in the AV Data Analyst folder
+- [ ] `ga4_YYYY-MM.json` in the AV Data Analyst folder (re-run `ga4_pull.py` fresh each month — it now includes AV Blog traffic sources)
 - [ ] `eventbrite_YYYY-MM.json` in the AV Data Analyst folder
 - [ ] LinkedIn Newsletter screenshots (or confirmed no-send)
 - [ ] Confetti PDF or Metricool MCP connected
 - [ ] Claude in Chrome extension installed and logged into both Substack accounts
+- [ ] Substack "Traffic by source" screenshots for O'Daily and Startup Strategies (Step 3a — manual, from `/publish/stats/traffic` on each site)
 
 ---
 
@@ -110,7 +129,12 @@ Substack: Pull O'Daily and Startup Strategies stats for [Month Year] using Chrom
   Startup Strategies stats: https://startupstrategies.substack.com/publish/stats/emails
   Startup Strategies subscribers: https://startupstrategies.substack.com/publish/growth/subscribers
 
+Substack Traffic Sources (manual, see Step 3a): [Attach or paste the "Traffic by source" table for each publication]
+  O'Daily traffic: https://kathrynoday.substack.com/publish/stats/traffic
+  Startup Strategies traffic: https://startupstrategies.substack.com/publish/stats/traffic
+
 Social: [Attach Confetti PDF — or "Pull from Metricool"]
+Kathryn's personal social (LinkedIn + Instagram): Pull from Metricool, brand ID 5146601.
 Mailchimp: Pull from Mailchimp MCP.
 
 Form Submissions: [Check https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports and paste the real total — don't rely on GA4's Contact_Form_Submit event until the webmaster confirms it's fixed]
@@ -136,7 +160,7 @@ After Claude updates the data, send:
 
 ```
 Write the Read/Rec narratives for [Month Year] across all sections:
-Overview, Web, Social, Newsletters, Content, Events, and Goals.
+Overview, Web, AV Social, KO Social, Newsletters, Content, Events, and Goals.
 Use the same format and tone as June 2026.
 ```
 
@@ -203,6 +227,9 @@ Tell Claude: "Review and reset the annual goals." Claude will update the `goals`
 
 **Substack Chrome pull fails**
 → Make sure you're logged into both Substack accounts in Chrome. If Claude gets an access error, log in manually and ask Claude to try again.
+
+**Substack Traffic Sources page shows the wrong date range / won't update**
+→ This is expected — Claude can't drive that specific date picker via automation (confirmed, not worth re-attempting). Set the range yourself by clicking the calendar icon (not typing) and send Claude the resulting table. This is why Step 3a is manual.
 
 **Metricool MCP not returning data**
 → Check the MCP connection is active in Cowork settings. The token may have expired — see Connector Setup Guide.md.
