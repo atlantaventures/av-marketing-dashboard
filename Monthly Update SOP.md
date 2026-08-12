@@ -170,11 +170,11 @@ Review and ask Claude to adjust anything. When you're happy, Claude saves them t
 
 ## Step 8 — Evie Social Notes
 
-Once the dashboard is updated, Claude sends a message to **#reporting** in Slack (if connected):
+Once the dashboard is updated, Claude sends a message to **#marketing-dashboard** in Slack:
 
 > "Evie — the [Month] dashboard is ready. Please add your social notes and top post callouts to the Social section."
 
-If Slack is not connected, send this yourself.
+> **Automated reminder:** A scheduled task (`av-dashboard-monthly-reminder`) posts to #marketing-dashboard on the 1st of every month at 9am, kicking off the pull for GA4, Eventbrite, Substack Traffic Sources, and LinkedIn Newsletter screenshots, and asking Evie for the Confetti/Metricool PDF. You don't need to trigger this yourself — it's the starting gun for the whole monthly cycle in this SOP.
 
 ---
 

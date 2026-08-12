@@ -186,13 +186,14 @@ See Monthly Update SOP.md for screenshot instructions and the bookmark URL.
 
 ---
 
-### Slack — #reporting Channel
+### Slack — #marketing-dashboard Channel
 
-**Status:** Set up once Slack MCP is available in Cowork
+**Status:** Done — Slack MCP connected, channel created, scheduled reminder live
 
-When available:
-1. Connect Slack MCP to the Atlanta Ventures workspace
-2. Tell Claude: *"Set up a scheduled task on the 1st of each month to send a reminder to #reporting to begin the monthly dashboard pull."*
+1. Slack MCP is connected to the Atlanta Ventures workspace
+2. Channel: `#marketing-dashboard` (created by Jacey, channel ID `C0BMMV1RJ93`)
+3. Scheduled task `av-dashboard-monthly-reminder` posts to #marketing-dashboard at 9am on the 1st of every month, kicking off the pull (GA4, Eventbrite, Substack Traffic Sources, LinkedIn Newsletter screenshots) and asking Evie for the Confetti/Metricool PDF
+4. Manage or edit this reminder from the "Scheduled" section in Cowork's sidebar
 
 ---
 
