@@ -119,19 +119,22 @@ Claude pulls open rate, click rate, unsubscribe rate, subscriber count, and camp
 
 ### Metricool — Social Data (via Confetti)
 
-**Status:** Connect once, then automatic
+**Status:** Connected via the official Metricool connector card (Cowork → Settings → MCP Connections → search "Metricool" → Connect). Requires admin access on the Confetti Metricool account to authorize.
 **Account:** Confetti Social's Metricool account (managed by Evie Lutz)
 
-| Field | Value |
-|-------|-------|
-| API Token | `***REMOVED-METRICOOL-TOKEN***` |
-| Brand ID | `5126724` |
+| Brand | Brand ID |
+|-------|----------|
+| Atlanta Ventures (corporate) | `5126724` |
+| Kathryn O'Daily (personal) | `5146601` |
 
-1. Open **Cowork → Settings → MCP Connections**
-2. Add a new connection: `https://ai.metricool.com/mcp`
-3. Authenticate with the API token above
+**Fully automated, no PDF required.** Two Metricool "connectors" matter here:
+- `evolution` fields (e.g. `LIEV01`, `IGEV01`) → channel totals: followers, aggregate impressions/engagements, post counts
+- `posts` fields (e.g. `LIPO01/03/08/12/13`, `IGPO01/03/06/13/14/28`, `FBPO01/03/06/11/12/13`) → individual published posts: date, caption, URL, impressions/reach, likes, engagement rate
 
-> If the token expires, contact Evie Lutz at Confetti for a new one.
+Query both via `getAnalyticsDataByMetrics(brandId, from, to, metrics)`. The `posts` connector is what makes Top Posts fully automated — no more asking Evie for the monthly Confetti PDF.
+
+> **Note:** the API token below was the original manual-connection method and is no longer how the connection actually works (it's now via the official connector, above) — but since this token is sitting in plaintext in a file that's committed to a public GitHub repo, it should still be rotated with Evie and removed from this doc.
+> ~~API Token: `***REMOVED-METRICOOL-TOKEN***`~~ (rotate this)
 
 ---
 

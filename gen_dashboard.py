@@ -425,6 +425,15 @@ html = """<!DOCTYPE html>
     <div class="section-eyebrow">KO Social</div>
     <div class="channel-grid" id="kathryn-social-grid"></div>
     <div id="kathryn-social-li-ig-chart" style="margin-bottom:16px"></div>
+    <div style="margin-bottom:4px">
+      <div class="section-eyebrow" style="margin-bottom:10px">Top Posts</div>
+      <div class="posts-table-wrap">
+        <table class="posts-table" id="ko-posts-table">
+          <thead><tr><th>Channel <span class="info-i">i<span class="tt">Metricool (brand 5146601)</span></span></th><th>Date</th><th>Post</th><th style="text-align:right">Impressions / Views</th><th style="text-align:right">Engagements / Likes</th><th style="width:32px;text-align:center">View</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
     <div class="narrative-grid">
       <div class="narrative-block"><div class="narrative-label">The Read</div><div class="narrative-text" contenteditable="true" id="n-ko-social-read"></div></div>
       <div class="narrative-block"><div class="narrative-label">Recommendation</div><div class="narrative-text" contenteditable="true" id="n-ko-social-rec"></div></div>
@@ -620,33 +629,33 @@ const DATA = {
           followers:{v:11487,mom:-0.0039,yoy:null},impressions:{v:21291,mom:0.2603,yoy:null},
           engagements:{v:3509,mom:7.5795,yoy:null},posts:{v:15,mom:0.1538,yoy:null},
           top_posts:[
-            {date:"Jul 24",caption:"Christian Ries on why he built The Perlant",impressions:6821,reach:6821,likes:143,engagements:143,eng_rate:"6.86%",url:"https://www.linkedin.com/feed/update/urn:li:share:7486456969248219136"},
-            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong on the gap in enterprise video",impressions:3166,reach:3166,likes:78,engagements:78,eng_rate:"14.28%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7483223156187537408"},
-            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",impressions:1314,reach:1314,likes:64,engagements:64,eng_rate:"32.95%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7480619517900152832"},
-            {date:"Jul 27",caption:"Ty Abernethy — making hiring human again since 2018",impressions:3282,reach:3282,likes:57,engagements:57,eng_rate:"18.19%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7487598578287230976"},
-            {date:"Jul 16",caption:"The Healthy Human Economy — health tech room to be in",impressions:1593,reach:1593,likes:38,engagements:38,eng_rate:"3.52%",url:"https://www.linkedin.com/feed/update/urn:li:share:7483543689731031043"}
+            {date:"Jul 24",caption:"Christian Ries didn't build The Perlant just for business — Perlant expanding to Nashville",impressions:6862,reach:6862,likes:143,engagements:143,eng_rate:"6.82%",url:"https://www.linkedin.com/feed/update/urn:li:share:7486456969248219136"},
+            {date:"Jul 27",caption:"Ty Abernethy's Grayscale journey — acquired by Paylocity",impressions:3295,reach:3295,likes:57,engagements:57,eng_rate:"18.24%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7487598578287230976"},
+            {date:"Jul 22",caption:"Where the AV team got their start",impressions:3286,reach:3286,likes:33,engagements:33,eng_rate:"59.31%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7485741791468621825"},
+            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong closed the gap in enterprise video — AdPipe",impressions:3188,reach:3188,likes:78,engagements:78,eng_rate:"14.21%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7483223156187537408"},
+            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",impressions:1327,reach:1327,likes:64,engagements:64,eng_rate:"32.86%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7480619517900152832"}
           ]
         },
         instagram:{
           followers:{v:3947,mom:0.0056,yoy:null},impressions:{v:27694,mom:3.3258,yoy:null},
           engagements:{v:330,mom:0.4103,yoy:null},posts:{v:15,mom:-0.4828,yoy:null},
           top_posts:[
-            {date:"Jul 20",caption:"Where Atlanta's founders got their start (South Downtown)",views:7502,reach:2950,impressions:2950,likes:129,engagements:129,eng_rate:"5.08%",url:"https://www.instagram.com/p/DbBvYXolVBK/"},
-            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong on the gap in enterprise video",views:1226,reach:454,impressions:454,likes:34,engagements:34,eng_rate:"10.13%",url:"https://www.instagram.com/p/Da0sCx6nB1S/"},
-            {date:"Jul 22",caption:"Where the Atlanta Ventures team got their start",views:909,reach:372,impressions:372,likes:24,engagements:24,eng_rate:"7.53%",url:"https://www.instagram.com/p/DbGlbhynJqC/"},
-            {date:"Jul 24",caption:"Christian Ries on building The Perlant",views:535,reach:281,impressions:281,likes:20,engagements:20,eng_rate:"7.12%",url:"https://www.instagram.com/p/DbLrJn7FdTH/"},
-            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",views:504,reach:224,impressions:224,likes:18,engagements:18,eng_rate:"9.82%",url:"https://www.instagram.com/p/DaiMGUNnIUh/"}
+            {date:"Jul 20",caption:"Where Atlanta's founders got their start (South Downtown)",views:7552,reach:2971,impressions:2971,likes:129,engagements:129,eng_rate:"5.05%",url:"https://www.instagram.com/p/DbBvYXolVBK/"},
+            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong closed the gap in enterprise video — AdPipe",views:1227,reach:454,impressions:454,likes:34,engagements:34,eng_rate:"10.13%",url:"https://www.instagram.com/p/Da0sCx6nB1S/"},
+            {date:"Jul 22",caption:"Where the AV team got their start",views:911,reach:372,impressions:372,likes:24,engagements:24,eng_rate:"7.53%",url:"https://www.instagram.com/p/DbGlbhynJqC/"},
+            {date:"Jul 7",caption:"Best startup jobs in Atlanta — job board roundup",views:836,reach:407,impressions:407,likes:17,engagements:17,eng_rate:"5.16%",url:"https://www.instagram.com/p/DagkIuqCfZB/"},
+            {date:"Jul 24",caption:"Christian Ries on building The Perlant — expanding to Nashville",views:537,reach:283,impressions:283,likes:20,engagements:20,eng_rate:"7.07%",url:"https://www.instagram.com/p/DbLrJn7FdTH/"}
           ]
         },
         facebook:{
           followers:{v:194,mom:0.0104,yoy:null},engagements:{v:26,mom:-0.5357,yoy:null},
           engagement_rate:{v:null,mom:null,yoy:null},posts:{v:14,mom:-0.3,yoy:null},
           top_posts:[
-            {date:"Jul 22",caption:"Where the Atlanta Ventures team got their start",views:68,reach:32,impressions:32,engagements:7,eng_rate:"21.88%",url:"https://facebook.com/549464963845954/posts/1644107171048389"},
-            {date:"Jul 29",caption:"Hannon Hill is fixing a problem every university has",views:53,reach:29,impressions:29,engagements:5,eng_rate:"20.69%",url:"https://facebook.com/549464963845954/posts/1650485267077246"},
-            {date:"Jul 16",caption:"The Healthy Human Economy — health tech room to be in",views:34,reach:30,impressions:30,engagements:1,eng_rate:"10%",url:"https://facebook.com/549464963845954/posts/1638607921598314"},
-            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",views:47,reach:35,impressions:35,engagements:1,eng_rate:"8.57%",url:"https://facebook.com/549464963845954/posts/1631430815649358"},
-            {date:"Jul 31",caption:"Next Healthcare Entrepreneur Meetup, with Women + Tech",views:17,reach:13,impressions:13,engagements:1,eng_rate:"7.69%",url:"https://facebook.com/549464963845954/posts/1652670013525438"}
+            {date:"Jul 22",caption:"Where the AV team got their start",views:68,reach:32,impressions:32,engagements:0,eng_rate:"21.88%",url:"https://facebook.com/549464963845954/posts/1644107171048389"},
+            {date:"Jul 8",caption:"Coming soon: Intown Golf Club Raleigh",views:48,reach:36,impressions:36,engagements:1,eng_rate:"8.33%",url:"https://facebook.com/549464963845954/posts/1631430815649358"},
+            {date:"Jul 7",caption:"Best startup jobs in Atlanta — job board roundup",views:42,reach:33,impressions:33,engagements:0,eng_rate:"6.06%",url:"https://facebook.com/549464963845954/posts/1630867962372310"},
+            {date:"Jul 16",caption:"The Healthy Human Economy Innovation Summit is back for Year Three",views:35,reach:31,impressions:31,engagements:1,eng_rate:"9.68%",url:"https://facebook.com/549464963845954/posts/1638607921598314"},
+            {date:"Jul 15",caption:"Andrew Levy and Sam Birdsong closed the gap in enterprise video — AdPipe",views:35,reach:27,impressions:27,engagements:1,eng_rate:"7.41%",url:"https://facebook.com/549464963845954/posts/1637807228345050"}
           ]
         },
         youtube:{
@@ -667,12 +676,21 @@ const DATA = {
         linkedin:{
           followers:{v:8999,mom:0.0183,yoy:null},impressions:{v:58922,mom:-0.3894,yoy:null},
           engagements:{v:790,mom:-0.2972,yoy:null},posts:{v:14,mom:0.1667,yoy:null},
-          top_posts:[]
+          top_posts:[
+            {date:"Jul 17",caption:"My top five horror movies as a VC",impressions:16880,reach:16880,likes:54,engagements:54,eng_rate:"0.36%",url:"https://www.linkedin.com/feed/update/urn:li:share:7483899077965881344"},
+            {date:"Jul 7",caption:"A decade ago, shit got real — I was a pregnant startup COO",impressions:16199,reach:16199,likes:132,engagements:132,eng_rate:"0.86%",url:"https://www.linkedin.com/feed/update/urn:li:share:7480275279685525504"},
+            {date:"Jul 28",caption:"Two weeks fully out — the longest since maternity leave",impressions:4543,reach:4543,likes:83,engagements:83,eng_rate:"1.87%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7487922962755653632"},
+            {date:"Jul 31",caption:"Job alert: Undaunted and The Perlant are hiring",impressions:3912,reach:3912,likes:38,engagements:38,eng_rate:"1.15%",url:"https://www.linkedin.com/feed/update/urn:li:share:7488972708752564224"},
+            {date:"Jul 23",caption:"My mom thinks I'm a judge on Shark Tank",impressions:3326,reach:3326,likes:54,engagements:54,eng_rate:"1.92%",url:"https://www.linkedin.com/feed/update/urn:li:share:7486073299588796418"}
+          ]
         },
         instagram:{
           followers:{v:894,mom:0.0182,yoy:null},impressions:{v:280,mom:-0.7225,yoy:null},
           engagements:{v:52,mom:-0.5,yoy:null},posts:{v:26,mom:0.3684,yoy:null},
-          top_posts:[]
+          top_posts:[
+            {date:"Jul 28",caption:"Two weeks fully out — the longest since maternity leave",views:662,reach:281,impressions:281,likes:52,engagements:52,eng_rate:"18.51%",url:"https://www.instagram.com/p/DbWFTG3leVB/"}
+          ],
+          note:"Metricool's Instagram integration for this account only returns reach/engagement data for 1 of ~26 posts published in July — the other 25 posts have no stats available. This is a data-completeness gap in Metricool's connection to this specific account, not a missing feature; the single post above is genuine, just not representative of full IG activity."
         }
       },
       newsletters:{
@@ -1563,6 +1581,23 @@ function renderKathrynSocial(){
     {name:"Instagram",metrics:[{label:"Followers",value:fmt(ks.instagram.followers.v),delta:getDelta(ks.instagram.followers)},{label:"Post Views",value:fmt(ks.instagram.impressions.v),delta:getDelta(ks.instagram.impressions)},{label:"Engagements",value:fmt(ks.instagram.engagements.v),delta:getDelta(ks.instagram.engagements)},{label:"Posts",value:fmt(ks.instagram.posts.v),delta:getDelta(ks.instagram.posts)}]}
   ];
   grid.innerHTML=channels.map(ch=>`<div class="channel-card ${ch.primary?'primary-channel':''}"><div class="channel-header"><span class="channel-name">${ch.name}</span>${ch.primary?'<span class="channel-primary-badge">Primary</span>':''} ${iTag('Metricool (brand 5146601)')}</div>${ch.metrics.map(m=>`<div class="channel-metric"><div class="channel-metric-label">${m.label}</div><div class="channel-metric-value">${m.value} ${dInline(m.delta)}</div></div>`).join('')}</div>`).join('');
+  const allPosts=[
+    ...(ks.linkedin.top_posts||[]).map(p=>({channel:'LinkedIn',date:p.date,caption:p.caption,impressions:p.impressions??null,engagements:p.likes??null,url:p.url||''})),
+    ...(ks.instagram.top_posts||[]).map(p=>({channel:'Instagram',date:p.date,caption:p.caption,impressions:p.impressions??null,engagements:p.likes??null,url:p.url||''}))
+  ].sort((a,b)=>(b.impressions||0)-(a.impressions||0)).slice(0,10);
+  const channelColors={'LinkedIn':'#2584c5','Instagram':'#c13584'};
+  const linkIcon=`<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 2H2a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V7" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/><path d="M8 1h3m0 0v3m0-3L5.5 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  const koTbody=document.querySelector('#ko-posts-table tbody');
+  if(koTbody){
+    koTbody.innerHTML=allPosts.length
+      ? allPosts.map(p=>{
+          const short=p.caption&&p.caption.length>70?p.caption.slice(0,68)+'…':p.caption||'—';
+          const preview=p.caption?(` title="${p.caption.replace(/"/g,"&quot;")}"`):' ';
+          const link=p.url?`<a href="${p.url}" target="_blank" rel="noopener" style="color:var(--blue);display:flex;align-items:center;justify-content:center;opacity:0.75" title="View post">${linkIcon}</a>`:`<span style="color:var(--gray-200)">${linkIcon}</span>`;
+          return `<tr><td><span style="font-size:10px;font-weight:700;color:${channelColors[p.channel]||'#6b7280'}">${p.channel}</span></td><td class="secondary">${p.date||'—'}</td><td${preview} style="cursor:default;max-width:260px">${short}</td><td class="num">${p.impressions!=null?p.impressions.toLocaleString():'—'}</td><td class="num">${p.engagements!=null?p.engagements.toLocaleString():'—'}</td><td style="text-align:center;padding:0 6px">${link}</td></tr>`;
+        }).join('')
+      : '<tr><td colspan="6" style="text-align:center;color:#9ca3af;padding:20px">No post data available</td></tr>';
+  }
   renderKathrynSocialTrend();
 }
 

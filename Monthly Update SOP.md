@@ -13,8 +13,8 @@ Each month, you gather data from six sources and tell Claude. Claude assembles e
 | Channel | Source | How you get it |
 |---------|--------|---------------|
 | Web traffic | GA4 | Run `ga4_pull.py` (automatic) — now also includes AV Blog traffic sources |
-| Social (LinkedIn, Instagram, etc.) | Metricool | Claude pulls via Metricool MCP (if connected) or you share the Confetti PDF |
-| Kathryn's personal social (LinkedIn, Instagram) | Metricool | Claude pulls via Metricool MCP, brand ID `5146601` |
+| Social (LinkedIn, Instagram, Facebook) — totals + Top Posts | Metricool | Fully automated via Metricool MCP, brand ID `5126724` (no PDF needed) |
+| Kathryn's personal social (LinkedIn, Instagram) — totals + Top Posts | Metricool | Fully automated via Metricool MCP, brand ID `5146601` |
 | Mailchimp newsletter | Mailchimp | Claude pulls automatically via Mailchimp MCP |
 | LinkedIn Newsletter | LinkedIn Analytics | Two screenshots from the LinkedIn admin page |
 | Substack stats (O'Daily + Startup Strategies) | Substack | Claude reads via Chrome extension — no export needed |
@@ -57,9 +57,9 @@ This saves `eventbrite_YYYY-MM.json` with RSVPs, attendance, and show rate for H
 
 ## Step 3 — Social Data
 
-**If Metricool MCP is connected** (preferred): Claude pulls channel totals (followers, impressions, engagements, posts) automatically. Skip to Step 4.
+**Fully automated via Metricool MCP — no PDF needed.** Claude pulls both channel totals (followers, impressions, engagements, posts — via Metricool's "evolution" connector) and individual Top Posts (captions, dates, URLs, impressions/reach, likes, engagement rate — via Metricool's "posts" connector) directly from the API for both AV's brand (`5126724`) and Kathryn's personal brand (`5146601`).
 
-**Either way, still ask Evie Lutz at Confetti for the monthly Metricool PDF report and attach it to your Claude prompt in Step 7.** The MCP connection only exposes aggregate channel totals — it has no tool for listing individual published posts, so the PDF is the only source for "Top Posts" (captions, per-post stats, and links) in the Social section.
+> **Changed Aug 2026:** We previously thought the Metricool MCP only exposed aggregate totals and needed Evie's Confetti PDF for Top Posts. That was wrong — the "posts" connector (fields like `LIPO*`/`IGPO*`/`FBPO*`) returns full per-post data including captions and links. The PDF is no longer part of this workflow. If Metricool MCP isn't connected for some reason, tell Claude and it'll flag what's missing rather than falling back to a PDF.
 
 ---
 
@@ -105,7 +105,7 @@ Before running the update, confirm you have:
 - [ ] `ga4_YYYY-MM.json` in the AV Data Analyst folder (re-run `ga4_pull.py` fresh each month — it now includes AV Blog traffic sources)
 - [ ] `eventbrite_YYYY-MM.json` in the AV Data Analyst folder
 - [ ] LinkedIn Newsletter screenshots (or confirmed no-send)
-- [ ] Confetti PDF or Metricool MCP connected
+- [ ] Metricool MCP connected (covers both AV and Kathryn's social — totals and Top Posts, no PDF needed)
 - [ ] Claude in Chrome extension installed and logged into both Substack accounts
 - [ ] Substack "Traffic by source" screenshots for O'Daily and Startup Strategies (Step 3a — manual, from `/publish/stats/traffic` on each site)
 
@@ -133,8 +133,7 @@ Substack Traffic Sources (manual, see Step 3a): [Attach or paste the "Traffic by
   O'Daily traffic: https://kathrynoday.substack.com/publish/stats/traffic
   Startup Strategies traffic: https://startupstrategies.substack.com/publish/stats/traffic
 
-Social: [Attach Confetti PDF — or "Pull from Metricool"]
-Kathryn's personal social (LinkedIn + Instagram): Pull from Metricool, brand ID 5146601.
+Social: Pull totals and Top Posts from Metricool, brand ID 5126724 (AV) and brand ID 5146601 (Kathryn's personal).
 Mailchimp: Pull from Mailchimp MCP.
 
 Form Submissions: [Check https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports and paste the real total — don't rely on GA4's Contact_Form_Submit event until the webmaster confirms it's fixed]
