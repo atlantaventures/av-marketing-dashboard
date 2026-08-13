@@ -143,13 +143,14 @@ Build the month data JSON and run add_month.py, then regenerate the dashboard.
 
 Claude will:
 1. Pull Mailchimp data via MCP
-2. Pull or read social data
+2. Pull AV Social + KO Social totals and Top Posts from Metricool (brands `5126724` and `5146601`)
 3. Use Chrome to read Substack stats from the URLs above
-4. Read the GA4 and Eventbrite JSON files
-5. Assemble all data into `[YYYY-MM]_data.json`
-6. Run `python3 add_month.py [YYYY-MM]_data.json`
-7. Regenerate the dashboard HTML
-8. Flag anything notable (big drops, targets at risk, anomalies)
+4. Read the GA4 JSON (including AV Blog traffic sources) and Eventbrite JSON files
+5. Fold in the manually-provided Substack Traffic Sources table (Step 3a)
+6. Assemble all data into `[YYYY-MM]_data.json`
+7. Run `python3 add_month.py [YYYY-MM]_data.json`
+8. Regenerate the dashboard HTML
+9. Flag anything notable (big drops, targets at risk, anomalies)
 
 ---
 
@@ -171,9 +172,9 @@ Review and ask Claude to adjust anything. When you're happy, Claude saves them t
 
 Once the dashboard is updated, Claude sends a message to **#marketing-dashboard** in Slack:
 
-> "Evie — the [Month] dashboard is ready. Please add your social notes and top post callouts to the Social section."
+> "Evie — the [Month] dashboard is ready. Top Posts and social totals are pulled automatically now, so feel free to just add any qualitative notes or context to the Social section if you have any."
 
-> **Automated reminder:** A scheduled task (`av-dashboard-monthly-reminder`) posts to #marketing-dashboard on the 1st of every month at 9am, kicking off the pull for GA4, Eventbrite, Substack Traffic Sources, and LinkedIn Newsletter screenshots, and asking Evie for the Confetti/Metricool PDF. You don't need to trigger this yourself — it's the starting gun for the whole monthly cycle in this SOP.
+> **Automated reminder:** A scheduled task (`av-dashboard-monthly-reminder`) posts to #marketing-dashboard on the 1st of every month at 9am, kicking off the pull for GA4, Eventbrite, Substack Traffic Sources, and LinkedIn Newsletter screenshots, and confirming that social data (AV + Kathryn's, including Top Posts) pulls automatically from Metricool — no PDF needed. You don't need to trigger this yourself — it's the starting gun for the whole monthly cycle in this SOP.
 
 ---
 
@@ -195,9 +196,10 @@ Claude runs the git commit and push. Cloudflare detects it and redeploys within 
 ## Step 10 — Final Check
 
 Before closing:
-- [ ] All sections populated (no obvious blanks)
-- [ ] Narratives written for all sections
-- [ ] Evie notified for social notes
+- [ ] All sections populated (no obvious blanks) — including AV Blog Traffic Sources and both Substack Traffic Sources cards
+- [ ] AV Social and KO Social Top Posts both populated (from Metricool, not a PDF)
+- [ ] Narratives written for all sections, including KO Social
+- [ ] Evie notified in #marketing-dashboard (social notes now optional/qualitative only — data itself is automated)
 - [ ] Context log entry saved for the month
 - [ ] Dashboard live at Cloudflare URL
 - [ ] Dashboard link shared with stakeholders
