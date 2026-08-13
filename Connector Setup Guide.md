@@ -194,8 +194,9 @@ See Monthly Update SOP.md for screenshot instructions and the bookmark URL.
 
 1. Slack MCP is connected to the Atlanta Ventures workspace
 2. Channel: `#marketing-dashboard` (created by Jacey, channel ID `C0BMMV1RJ93`)
-3. Scheduled task `av-dashboard-monthly-reminder` posts to #marketing-dashboard at 9am on the 1st of every month, kicking off the pull (GA4, Eventbrite, Substack Traffic Sources, LinkedIn Newsletter screenshots) and asking Evie for the Confetti/Metricool PDF
+3. Scheduled task `av-dashboard-monthly-reminder` posts to #marketing-dashboard at 9am on the 1st of every month, listing the specific manual items for that month (GA4/Eventbrite scripts, LinkedIn Newsletter screenshots, Substack Traffic Sources) and confirming social data pulls automatically from Metricool — no PDF needed
 4. Manage or edit this reminder from the "Scheduled" section in Cowork's sidebar
+5. **#marketing-dashboard is also the shared feedback channel** — Evie and Jacey should post notes, decisions, and things to watch there, not directly on the dashboard page. The dashboard's in-page "Notes & Decisions" boxes and the Context Log's "Add Entry" form both save to browser `localStorage` only — there's no backend, so anything typed there is invisible to anyone else, on any other device. Claude reads #marketing-dashboard each month and writes the real, shared entry into `DATA.context.log` in `gen_dashboard.py`, which gets committed to git and is what actually shows up for everyone on the live page. See Monthly Update SOP.md Step 8.
 
 ---
 
