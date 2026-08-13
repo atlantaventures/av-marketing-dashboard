@@ -10,6 +10,8 @@
 
 Each month, you gather data from six sources and tell Claude. Claude assembles everything, runs `add_month.py`, and regenerates the dashboard HTML. You don't need to write code or touch the Python files directly.
 
+> **Keeping this SOP current:** Any time a data source's automation changes — something moves from manual to automatic, a new field gets added, a source breaks or gets fixed — Claude should update both this SOP *and* the `av-dashboard-monthly-reminder` scheduled task's wording in the same turn, without waiting to be asked. If Claude misses one, tell it: "update the SOP and monthly reminder." This note exists because that sync slipped once already (Aug 2026, Form Submissions automation) — the intent is for it not to happen again.
+
 | Channel | Source | How you get it |
 |---------|--------|---------------|
 | Web traffic | GA4 | Run `ga4_pull.py` (automatic) — now also includes AV Blog traffic sources |
