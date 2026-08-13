@@ -133,8 +133,7 @@ Claude pulls open rate, click rate, unsubscribe rate, subscriber count, and camp
 
 Query both via `getAnalyticsDataByMetrics(brandId, from, to, metrics)`. The `posts` connector is what makes Top Posts fully automated — no more asking Evie for the monthly Confetti PDF.
 
-> **Note:** the API token below was the original manual-connection method and is no longer how the connection actually works (it's now via the official connector, above) — but since this token is sitting in plaintext in a file that's committed to a public GitHub repo, it should still be rotated with Evie and removed from this doc.
-> ~~API Token: `***REMOVED-METRICOOL-TOKEN***`~~ (rotate this)
+> **Note:** an earlier version of this doc referenced a manual API token for the old connection method. That token has been removed from this file and should be treated as compromised — see below for what still needs to happen.
 
 ---
 
