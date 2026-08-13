@@ -173,17 +173,29 @@ Review and ask Claude to adjust anything. When you're happy, Claude saves them t
 
 ---
 
-## Step 8 — Evie Social Notes
+## Step 8 — Fold Slack Feedback into the Context Log
+
+**Why this step exists:** the dashboard's in-page "Notes & Decisions" boxes and the Context Log's "Add Entry" form both save to browser `localStorage` — meaning anything Evie types directly into the live page on her own computer is invisible to you, and vice versa. There's no backend, so those boxes can't actually share anything between people. **#marketing-dashboard in Slack is the real shared record.** Anything meant to be seen by both of you needs to go through there, not typed directly into the dashboard.
+
+Before finalizing this month's update, Claude reads **#marketing-dashboard** for anything posted since the last update (usually feedback on *last* month's dashboard, since that's what would have been live when people were looking at it) and folds relevant items into that prior month's entry in `DATA.context.log` inside `gen_dashboard.py` — under `decisions`, `watch`, or `notes` as appropriate. This gets committed to git and becomes part of the permanent record everyone sees, unlike the in-page boxes.
+
+Tell Claude: *"Check #marketing-dashboard for any feedback since last update and fold it into [Month]'s Context Log entry."*
+
+> The in-page Notes & Decisions boxes are fine to use as a personal scratchpad on your own machine, but don't rely on them (or the Context Log's "Add Entry" form) to communicate anything to Evie or anyone else — they won't see it.
+
+---
+
+## Step 9 — Evie Social Notes
 
 Once the dashboard is updated, Claude sends a message to **#marketing-dashboard** in Slack:
 
-> "Evie — the [Month] dashboard is ready. Top Posts and social totals are pulled automatically now, so feel free to just add any qualitative notes or context to the Social section if you have any."
+> "Evie — the [Month] dashboard is ready. Top Posts and social totals are pulled automatically now. If you have any qualitative notes or context, post them here in the channel and we'll fold them into the Context Log — notes typed directly into the dashboard page don't get shared with Jacey, so this channel is the way to make sure it lands."
 
 > **Automated reminder:** A scheduled task (`av-dashboard-monthly-reminder`) posts to #marketing-dashboard on the 1st of every month at 9am, kicking off the pull for GA4, Eventbrite, Substack Traffic Sources, and LinkedIn Newsletter screenshots, and confirming that social data (AV + Kathryn's, including Top Posts) pulls automatically from Metricool — no PDF needed. You don't need to trigger this yourself — it's the starting gun for the whole monthly cycle in this SOP.
 
 ---
 
-## Step 9 — Deploy to GitHub
+## Step 10 — Deploy to GitHub
 
 Once the dashboard looks good, push it so Cloudflare auto-publishes the update:
 
@@ -198,13 +210,14 @@ Claude runs the git commit and push. Cloudflare detects it and redeploys within 
 
 ---
 
-## Step 10 — Final Check
+## Step 11 — Final Check
 
 Before closing:
 - [ ] All sections populated (no obvious blanks) — including AV Blog Traffic Sources and both Substack Traffic Sources cards
 - [ ] AV Social and KO Social Top Posts both populated (from Metricool, not a PDF)
 - [ ] Narratives written for all sections, including KO Social
-- [ ] Evie notified in #marketing-dashboard (social notes now optional/qualitative only — data itself is automated)
+- [ ] Checked #marketing-dashboard for feedback since last update and folded it into the Context Log (Step 8)
+- [ ] Evie notified in #marketing-dashboard for this month (Step 9)
 - [ ] Context log entry saved for the month
 - [ ] Dashboard live at Cloudflare URL
 - [ ] Dashboard link shared with stakeholders
