@@ -39,6 +39,8 @@ This saves `ga4_YYYY-MM.json` in the folder. Attach it to your Claude prompt in 
 > **Form Submissions — now pulled via Claude in Chrome, not GA4.** GA4's `Contact_Form_Submit` event has badly overcounted form submissions ever since the new website launched (2,784 vs. 32 real submissions in July 2026) and should not be trusted. Instead, Claude reads the real number directly from Fluent Forms:
 > `https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports`
 > On that page, Claude clicks the date-range calendar (top right) — **click through the calendar, don't type into the field** — sets it to the first through last day of the previous month, and reads "Total Submissions." This is confirmed working (verified against July's real total of 32). Requires you to be logged into WordPress admin in Chrome. Use this number for the dashboard's Form Submissions metric until the webmaster confirms the GA4 event is fixed — then re-validate one month side-by-side before trusting GA4 again.
+>
+> **This is a temporary workaround, not the intended long-term setup.** Form Submissions should ultimately come straight from `ga4_pull.py` again once the underlying GA4 tracking bug is fixed. Virgil (web contractor) is aware of the issue as of Aug 2026 — **confirm with him each month whether it's fixed** before defaulting to the Fluent Forms Chrome pull. Once confirmed fixed: re-validate one full month side-by-side (Fluent Forms vs. GA4), then retire this Chrome step and switch Form Submissions back to the automatic GA4 pull for good.
 
 ---
 
