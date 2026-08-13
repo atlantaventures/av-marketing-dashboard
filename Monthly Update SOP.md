@@ -13,6 +13,7 @@ Each month, you gather data from six sources and tell Claude. Claude assembles e
 | Channel | Source | How you get it |
 |---------|--------|---------------|
 | Web traffic | GA4 | Run `ga4_pull.py` (automatic) — now also includes AV Blog traffic sources |
+| Form Submissions | Fluent Forms (not GA4) | Claude reads it via Chrome — GA4's form event is broken since the new site launched |
 | Social (LinkedIn, Instagram, Facebook) — totals + Top Posts | Metricool | Fully automated via Metricool MCP, brand ID `5126724` (no PDF needed) |
 | Kathryn's personal social (LinkedIn, Instagram) — totals + Top Posts | Metricool | Fully automated via Metricool MCP, brand ID `5146601` |
 | Mailchimp newsletter | Mailchimp | Claude pulls automatically via Mailchimp MCP |
@@ -35,9 +36,9 @@ This saves `ga4_YYYY-MM.json` in the folder. Attach it to your Claude prompt in 
 
 > **First time only:** see Connector Setup Guide.md for the one-time Google Cloud setup.
 
-> **Form Submissions cross-check:** GA4's `Contact_Form_Submit` event is known to badly overcount (2,784 vs. 32 real submissions in July 2026) and should not be trusted as-is. Check the real number at:
+> **Form Submissions — now pulled via Claude in Chrome, not GA4.** GA4's `Contact_Form_Submit` event has badly overcounted form submissions ever since the new website launched (2,784 vs. 32 real submissions in July 2026) and should not be trusted. Instead, Claude reads the real number directly from Fluent Forms:
 > `https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports`
-> Use the Fluent Forms number for the dashboard's Form Submissions metric until the GA4 tracking issue is fixed by the webmaster. Once it's confirmed fixed, re-validate one month side-by-side before trusting GA4 again.
+> On that page, Claude clicks the date-range calendar (top right) — **click through the calendar, don't type into the field** — sets it to the first through last day of the previous month, and reads "Total Submissions." This is confirmed working (verified against July's real total of 32). Requires you to be logged into WordPress admin in Chrome. Use this number for the dashboard's Form Submissions metric until the webmaster confirms the GA4 event is fixed — then re-validate one month side-by-side before trusting GA4 again.
 
 ---
 
@@ -106,7 +107,7 @@ Before running the update, confirm you have:
 - [ ] `eventbrite_YYYY-MM.json` in the AV Data Analyst folder
 - [ ] LinkedIn Newsletter screenshots (or confirmed no-send)
 - [ ] Metricool MCP connected (covers both AV and Kathryn's social — totals and Top Posts, no PDF needed)
-- [ ] Claude in Chrome extension installed and logged into both Substack accounts
+- [ ] Claude in Chrome extension installed and logged into both Substack accounts AND WordPress admin (for Form Submissions)
 - [ ] Substack "Traffic by source" screenshots for O'Daily and Startup Strategies (Step 3a — manual, from `/publish/stats/traffic` on each site)
 
 ---
@@ -136,7 +137,7 @@ Substack Traffic Sources (manual, see Step 3a): [Attach or paste the "Traffic by
 Social: Pull totals and Top Posts from Metricool, brand ID 5126724 (AV) and brand ID 5146601 (Kathryn's personal).
 Mailchimp: Pull from Mailchimp MCP.
 
-Form Submissions: [Check https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports and paste the real total — don't rely on GA4's Contact_Form_Submit event until the webmaster confirms it's fixed]
+Form Submissions: Pull from Fluent Forms via Chrome (https://www.atlantaventures.com/wp-admin/admin.php?page=fluent_forms_reports) — don't rely on GA4's Contact_Form_Submit event until the webmaster confirms it's fixed.
 
 Build the month data JSON and run add_month.py, then regenerate the dashboard.
 ```
@@ -144,7 +145,7 @@ Build the month data JSON and run add_month.py, then regenerate the dashboard.
 Claude will:
 1. Pull Mailchimp data via MCP
 2. Pull AV Social + KO Social totals and Top Posts from Metricool (brands `5126724` and `5146601`)
-3. Use Chrome to read Substack stats from the URLs above
+3. Use Chrome to read Substack stats from the URLs above, and Fluent Forms' Total Submissions for the prior month
 4. Read the GA4 JSON (including AV Blog traffic sources) and Eventbrite JSON files
 5. Fold in the manually-provided Substack Traffic Sources table (Step 3a)
 6. Assemble all data into `[YYYY-MM]_data.json`
@@ -228,6 +229,9 @@ Tell Claude: "Review and reset the annual goals." Claude will update the `goals`
 
 **Substack Chrome pull fails**
 → Make sure you're logged into both Substack accounts in Chrome. If Claude gets an access error, log in manually and ask Claude to try again.
+
+**Fluent Forms Chrome pull fails**
+→ Make sure you're logged into WordPress admin in Chrome. Confirmed working via calendar clicks (not typing) as of Aug 2026 — if it breaks, check whether Fluent Forms changed its date-picker UI.
 
 **Substack Traffic Sources page shows the wrong date range / won't update**
 → This is expected — Claude can't drive that specific date picker via automation (confirmed, not worth re-attempting). Set the range yourself by clicking the calendar icon (not typing) and send Claude the resulting table. This is why Step 3a is manual.
