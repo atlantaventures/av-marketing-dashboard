@@ -1166,7 +1166,21 @@ const DATA = {
       // ADD NEXT MONTH HERE ↑
     ],
     // Social follower growth: Jan = goal start values; May/Jun = actuals; Feb–Apr = linear estimates
+    // Apr–Dec 2025 backfilled from Metricool (brand 5126724) evolution + posts connectors, Aug 2026.
+    // LinkedIn followers/impressions/engagements are real Metricool data. Instagram followers
+    // weren't reliably tracked by Metricool until Jul 2025 (null before that). YouTube/Twitter/
+    // Facebook followers are not backfilled for 2025 (no reliable historical source) — left null
+    // rather than estimated.
     social_followers:[
+      {period:"Apr 2025",linkedin:8872,instagram:null,youtube:null,twitter:null,facebook:null,li_impressions:8072,li_engagements:189,ig_impressions:2137,ig_engagements:129},
+      {period:"May 2025",linkedin:9586,instagram:null,youtube:null,twitter:null,facebook:null,li_impressions:39520,li_engagements:1071,ig_impressions:7821,ig_engagements:349},
+      {period:"Jun 2025",linkedin:9755,instagram:null,youtube:null,twitter:null,facebook:null,li_impressions:15825,li_engagements:308,ig_impressions:3050,ig_engagements:108},
+      {period:"Jul 2025",linkedin:9883,instagram:3689,youtube:null,twitter:null,facebook:null,li_impressions:18382,li_engagements:361,ig_impressions:3276,ig_engagements:179},
+      {period:"Aug 2025",linkedin:10006,instagram:3705,youtube:null,twitter:null,facebook:null,li_impressions:20895,li_engagements:407,ig_impressions:5375,ig_engagements:326},
+      {period:"Sep 2025",linkedin:10141,instagram:3746,youtube:null,twitter:null,facebook:null,li_impressions:20215,li_engagements:412,ig_impressions:4337,ig_engagements:175},
+      {period:"Oct 2025",linkedin:10293,instagram:3757,youtube:null,twitter:null,facebook:null,li_impressions:16368,li_engagements:314,ig_impressions:2681,ig_engagements:178},
+      {period:"Nov 2025",linkedin:10397,instagram:3791,youtube:null,twitter:null,facebook:null,li_impressions:10672,li_engagements:253,ig_impressions:1249,ig_engagements:91},
+      {period:"Dec 2025",linkedin:10484,instagram:3780,youtube:null,twitter:null,facebook:null,li_impressions:16795,li_engagements:320,ig_impressions:2505,ig_engagements:181},
       {period:"Jan 2026",linkedin:10502,instagram:3772,youtube:210,twitter:2792,facebook:180,li_impressions:24776,li_engagements:6997,ig_impressions:6602,ig_engagements:156},
       {period:"Feb 2026",linkedin:10722,instagram:3802,youtube:214,twitter:2804,facebook:182,li_impressions:35764,li_engagements:8643,ig_impressions:8389,ig_engagements:289},
       {period:"Mar 2026",linkedin:10942,instagram:3832,youtube:218,twitter:2816,facebook:185,li_impressions:21292,li_engagements:4974,ig_impressions:4917,ig_engagements:182},
@@ -1180,7 +1194,15 @@ const DATA = {
     // Kathryn O'Daily personal social — Metricool brand 5146601. IG impressions/engagements
     // are sparse most months (Metricool only returns post-level reach/interaction data for
     // ~1 posting day out of the whole month) — treat IG figures here as directional, not exact.
+    // Aug–Dec 2025 backfilled from Metricool, Aug 2026. Metricool has no reliable data for this
+    // brand before ~Aug 11, 2025 (evolution/posts data is null/absent through early Aug) — July
+    // 2025 is intentionally omitted rather than estimated.
     kathryn_social:[
+      {period:"Aug 2025",li_impressions:37103,li_engagements:249,ig_impressions:1536,ig_engagements:88},
+      {period:"Sep 2025",li_impressions:40171,li_engagements:748,ig_impressions:344,ig_engagements:35},
+      {period:"Oct 2025",li_impressions:23934,li_engagements:395,ig_impressions:1117,ig_engagements:101},
+      {period:"Nov 2025",li_impressions:28421,li_engagements:285,ig_impressions:992,ig_engagements:92},
+      {period:"Dec 2025",li_impressions:30451,li_engagements:529,ig_impressions:947,ig_engagements:130},
       {period:"Jan 2026",li_impressions:20323,li_engagements:516,ig_impressions:493,ig_engagements:88},
       {period:"Feb 2026",li_impressions:64421,li_engagements:1042,ig_impressions:2249,ig_engagements:213},
       {period:"Mar 2026",li_impressions:30985,li_engagements:551,ig_impressions:363,ig_engagements:50},
