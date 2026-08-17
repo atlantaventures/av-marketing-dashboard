@@ -1528,12 +1528,15 @@ function renderGoals(){
 function renderWeb(){
   if(!M){document.getElementById('kpi-web').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';document.querySelector('#top-pages-table tbody').innerHTML='<tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   const w=M.web;
+  const EMPTY_METRIC={v:null,mom:null,yoy:null};
+  const wSessions=w.sessions||EMPTY_METRIC, wUsers=w.users||EMPTY_METRIC, wEngRate=w.engagement_rate||EMPTY_METRIC,
+        wFormSubs=w.form_submissions||EMPTY_METRIC, wEventCount=w.event_count||EMPTY_METRIC;
   document.getElementById('kpi-web').innerHTML=[
-    {label:"Sessions",value:fmt(w.sessions.v),delta:getDelta(w.sessions),src:'GA4'},
-    {label:"Users",value:fmt(w.users.v),delta:getDelta(w.users),src:'GA4'},
-    {label:"Avg Engagement Time",value:fmt(w.engagement_rate.v),delta:getDelta(w.engagement_rate),src:'GA4'},
-    {label:"Form Submissions",value:fmt(w.form_submissions.v),delta:getDelta(w.form_submissions),src:'GA4'},
-    {label:"Total Events",value:fmt(w.event_count.v),delta:getDelta(w.event_count),src:'GA4'}
+    {label:"Sessions",value:fmt(wSessions.v),delta:getDelta(wSessions),src:'GA4'},
+    {label:"Users",value:fmt(wUsers.v),delta:getDelta(wUsers),src:'GA4'},
+    {label:"Avg Engagement Time",value:fmt(wEngRate.v),delta:getDelta(wEngRate),src:'GA4'},
+    {label:"Form Submissions",value:fmt(wFormSubs.v),delta:getDelta(wFormSubs),src:'GA4'},
+    {label:"Total Events",value:fmt(wEventCount.v),delta:getDelta(wEventCount),src:'GA4'}
   ].map(k=>`<div class="kpi-card"><div class="kpi-label">${k.label}${k.src?iTag(k.src):''}</div><div class="kpi-value">${k.value}</div>${dEl(k.delta)}</div>`).join('');
   // Traffic sources bar chart
   if(chartInstances['chart-traffic-sources']) chartInstances['chart-traffic-sources'].destroy();
