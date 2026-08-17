@@ -1481,11 +1481,12 @@ function applyFilter(){
   const key=detectPeriodKey(from,to);
   setActiveMonth(key);
   closeFilter();
-  renderWeb();renderSocial();renderKathrynSocial();renderSocialTrend();renderLIIGTrend();
-  renderNewsletters();
-  renderBlogs();renderBlogTrend();renderSubstack6Mo();
-  renderEvents();
-  renderNarratives();
+  function safe(fn){try{fn();}catch(e){console.warn('Render failed for '+fn.name+' on period '+activePeriodKey+':',e);}}
+  safe(renderWeb);safe(renderSocial);safe(renderKathrynSocial);safe(renderSocialTrend);safe(renderLIIGTrend);
+  safe(renderNewsletters);
+  safe(renderBlogs);safe(renderBlogTrend);safe(renderSubstack6Mo);
+  safe(renderEvents);
+  safe(renderNarratives);
 }
 document.addEventListener('click',e=>{
   const pop=document.getElementById('filter-popover'),btn=document.getElementById('period-btn');
@@ -1567,13 +1568,15 @@ function renderWebTrend(){
 function renderSocial(){
   if(!M){document.getElementById('channel-grid').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';document.querySelector('#all-posts-table tbody').innerHTML='<tr><td colspan="6" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   const s=M.social;
+  const EM={v:null,mom:null,yoy:null};
+  const li=s.linkedin||{}, ig=s.instagram||{}, fb=s.facebook||{}, yt=s.youtube||{}, tt=s.tiktok||{}, tw=s.twitter||{};
   const channels=[
-    {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt(s.linkedin.followers.v),delta:getDelta(s.linkedin.followers)},{label:"Impressions",value:fmt(s.linkedin.impressions.v),delta:getDelta(s.linkedin.impressions)},{label:"Engagements",value:fmt(s.linkedin.engagements.v),delta:getDelta(s.linkedin.engagements)},{label:"Posts",value:fmt(s.linkedin.posts.v),delta:getDelta(s.linkedin.posts)}]},
-    {name:"Instagram",metrics:[{label:"Followers",value:fmt(s.instagram.followers.v),delta:getDelta(s.instagram.followers)},{label:"Post Views",value:fmt(s.instagram.impressions.v),delta:getDelta(s.instagram.impressions)},{label:"Engagements",value:fmt(s.instagram.engagements.v),delta:getDelta(s.instagram.engagements)},{label:"Posts",value:fmt(s.instagram.posts.v),delta:getDelta(s.instagram.posts)}]},
-    {name:"Facebook",metrics:[{label:"Followers",value:fmt(s.facebook.followers.v),delta:getDelta(s.facebook.followers)},{label:"Engagements",value:fmt(s.facebook.engagements.v),delta:getDelta(s.facebook.engagements)},{label:"Eng. Rate",value:fmt(s.facebook.engagement_rate.v),delta:getDelta(s.facebook.engagement_rate)},{label:"Posts",value:fmt(s.facebook.posts.v),delta:getDelta(s.facebook.posts)}]},
-    {name:"YouTube",metrics:[{label:"Subscribers",value:fmt(s.youtube.subscribers.v),delta:getDelta(s.youtube.subscribers)},{label:"Views",value:fmt(s.youtube.views.v),delta:getDelta(s.youtube.views)},{label:"Likes",value:fmt(s.youtube.likes.v),delta:getDelta(s.youtube.likes)},{label:"Videos",value:fmt(s.youtube.videos.v),delta:getDelta(s.youtube.videos)}]},
-    {name:"TikTok",metrics:[{label:"Followers",value:fmt(s.tiktok.followers.v),delta:getDelta(s.tiktok.followers)},{label:"Video Views",value:fmt(s.tiktok.video_views.v),delta:getDelta(s.tiktok.video_views)},{label:"Likes",value:fmt(s.tiktok.likes.v),delta:getDelta(s.tiktok.likes)},{label:"Posts",value:fmt(s.tiktok.posts.v),delta:getDelta(s.tiktok.posts)}]},
-    {name:"Twitter / X",metrics:[{label:"Followers",value:fmt(s.twitter.followers.v),delta:getDelta(s.twitter.followers)},{label:"Impressions",value:fmt(s.twitter.impressions.v),delta:getDelta(s.twitter.impressions)},{label:"Posts",value:fmt(s.twitter.posts.v),delta:getDelta(s.twitter.posts)}]}
+    {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt((li.followers||EM).v),delta:getDelta(li.followers||EM)},{label:"Impressions",value:fmt((li.impressions||EM).v),delta:getDelta(li.impressions||EM)},{label:"Engagements",value:fmt((li.engagements||EM).v),delta:getDelta(li.engagements||EM)},{label:"Posts",value:fmt((li.posts||EM).v),delta:getDelta(li.posts||EM)}]},
+    {name:"Instagram",metrics:[{label:"Followers",value:fmt((ig.followers||EM).v),delta:getDelta(ig.followers||EM)},{label:"Post Views",value:fmt((ig.impressions||EM).v),delta:getDelta(ig.impressions||EM)},{label:"Engagements",value:fmt((ig.engagements||ig.likes||EM).v),delta:getDelta(ig.engagements||ig.likes||EM)},{label:"Posts",value:fmt((ig.posts||EM).v),delta:getDelta(ig.posts||EM)}]},
+    {name:"Facebook",metrics:[{label:"Followers",value:fmt((fb.followers||EM).v),delta:getDelta(fb.followers||EM)},{label:"Engagements",value:fmt((fb.engagements||EM).v),delta:getDelta(fb.engagements||EM)},{label:"Eng. Rate",value:fmt((fb.engagement_rate||fb.reach||EM).v),delta:getDelta(fb.engagement_rate||fb.reach||EM)},{label:"Posts",value:fmt((fb.posts||EM).v),delta:getDelta(fb.posts||EM)}]},
+    {name:"YouTube",metrics:[{label:"Subscribers",value:fmt((yt.subscribers||EM).v),delta:getDelta(yt.subscribers||EM)},{label:"Views",value:fmt((yt.views||EM).v),delta:getDelta(yt.views||EM)},{label:"Likes",value:fmt((yt.likes||yt.watch_time||EM).v),delta:getDelta(yt.likes||yt.watch_time||EM)},{label:"Videos",value:fmt((yt.videos||EM).v),delta:getDelta(yt.videos||EM)}]},
+    {name:"TikTok",metrics:[{label:"Followers",value:fmt((tt.followers||EM).v),delta:getDelta(tt.followers||EM)},{label:"Video Views",value:fmt((tt.video_views||EM).v),delta:getDelta(tt.video_views||EM)},{label:"Likes",value:fmt((tt.likes||EM).v),delta:getDelta(tt.likes||EM)},{label:"Posts",value:fmt((tt.posts||EM).v),delta:getDelta(tt.posts||EM)}]},
+    {name:"Twitter / X",metrics:[{label:"Followers",value:fmt((tw.followers||EM).v),delta:getDelta(tw.followers||EM)},{label:"Impressions",value:fmt((tw.impressions||EM).v),delta:getDelta(tw.impressions||EM)},{label:"Posts",value:fmt((tw.posts||EM).v),delta:getDelta(tw.posts||EM)}]}
   ];
   document.getElementById('channel-grid').innerHTML=channels.map(ch=>`<div class="channel-card ${ch.primary?'primary-channel':''} ${ch.unavailable?'unavailable':''}"><div class="channel-header"><span class="channel-name">${ch.name}</span>${ch.primary?'<span class="channel-primary-badge">Primary</span>':''} ${iTag('Metricool via Confetti Social')}${ch.unavailable?'<span style="font-size:9.5px;color:var(--gray-400)">Unavailable</span>':''}</div>${ch.metrics.map(m=>`<div class="channel-metric"><div class="channel-metric-label">${m.label}</div><div class="channel-metric-value">${m.value} ${dInline(m.delta)}</div></div>`).join('')}</div>`).join('');
   // Build combined top posts across all channels
