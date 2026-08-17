@@ -1294,9 +1294,13 @@ const DATA = {
 
 // ── STATE ─────────────────────────────────────
 const period = DATA.meta.period_key;
-const M = DATA.months[period];
+let M = DATA.months[period];
 let compareMode = 'mom';
 let activePeriodKey = period;
+function setActiveMonth(key){
+  activePeriodKey = key || period;
+  M = key ? (DATA.months[key] || null) : null;
+}
 
 // ── PERIOD DETECTION ─────────────────────────
 function detectPeriodKey(fromStr, toStr){
@@ -1458,7 +1462,14 @@ function applyFilter(){
   } else {
     cEl.style.display='none';
   }
-  closeFilter();renderWeb();renderSocial();renderKathrynSocial();renderSocialTrend();renderNewsletterCharts();renderNarratives();
+  const key=detectPeriodKey(from,to);
+  setActiveMonth(key);
+  closeFilter();
+  renderWeb();renderSocial();renderKathrynSocial();renderSocialTrend();renderLIIGTrend();
+  renderNewsletters();
+  renderBlogs();renderBlogTrend();renderSubstack6Mo();
+  renderEvents();
+  renderNarratives();
 }
 document.addEventListener('click',e=>{
   const pop=document.getElementById('filter-popover'),btn=document.getElementById('period-btn');
@@ -1499,6 +1510,7 @@ function renderGoals(){
 
 // ── WEB ──────────────────────────────────────
 function renderWeb(){
+  if(!M){document.getElementById('kpi-web').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';document.querySelector('#top-pages-table tbody').innerHTML='<tr><td colspan="3" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   const w=M.web;
   document.getElementById('kpi-web').innerHTML=[
     {label:"Sessions",value:fmt(w.sessions.v),delta:getDelta(w.sessions),src:'GA4'},
@@ -1534,6 +1546,7 @@ function renderWebTrend(){
 
 // ── SOCIAL ───────────────────────────────────
 function renderSocial(){
+  if(!M){document.getElementById('channel-grid').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';document.querySelector('#all-posts-table tbody').innerHTML='<tr><td colspan="6" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   const s=M.social;
   const channels=[
     {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt(s.linkedin.followers.v),delta:getDelta(s.linkedin.followers)},{label:"Impressions",value:fmt(s.linkedin.impressions.v),delta:getDelta(s.linkedin.impressions)},{label:"Engagements",value:fmt(s.linkedin.engagements.v),delta:getDelta(s.linkedin.engagements)},{label:"Posts",value:fmt(s.linkedin.posts.v),delta:getDelta(s.linkedin.posts)}]},
@@ -1618,6 +1631,7 @@ function renderKathrynSocialTrend(){
 
 // ── NEWSLETTERS ──────────────────────────────
 function renderNewsletters(){
+  if(!M){document.getElementById('newsletters-grid').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';document.querySelector('#mc-campaigns-table tbody').innerHTML='<tr><td colspan="4" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';document.querySelector('#li-articles-table tbody').innerHTML='<tr><td colspan="7" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   let mc=M.newsletters.mailchimp,li=M.newsletters.linkedin_newsletter;
   let mcNote='',liNote='';
   if(mc.no_send){
@@ -1749,6 +1763,7 @@ function renderLIIGTrend(){
 
 // ── CONTENT ──────────────────────────────────
 function renderBlogs(){
+  if(!M){document.getElementById('content-grid').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';const tg=document.getElementById('content-traffic-grid');if(tg)tg.innerHTML='';return;}
   const c=M.content;
   const subCard=(label,data,ai,chartId)=>{
     const sd=getDelta(data.sessions),sdc=sd!==null?(sd>0?'↑':'↓')+(Math.abs(sd)*100).toFixed(1)+'%':'—',sdcls=sd>0?'pos':sd<0?'neg':'flat';
@@ -1872,11 +1887,12 @@ function renderSubstack6Mo(){
   mkChart('chart-sub-newsubs',ons,sns,'');
 }
 function renderEvents(){
+  if(!M){document.getElementById('events-grid').innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';return;}
   const ev=M.events;
   const oh=ev.office_hours;
   const ohHistory=[...(oh.history||[])].reverse().slice(-6);
   // Detect if there was a HEM / Office Hours event this reporting period
-  const [pyear,pmonth]=DATA.meta.period_key.split('-');
+  const [pyear,pmonth]=activePeriodKey.split('-');
   const monthNames=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const curMon=monthNames[parseInt(pmonth)-1];
   const hemHistory=[...(ev.hem.history||[])].reverse().slice(-6);
