@@ -1622,10 +1622,10 @@ function renderSocial(){
 
 // ── KATHRYN O'DAILY PERSONAL SOCIAL ──────────
 function renderKathrynSocial(){
-  const ks=M.kathryn_social;
   const grid=document.getElementById('kathryn-social-grid');
   if(!grid) return;
-  if(!ks){grid.innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';return;}
+  const ks=M?M.kathryn_social:null;
+  if(!ks){grid.innerHTML='<div style="color:#9ca3af;font-size:12px;padding:8px 2px">No data pulled for this period yet.</div>';const kt=document.querySelector('#ko-posts-table tbody');if(kt)kt.innerHTML='<tr><td colspan="6" style="text-align:center;color:#9ca3af;padding:20px">No data pulled for this period yet.</td></tr>';return;}
   const channels=[
     {name:"LinkedIn",primary:true,metrics:[{label:"Followers",value:fmt(ks.linkedin.followers.v),delta:getDelta(ks.linkedin.followers)},{label:"Impressions",value:fmt(ks.linkedin.impressions.v),delta:getDelta(ks.linkedin.impressions)},{label:"Engagements",value:fmt(ks.linkedin.engagements.v),delta:getDelta(ks.linkedin.engagements)},{label:"Posts",value:fmt(ks.linkedin.posts.v),delta:getDelta(ks.linkedin.posts)}]},
     {name:"Instagram",metrics:[{label:"Followers",value:fmt(ks.instagram.followers.v),delta:getDelta(ks.instagram.followers)},{label:"Post Views",value:fmt(ks.instagram.impressions.v),delta:getDelta(ks.instagram.impressions)},{label:"Engagements",value:fmt(ks.instagram.engagements.v),delta:getDelta(ks.instagram.engagements)},{label:"Posts",value:fmt(ks.instagram.posts.v),delta:getDelta(ks.instagram.posts)}]}
