@@ -267,8 +267,8 @@
   <div style="display:flex;align-items:center;gap:10px">
     <button class="period-btn" id="period-btn" onclick="toggleFilter()">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="margin-right:6px;flex-shrink:0"><rect x="1" y="2" width="12" height="11" rx="1.5" stroke="white" stroke-width="1.3"/><path d="M1 5.5h12" stroke="white" stroke-width="1.3"/><path d="M4.5 1v2M9.5 1v2" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
-      <span id="period-label-primary" style="font-weight:700;">7/1/2026 - 7/31/2026</span>
-      <span id="period-label-compare" style="font-weight:400;opacity:0.6;margin-left:6px;">vs 6/1/2026 - 6/30/2026</span>
+      <span id="period-label-primary" style="font-weight:700;">8/1/2026 - 8/31/2026</span>
+      <span id="period-label-compare" style="font-weight:400;opacity:0.6;margin-left:6px;">vs 7/1/2026 - 7/31/2026</span>
       <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left:8px;flex-shrink:0"><path d="M1 1L5 5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </button>
     <button class="period-btn" onclick="window.print()" style="background:var(--blue);border-color:var(--blue);">Export PDF</button>
@@ -311,9 +311,9 @@
           <option value="custom">Custom Range</option>
         </select>
         <div class="fp-date-range" style="margin-top:8px">
-          <input class="fp-date-input" id="fp-from" type="text" value="7/1/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
+          <input class="fp-date-input" id="fp-from" type="text" value="8/1/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
           <span class="fp-date-arrow">&#8594;</span>
-          <input class="fp-date-input" id="fp-to" type="text" value="7/31/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
+          <input class="fp-date-input" id="fp-to" type="text" value="8/31/2026" placeholder="M/D/YYYY" oninput="onCustomDateInput()">
         </div>
       </div>
       <div>
@@ -528,8 +528,42 @@
 <script>
 // ── DATA ──────────────────────────────────────
 const DATA = {
-  meta:{client:"Atlanta Ventures",period:"Jul 2026",period_key:"2026-07",pulled:"August 3, 2026"},
+  meta:{client:"Atlanta Ventures",period:"Aug 2026",period_key:"2026-08",pulled:"September 1, 2026"},
   narrative:{
+    "2026-08":{
+    overview:{
+      read:"• Web sessions more than doubled to 5,285 (+148% vs July's 2,130), but Direct traffic accounts for 80% of that (4,205 sessions) — given prior months flagged bot-inflated Direct spikes, this needs verification before it's read as real growth\n• Two data sources went dark this month: Mailchimp (MCP connector disconnected, no manual fallback pulled yet) and both Substacks (O'Daily, Startup Strategies — login access issue this cycle) — neither has any figures this month\n• AV LinkedIn engagements normalized to 704 from July's outlier 3,509 — back in the 409-741 range seen Apr-Jun, confirming July really was an anomaly rather than a new baseline\n• AV Instagram impressions dropped to 3,860 from July's 27,694 — but July itself was flagged as 4x the normal baseline (Perlant-style spike), so August is a reversion to typical, not a collapse\n• Kathryn O'Day's LinkedIn had a genuinely strong month: followers +2.0% to 9,176, impressions +30.8% to 77,082, engagements +47.6% to 1,166 — all real growth, not baseline noise\n• AV's TikTok pull returned all-null/zero data for the entire month (vs 130 flat followers every prior month) — this looks like a broken Metricool connection for that account, not a real follower loss, and needs checking directly in Metricool\n• Office Hours ran Aug 13: 14 RSVPs, 10 attended (71.4% show rate) — in line with the 72% historical average; no HEM event for a third straight month",
+      rec:"• Verify the Mailchimp MCP connection (or get manual numbers from Jacey) and re-establish Substack access before next month — two consecutive gaps in either would start eroding trend visibility the way email silence did earlier this year\n• Check the AV TikTok account's connection status directly in Metricool — an all-null month after being flat for a year is almost certainly a broken pull, not 130 real followers vanishing\n• Confirm whether the 5,285 web sessions / 80% Direct concentration is real traffic or another bot-inflation episode before reporting it as growth\n• Get an HEM event scheduled — three consecutive months with zero HEM activity is now a real, ongoing gap rather than a one-off"
+    },
+    web:{
+      read:"• Sessions jumped to 5,285 (+148% vs July), users to 4,753 (+156%) — the increase is almost entirely Direct traffic (4,205 sessions, 80% of total, up from July's 70%), which is the same pattern flagged as possibly bot-inflated in earlier months this year\n• Organic Search fell to 840 sessions (16% of mix, down from July's 21%) even as total sessions grew — consistent with real traffic staying flat while something else (likely Direct) inflated the total\n• Form Submissions is 42 for August, sourced from Fluent Forms' exact Aug 1-31 date range (up from July's 32) — GA4's Contact_Form_Submit event still shows 836 for the same period, confirming it remains unusably overcounted (roughly 20x) and pending Virgil's fix\n• AV Blog sessions fell again to 81 (-34.7% vs July's 124, which was itself down 79% from June) — this is now three consecutive months of blog traffic decline and still hasn't been separately investigated for a tracking/indexing cause",
+      rec:"• Treat the 5,285 session total with real skepticism until the Direct-traffic composition is checked for bot activity — an 80% Direct share growing faster than any other channel is the same red flag raised in June\n• The AV Blog session decline is now a 3-month pattern (124 → 81, both down double digits) — this needs a dedicated look at GA4 filters and blog indexing rather than another month of noting it without action\n• Keep sourcing Form Submissions from Fluent Forms' exact date range going forward; the GA4 event is off by roughly 20x this month and isn't safe to use even directionally"
+    },
+    social:{
+      read:"• LinkedIn followers grew modestly to 11,673 (+1.6%); impressions rose to 25,360 (+19.1%) while engagements fell to 704 (-79.9%) — but July's 3,509 engagements was itself flagged as an 8x outlier, so August's number is actually a return to the normal Apr-Jun range (409-741), not a real decline\n• Instagram followers held flat at 3,960 (+0.3%); impressions fell sharply to 3,860 (-86.1%) from July's 27,694 — again, July was a 4x-normal spike, so this reads as reversion to baseline rather than a collapse\n• Facebook and YouTube were both flat to slightly up (Facebook 194 followers unchanged; YouTube views +23.9% to 306); Twitter/X held steady at 2,796 followers\n• TikTok returned no usable data this month — followers, views, and likes all came back null/zero across the entire pull, a sharp break from 130 flat followers every month prior; this looks like a broken Metricool connection for that specific account rather than a real drop to zero\n• Top LinkedIn post was the Aly Merritt / Atlanta Tech Village profile (11,758 impressions, 465 likes) — by far the standout, more than 4x the next-best post — while portfolio/founder-story content (Habits Inc., Studio Entrepreneur announcement) again outperformed generic posts on both LinkedIn and Instagram",
+      rec:"• Don't read August's LinkedIn/Instagram engagement and impression drops as decline — both are reversions from July's outlier highs back to normal ranges; the real comparison point should be the Apr-Jun baseline, not July\n• Get the AV TikTok account's Metricool connection checked before next month's pull — an all-null result needs a fix, not another month of reporting zeros as real\n• Keep leaning into founder-profile and portfolio-story content; the Aly Merritt post's outsized performance (4x the next post) is the same pattern seen with the Perlant and Grayscale stories in prior months"
+    },
+    ko_social:{
+      read:"• Kathryn's LinkedIn had a strong month across every metric: followers +2.0% to 9,176, impressions +30.8% to 77,082, engagements +47.6% to 1,166 — engagement rate improved to 1.51% from July's 1.34%\n• Top post was a personal/lifestyle piece (\"I used to only wear black...\") at 28,831 impressions and 260 likes — the two highest-performing posts this month (this one and the college-graduation reflection post at 22,800 impressions) were both personal-story format, not business content, suggesting that register is resonating particularly well right now\n• Instagram still has the same sparse-coverage gap seen every month since January — Metricool only returned data for 1 of an unknown number of posts published in August (224 reach, 39 likes on that single post); posting volume itself isn't visible through this connector, so no post count is reported\n• This is now 8 consecutive months of this same Instagram data gap for Kathryn's account with no resolution",
+      rec:"• Kathryn's personal-story LinkedIn content is clearly outperforming business-update posts this month — worth leaning into more of that register given the two 20K+ impression posts were both personal reflections\n• The Instagram data gap has now persisted for 8 straight months — if this account's IG performance matters enough to report precisely, it's worth asking Metricool support directly why only 1 post/month gets tracked, rather than continuing to note the same gap indefinitely\n• LinkedIn is trending in a strong, consistent direction — worth watching whether September holds the gains or reverts toward the Apr-Jun baseline the way AV's numbers did this month"
+    },
+    newsletters:{
+      read:"• Mailchimp has no data this month — the Mailchimp MCP connector appears disconnected in this session, and no manual fallback numbers were available in time for this pull; this is a full gap, not a no-send month\n• LinkedIn Newsletter sent 2 articles (Aug 5: 3,210 impressions/182 interactions; Aug 12: 1,070 impressions/54 interactions) — combined impressions of 4,280 are up 94.6% vs July's 2,199, and combined engagements of 236 are up sharply from July's 25\n• LinkedIn Newsletter subscriber count wasn't captured this month (Metricool's evolution metrics don't expose a subscriber count field, and the source used in prior months — manual screenshots — wasn't available in this pull); July's last known figure was 3,523\n• Article titles for the two August sends aren't available from Metricool's data (it returns performance metrics but not the newsletter's actual headline) — placeholder date-based labels were used instead",
+      rec:"• Resolve the Mailchimp connector gap before next month — either reconnect the MCP integration or establish a reliable manual pull process, since a second consecutive missing month would start to look like the multi-month email silence flagged earlier this year\n• Get the actual LinkedIn Newsletter subscriber count and article titles from LinkedIn's own admin panel (via screenshot, same as prior months) to fill in what Metricool's API doesn't expose\n• The LinkedIn Newsletter engagement jump (25 → 236) is large enough to sanity-check against LinkedIn's own dashboard before treating it as a real trend"
+    },
+    content:{
+      read:"• Both Substacks (O'Daily and Startup Strategies) have no data this month — a login/access issue blocked the pull for this account, and it wasn't resolved in time; this is a full gap, not a real-numbers reading\n• AV Blog sessions fell again to 81 (-34.7% vs July's 124), continuing a 3-month decline (June 600 → July 124 → August 81) that still hasn't been separately diagnosed\n• AV Blog's top page is still the generic /blog/ index (36 sessions) rather than any individual post — no single article is driving meaningful traffic this month",
+      rec:"• Re-establish Substack access before next month's pull — two straight newsletters going unreported would create a real blind spot in the content section, not just a one-off gap\n• The 3-month AV Blog session slide (600 → 124 → 81) needs the same investigation flagged in July and not yet done — check GA4 filters, redirects, and whether blog content is still being indexed\n• Once Substack access is back, prioritize checking whether the 7-straight-month open-rate decline flagged in July continued into August — that trend was the clearest actionable signal in this section last month and shouldn't go unmonitored for two cycles"
+    },
+    events:{
+      read:"• Office Hours ran Aug 13: 14 RSVPs, 10 attended, 71.4% show rate — in line with the 72% historical average; attendance was manually corrected from the sign-in sheet after Eventbrite's own check-in tracking failed to record any attendees for this event\n• No HEM event ran in August — the third consecutive month (June, July, August) without one; HEM total membership is not reported this month (no updated source, per the ongoing gap flagged in July)\n• The Eventbrite attendance-tracking failure on the Aug 13 event (API showed 0 of 14 attended, actual was 10) is a new, separate issue from the total_members gap — worth flagging to whoever manages the Eventbrite check-in flow",
+      rec:"• Schedule an HEM event — three consecutive months with zero HEM activity is a sustained gap, not an occasional miss, and is worth flagging as a priority\n• Investigate why Eventbrite's check-in tracking failed to record the Aug 13 Office Hours attendees; if this is a recurring issue with the check-in process (not just a one-off), future events risk the same silent 0%-attendance bug\n• Find a real, updating source for HEM total membership — it's now been unreported or static for multiple consecutive months"
+    },
+    goals:{
+      read:"• Kathryn's LinkedIn is the strongest goal-relevant signal this month: followers, impressions, and engagements all grew meaningfully (+2.0%, +30.8%, +47.6% respectively) — a genuine positive trend, not baseline noise\n• AV's LinkedIn and Instagram numbers look dramatically down month-over-month, but both comparisons are against July's outlier highs — against the more typical Apr-Jun baseline, August is roughly in line, not a real setback\n• Two consecutive-month data gaps (Mailchimp, Substack) mean goal tracking for email/newsletter subscriber growth and Substack view/open-rate targets has no fresh data point this month\n• The AV Blog session decline is now a real 3-month trend (600 → 124 → 81) rather than a one-off dip, and is worth elevating to a goal-level watch item given how sustained it's been\n• HEM has now gone three straight months without an event, putting any HEM-related annual goal (membership growth, event cadence) at real risk of falling behind for the year",
+      rec:"• Don't let August's AV social numbers read as decline in any goal review — they're a reversion from July's outlier, not a downward trend; use Apr-Jun as the fairer baseline\n• Treat the Mailchimp and Substack gaps as urgent to resolve before the next monthly pull — goal tracking for both channels is currently flying blind\n• Add the AV Blog session decline and the HEM event cadence gap to the standing goals watch-list; both are now multi-month patterns rather than single-month noise"
+    }
+    },
     "2026-07":{
     overview:{
       read:"• Mailchimp and LinkedIn Newsletter both broke a multi-month silence in July: 3 Mailchimp sends went out (open rates 26.3%, 25.0%, and 13.1% on a resend) and 2 LinkedIn Newsletter articles published — the first real newsletter activity since ~April/May\n• LinkedIn Newsletter subscribers hit 3,523, extending an unbroken monthly growth streak that's now run all 7 months of 2026\n• Both Substacks show open rates still declining every month with no exception: O'Daily is down to 42.73% (7 straight monthly drops from 50.6% in January) and Startup Strategies is down to 37.88% (7 straight drops from 51.4%)\n• O'Daily views fell sharply to 2,210 (-52% vs June's 4,646), while Startup Strategies views actually ticked up to 963 (+11.5%) — a split result across the two newsletters\n• LinkedIn impressions jumped to 21,291 (+26% vs June) and Instagram impressions more than quadrupled to 27,694 (vs June's 6,402 low) — both recovering from June's dip\n• AV Blog sessions collapsed to 124 (-79% vs June's 600), the lowest of any month with data this year — worth investigating whether this is a real drop or another tracking issue like June's GA4 indexing bug\n• No HEM or Office Hours event ran in July (confirmed via the new Eventbrite pull, which returned zero org events for the month)",
@@ -596,6 +630,179 @@ const DATA = {
     }
   },
   months:{
+    "2026-08":{
+      web:{
+        sessions:{v:5285,mom:1.4812,yoy:null},users:{v:4753,mom:1.5581,yoy:null},
+        engagement_rate:{v:"64s avg",mom:null,yoy:null},form_submissions:{v:42,mom:0.3125,yoy:null},event_count:{v:21428,mom:0.8078,yoy:null},
+        traffic:[
+          {source:"Direct",sessions:4205,pct:"80%",yoy_note:""},
+          {source:"Organic Search",sessions:840,pct:"16%",yoy_note:""},
+          {source:"Referral",sessions:142,pct:"3%",yoy_note:""},
+          {source:"Organic Social",sessions:97,pct:"2%",yoy_note:""},
+          {source:"AI Assistant",sessions:56,pct:"1%",yoy_note:""},
+          {source:"Unassigned",sessions:5,pct:"0%",yoy_note:""},
+          {source:"Cross-network",sessions:1,pct:"0%",yoy_note:""}
+        ],
+        top_pages:[
+          {page:"/",sessions:1017,change:null},
+          {page:"(not set)",sessions:171,change:null},
+          {page:"/about",sessions:119,change:null},
+          {page:"/events",sessions:80,change:null},
+          {page:"/jobs",sessions:67,change:null}
+        ],
+        note:"form_submissions sourced from Fluent Forms (Aug 1-31, 2026 exact range: 42 total) since GA4's Contact_Form_Submit event is over-counting (836 raw events, known bug pending Virgil's fix). event_count is the raw GA4 event total including the broken metric."
+      },
+      social:{
+        linkedin:{
+          followers:{v:11673,mom:0.0162,yoy:null},impressions:{v:25360,mom:0.1911,yoy:null},
+          engagements:{v:704,mom:-0.7994,yoy:null},posts:{v:9,mom:-0.4,yoy:null},
+          // NOTE FOR JACEY: connect Metricool MCP to auto-populate post URLs and previews each month.
+          top_posts:[
+          {date:"2026-08-14",caption:"Aly Merritt didn't set out to run one of the largest startup hubs in the country...",impressions:11758,likes:465,url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7494031365831766017"},
+          {date:"2026-08-27",caption:"Introducing our newest Studio Entrepreneur, Kathryn Farrell!",impressions:2861,likes:58,url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7498787668277805057"},
+          {date:"2026-08-28",caption:"Atlanta Tech Week was packed with fun and innovation!",impressions:2249,likes:58,url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7499179883256799232"},
+          {date:"2026-08-10",caption:"Atlanta Tech Week is almost here, and our team is showing up all over the city!",impressions:2004,likes:34,url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7492656961012944897"},
+          {date:"2026-08-06",caption:"The Habits Inc. team has been building something the financial industry has needed.",impressions:1842,likes:24,url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7491222214596460544"}
+          ]
+        },
+        instagram:{
+          followers:{v:3960,mom:0.0033,yoy:null},impressions:{v:3860,mom:-0.8606,yoy:null},
+          engagements:{v:252,mom:-0.2364,yoy:null},posts:{v:9,mom:-0.4,yoy:null},
+          top_posts:[
+            {date:"2026-08-14",caption:"Aly Merritt didn't set out to run one of the largest startup hubs in the country.",reach:1085,likes:102,views:null,type:"post"},
+            {date:"2026-08-06",caption:"The Habits Inc. team has been building something the financial industry has needed.",reach:668,likes:14,views:null,type:"post"},
+            {date:"2026-08-27",caption:"Introducing our newest Studio Entrepreneur, Kathryn Farrell!",reach:583,likes:53,views:null,type:"post"},
+            {date:"2026-08-17",caption:"Before the 65-person team in 11,000+ patients! STAT Wellness.",reach:395,likes:23,views:null,type:"post"},
+            {date:"2026-08-28",caption:"Atlanta Tech Week was packed with fun and innovation!",reach:302,likes:19,views:null,type:"post"}
+          ]
+        },
+        facebook:{
+          followers:{v:194,mom:0.0,yoy:null},engagements:{v:26,mom:0.0,yoy:null},
+          engagement_rate:{v:null,mom:null,yoy:null},posts:{v:10,mom:-0.2857,yoy:null},
+          top_posts:[]
+        },
+        youtube:{
+          subscribers:{v:226,mom:0.0,yoy:null},views:{v:306,mom:0.2389,yoy:null},
+          likes:{v:0,mom:null,yoy:null},videos:{v:0,mom:null,yoy:null},
+          top_videos:[]
+        },
+        tiktok:{
+          followers:{v:null,mom:null,yoy:null},video_views:{v:null,mom:null,yoy:null},
+          likes:{v:null,mom:null,yoy:null},posts:{v:null,mom:null,yoy:null}
+        },
+        twitter:{
+          followers:{v:2796,mom:0.0007,yoy:null},impressions:{v:1320,mom:null,yoy:null},
+          posts:{v:9,mom:-0.3571,yoy:null}
+        }
+      },
+      kathryn_social:{
+        linkedin:{
+          followers:{v:9176,mom:0.0197,yoy:null},impressions:{v:77082,mom:0.3081,yoy:null},
+          engagements:{v:1166,mom:0.4759,yoy:null},posts:{v:15,mom:0.0714,yoy:null},
+          top_posts:[
+            {date:"Aug 21",caption:"I used to only wear black. Then I met Abbey Glass, and found out I have this whole other part of my personality!",impressions:28831,reach:28831,likes:260,engagements:260,eng_rate:"0.90%",url:"https://www.linkedin.com/feed/update/urn:li:share:7496589687675875328"},
+            {date:"Aug 25",caption:"If you told us where we'd all end up, we would not have believed you.",impressions:22800,reach:22800,likes:131,engagements:131,eng_rate:"0.57%",url:"https://www.linkedin.com/feed/update/urn:li:share:7498002420040536064"},
+            {date:"Aug 6",caption:"Kristin Oja is a 10 out of 10 founder. I don't say that lightly.",impressions:5563,reach:5563,likes:141,engagements:141,eng_rate:"2.53%",url:"https://www.linkedin.com/feed/update/urn:li:share:7491219711519617024"},
+            {date:"Aug 27",caption:"Hot take: The best workplace perks cost next to nothing.",impressions:4529,reach:4529,likes:120,engagements:120,eng_rate:"2.65%",url:"https://www.linkedin.com/feed/update/urn:li:share:7498835711010193408"},
+            {date:"Aug 18",caption:"One of those days that reminds you why you do this. Atlanta Tech Week.",impressions:2890,reach:2890,likes:102,engagements:102,eng_rate:"3.53%",url:"https://www.linkedin.com/feed/update/urn:li:ugcPost:7495521798034407424"}
+          ]
+        },
+        instagram:{
+          followers:{v:900,mom:0.0067,yoy:null},impressions:{v:224,mom:-0.2,yoy:null},
+          engagements:{v:39,mom:-0.25,yoy:null},posts:{v:null,mom:null,yoy:null},
+          top_posts:[
+            {date:"Aug 18",caption:"One of those days that reminds you why you do this. Atlanta Tech Week.",views:224,reach:224,impressions:224,likes:39,engagements:39,eng_rate:"17.41%",url:"https://www.instagram.com/p/DcMXqTDFbBd/"}
+          ],
+          note:"Metricool's Instagram integration for this account only returns reach/engagement data for 1 tracked post in August — same sparse-coverage gap seen every month since January. Post count (posts:null) isn't reported since real posting volume for the month isn't visible through this connector."
+        }
+      },
+      newsletters:{
+        mailchimp:{
+          open_rate:{v:null,mom:null,yoy:null},click_rate:{v:null,mom:null,yoy:null},
+          subscribers:{v:null,mom:null,yoy:null},opens:{v:null,mom:null,yoy:null},
+          no_send:false,campaigns:[]
+        },
+        linkedin_newsletter:{
+          subscribers:{v:null,mom:null,yoy:null},impressions:{v:4280,mom:null,yoy:null},
+          engagements:{v:236,mom:null,yoy:null},article_views:{v:null,mom:null,yoy:null},
+          engagement_rate:{v:"5.5%",mom:null,yoy:null},no_send:false,
+          top_articles:[
+          {title:"LinkedIn Newsletter Send (Aug 5, 2026)",open_rate:"",click_rate:"",impressions:3210,reach:null,engagements:182,eng_rate:"5.7%",article_views:null,email_sends:null},
+          {title:"LinkedIn Newsletter Send (Aug 12, 2026)",open_rate:"",click_rate:"",impressions:1070,reach:null,engagements:54,eng_rate:"5.0%",article_views:null,email_sends:null}
+          ]
+        }
+      },
+      content:{
+        odaily:{
+          subscribers:{v:null},
+          sessions:{v:null,mom:null,yoy:null},views:{v:null,mom:null,yoy:null},
+          open_rate:{v:null,mom:null,yoy:null},new_subs:{v:null,mom:null,yoy:null},
+          top_posts:[]
+        },
+        startup_strategies:{
+          subscribers:{v:null},
+          sessions:{v:null,mom:null,yoy:null},views:{v:null,mom:null,yoy:null},
+          open_rate:{v:null,mom:null,yoy:null},new_subs:{v:null,mom:null,yoy:null},
+          ai_assisted:true,
+          top_posts:[]
+        },
+        av_blog:{
+          sessions:{v:81,mom:-0.3468,yoy:null},views:{v:85,mom:-0.2917,yoy:null},
+          users:{v:74,mom:-0.3984,yoy:null},engagement_rate:{v:"40.74%",mom:null,yoy:null},
+          top_posts:[
+            {title:"/blog/",sessions:36,url:""},
+            {title:"/blog/everything-compounds-399c8",sessions:12,url:""},
+            {title:"/blog/double-revenue-with-no-additional-employees-7c489",sessions:11,url:""},
+            {title:"/blog/entrepreneurs-selling-equity-in-a-financing-round-3305d",sessions:11,url:""},
+            {title:"/blog/market-a-or-b-for-a-startup-80a16",sessions:11,url:""}
+          ]
+        }
+      },
+      events:{
+        hem:{
+          note:"No HEM event in August 2026 (confirmed via Eventbrite pull — zero events for the org this month)",
+          historical_avg:{rsvps:136,attendance:47,conversion:"35%",replays:30},
+          total_members:null,
+          history:[
+            {date:"Apr 15, 2026",rsvps:84,attended:45,conversion:"53%"},
+            {date:"Feb 4, 2026",rsvps:160,attended:43,conversion:"26%"},
+            {date:"Oct 29, 2025",rsvps:152,attended:58,conversion:"38%"},
+            {date:"Aug 20, 2025",rsvps:120,attended:41,conversion:"34%"},
+            {date:"Jul 16, 2025",rsvps:157,attended:45,conversion:"29%"},
+            {date:"Apr 23, 2025",rsvps:179,attended:50,conversion:"28%"},
+            {date:"Jan 22, 2025",rsvps:148,attended:60,conversion:"41%"},
+            {date:"Nov 14, 2024",rsvps:151,attended:70,conversion:"46%"},
+            {date:"Sep 25, 2024",rsvps:109,attended:35,conversion:"32%"},
+            {date:"Jun 12, 2024",rsvps:119,attended:41,conversion:"34%"},
+            {date:"Mar 27, 2024",rsvps:158,attended:30,conversion:"19%"},
+            {date:"Jan 1, 2024",rsvps:151,attended:44,conversion:"29%"},
+            {date:"Nov 1, 2023",rsvps:127,attended:44,conversion:"35%"},
+            {date:"Sep 1, 2023",rsvps:165,attended:55,conversion:"33%"},
+            {date:"Jul 1, 2023",rsvps:143,attended:43,conversion:"30%"},
+            {date:"May 1, 2023",rsvps:117,attended:46,conversion:"39%"},
+            {date:"Mar 1, 2023",rsvps:136,attended:66,conversion:"49%"},
+            {date:"Jan 1, 2023",rsvps:122,attended:42,conversion:"34%"},
+            {date:"Nov 1, 2022",rsvps:122,attended:45,conversion:"37%"},
+            {date:"Oct 1, 2022",rsvps:99,attended:36,conversion:"36%"},
+            {date:"Aug 1, 2022",rsvps:137,attended:41,conversion:"30%"},
+            {date:"Jun 1, 2022",rsvps:146,attended:46,conversion:"32%"}
+          ]
+        },
+        office_hours:{
+          note:"Attendance manually corrected from Office Hours sign-in sheet (Jacey, Sep 2026) -- Eventbrite check-ins were not recorded for this event, API pull showed 0 attended",
+          historical_avg:{rsvps:28,attendance:19,conversion:"72%"},
+          history:[
+            {date:"2026-08-13",rsvps:14,attended:10,conversion:"71.4%"},
+            {date:"Jun 11, 2026",rsvps:10,attended:7,conversion:"70%"},
+            {date:"May 14, 2026",rsvps:9,attended:10,conversion:"111%"},
+            {date:"Mar 19, 2026",rsvps:27,attended:22,conversion:"81%"},
+            {date:"Dec 4, 2025",rsvps:15,attended:12,conversion:"80%"},
+            {date:"Nov 13, 2025",rsvps:13,attended:12,conversion:"92%"},
+            {date:"Jul 10, 2025",rsvps:35,attended:21,conversion:"60%"}
+          ]
+        }
+      }
+    },
     "2026-07":{
       web:{
         sessions:{v:2130,mom:-0.0444,yoy:null},users:{v:1858,mom:-0.0221,yoy:null},
@@ -1189,6 +1396,8 @@ const DATA = {
       {period:"Jun 2026",linkedin:11532,instagram:3925,youtube:228,twitter:2856,facebook:192,li_impressions:16894,li_engagements:409,ig_impressions:6402,ig_engagements:234}
 ,
       {period:"Jul 2026",linkedin:11487,instagram:3947,youtube:226,twitter:2794,facebook:194,li_impressions:21291,li_engagements:3509,ig_impressions:27694,ig_engagements:330}
+,
+      {period:"Aug 2026",linkedin:11673,instagram:3960,youtube:226,twitter:2796,facebook:194,li_impressions:25360,li_engagements:704,ig_impressions:3860,ig_engagements:252}
       // ADD SOCIAL MONTH HERE ↑
     ],
     // Kathryn O'Daily personal social — Metricool brand 5146601. IG impressions/engagements
@@ -1209,7 +1418,8 @@ const DATA = {
       {period:"Apr 2026",li_impressions:50266,li_engagements:1427,ig_impressions:268,ig_engagements:42},
       {period:"May 2026",li_impressions:62410,li_engagements:1098,ig_impressions:717,ig_engagements:46},
       {period:"Jun 2026",li_impressions:96479,li_engagements:1124,ig_impressions:1009,ig_engagements:104},
-      {period:"Jul 2026",li_impressions:58922,li_engagements:790,ig_impressions:280,ig_engagements:52}
+      {period:"Jul 2026",li_impressions:58922,li_engagements:790,ig_impressions:280,ig_engagements:52},
+      {period:"Aug 2026",li_impressions:77082,li_engagements:1166,ig_impressions:224,ig_engagements:39}
       // ADD KATHRYN SOCIAL MONTH HERE ↑
     ],
     // Web sessions: actuals from GA4. Jan–Apr pending from Jacey/GA4 pull.
@@ -1222,6 +1432,8 @@ const DATA = {
       {period:"Jun 2026",sessions:2229}
 ,
       {period:"Jul 2026",sessions:2130}
+,
+      {period:"Aug 2026",sessions:5285}
       // ADD WEB MONTH HERE ↑
     ],
     linkedin_newsletter:[
@@ -1236,6 +1448,8 @@ const DATA = {
       {period:"Jun 2026",subscribers:3429,article_views:null,impressions:null,engagements:null,eng_rate:null,no_send:true}
 ,
       {period:"Jul 2026",subscribers:3523,article_views:3109,impressions:2199,engagements:25,eng_rate:1.1}
+,
+      {period:"Aug 2026",subscribers:null,article_views:null,impressions:4280,engagements:236,eng_rate:5.5}
       // ADD LINKEDIN MONTH HERE ↑
     ]
   },
@@ -1400,11 +1614,11 @@ function renderCals() {
 
 // ── FILTER PRESETS ───────────────────────────
 const presetDates = {
-  current_month: {from:'7/1/2026',  to:'7/31/2026', cFrom:'6/1/2026',  cTo:'6/30/2026', note:'Comparing 30 days to 31 days.', label:'Current Month'},
-  last_month:    {from:'7/1/2026',  to:'7/31/2026', cFrom:'6/1/2026',  cTo:'6/30/2026', note:'Comparing 30 days to 31 days.', label:'Last Month'},
-  last_3_months: {from:'4/1/2026',  to:'7/31/2026', cFrom:'1/1/2026',  cTo:'3/31/2026', note:'Comparing 91 days to 90 days.', label:'Last 3 Months'},
-  last_6_months: {from:'1/1/2026',  to:'7/31/2026', cFrom:'7/1/2025',  cTo:'12/31/2025',note:'Comparing 181 days to 184 days.',label:'Last 6 Months'},
-  ytd:           {from:'1/1/2026',  to:'7/31/2026', cFrom:'1/1/2025',  cTo:'6/30/2025', note:'Comparing 181 days to 181 days.',label:'Year to Date'},
+  current_month: {from:'8/1/2026',  to:'8/31/2026', cFrom:'7/1/2026',  cTo:'7/31/2026', note:'Comparing 30 days to 31 days.', label:'Current Month'},
+  last_month:    {from:'8/1/2026',  to:'8/31/2026', cFrom:'7/1/2026',  cTo:'7/31/2026', note:'Comparing 30 days to 31 days.', label:'Last Month'},
+  last_3_months: {from:'4/1/2026',  to:'8/31/2026', cFrom:'1/1/2026',  cTo:'3/31/2026', note:'Comparing 91 days to 90 days.', label:'Last 3 Months'},
+  last_6_months: {from:'1/1/2026',  to:'8/31/2026', cFrom:'7/1/2025',  cTo:'12/31/2025',note:'Comparing 181 days to 184 days.',label:'Last 6 Months'},
+  ytd:           {from:'1/1/2026',  to:'8/31/2026', cFrom:'1/1/2025',  cTo:'6/30/2025', note:'Comparing 181 days to 181 days.',label:'Year to Date'},
   last_year:     {from:'1/1/2025',  to:'12/31/2025',cFrom:'1/1/2024',  cTo:'12/31/2024',note:'Comparing 365 days to 366 days.',label:'Last Year'}
 };
 
